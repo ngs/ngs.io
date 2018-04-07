@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Universal Code support for middleman-google-analytics</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2014/04/16/middleman-google-analytics/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Universal Code support for middleman-google-analytics</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2014-04-16T01:00:00">2014-04-16 10:00</time>
+      <meta itemprop="description" content="I've sent a pull request to support Universal Code for middleman-google-analytics"></meta>
+      <div class="hidden article-metadata"><meta content="I've sent a pull request to support Universal Code for middleman-google-analytics" itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?s=500" itemprop="url" /><meta content="500" itemprop="width" /><meta content="500" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2014-04-16T01:00:00" itemprop="dateModified" /></div>
+      <p>As <a href="http://analytics.blogspot.jp/2014/04/universal-analytics-out-of-beta-into.html">Google announced</a>, Universal Analytics became out of beta.</p>
+
+<p>This blog is using <a href="https://github.com/danielbayerlein/middleman-google-analytics/">middleman-google-analytics</a> to embed Google Analytics code, so I need to paste the snippet or modify the extension to use Universal Analytics.</p>
+
+<p>The extension helped me a lot, so I started improve that and sent pull requests.</p>
+
+
+
+<p><a href="https://github.com/danielbayerlein/middleman-google-analytics/pull/15">danielbayerlein/middleman-google-analytics#15: <strong>Universal code support</strong></a></p>
+
+<p>This update adds <code>google_analytics_universal_tag</code> to helper methods with existing <code>google_analytics_tag</code>.</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%=</span> <span class="n">google_analytics_universal_tag</span> <span class="cp">%&gt;</span></code></pre>
+
+<p>I also sent a pull request to add <a href="https://github.com/ngs/middleman-google-analytics/blob/c82d5deeb0e8295122b1ebcfbe8193c11980f462/features/helper.feature">unit tests</a> the project does not have yet. I enjoyed <a href="http://cukes.info/">Cucumber</a> coding &lt;3</p>
+
+<p><a href="https://github.com/danielbayerlein/middleman-google-analytics/pull/14">danielbayerlein/middleman-google-analytics#14: <strong>Added Cucumber tests</strong></a></p>
+
+<p>I hope that will merge happily, but if not, you can use the updates with referring my repos. (I do.)</p>
+<pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'middleman-google-analytics'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'ngs/middleman-google-analytics'</span></code></pre>
+
+<h2 id="update-2014-04-17-05-40">Update 2014-04-17 05:40</h2>
+
+<p>Merged!</p>
+
+<p><a href="https://github.com/danielbayerlein/middleman-google-analytics/pull/15"><amp-img src="/images/2014-04-16-middleman-google-analytics/merge.png" layout="responsive" width="1542" height="842"></amp-img></a></p>
+
+<p>The version was bumped to <a href="https://github.com/danielbayerlein/middleman-google-analytics/commit/c28a5fc1e0f72cd206ba5f8733c3655935501b9c">0.1.0</a> and released to <a href="http://rubygems.org/gems/middleman-google-analytics">RubyGems</a>.</p>
+<pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'middleman-google-analytics'</span><span class="p">,</span> <span class="s1">'~&gt; 0.1.0'</span></code></pre>
+
+    </article>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Debugging Coda Plug-In with LLDB</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2012/05/25/debugging-coda-plug-in-with-lldb/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Debugging Coda Plug-In with LLDB</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2012-05-25T03:00:00">2012-05-25 12:00</time>
+      <meta itemprop="description" content=""></meta>
+      <div class="hidden article-metadata"><meta itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?s=500" itemprop="url" /><meta content="500" itemprop="width" /><meta content="500" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2012-05-25T03:00:00" itemprop="dateModified" /></div>
+      <ol>
+<li>Open <strong>Edit Scheme</strong> window (&#x2318;&lt;).
+</li><li>Select <strong>Run</strong> pane from side bar.
+</li><li>In <strong>Info</strong> tab, select <strong>Coda 2.app</strong> from <strong>Executable</strong> dropdown.
+</li><li>Click the <strong>OK</strong> button to close the window.
+</li><li>Select your your plug-in target.
+</li><li>Select <strong>Build Settings</strong> tab, click <strong>Add Build Setting</strong>, select <strong>Add User-Defined Setting</strong> and set name as <code>INSTALL_BUNDLE</code>, value as <code>1</code> for Debug configuration.
+</li><li>Switch to <strong>Build Phase</strong> tab, click <strong>Add Build Phase</strong> button and select <strong>Add Run Script</strong>
+</li><li>Copy and paste the script bellow.
+</li></ol>
+
+<pre class="highlight shell"><code><span class="k">if</span> <span class="o">[</span> <span class="nv">$INSTALL_BUNDLE</span> <span class="o">==</span> 1 <span class="o">]</span>; <span class="k">then
+  </span><span class="nv">DEST</span><span class="o">=</span><span class="s2">"</span><span class="nv">$USER_LIBRARY_DIR</span><span class="s2">/Application Support/Coda 2/Plug-ins/</span><span class="nv">$FULL_PRODUCT_NAME</span><span class="s2">"</span>
+  <span class="nv">ORG</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TARGET_BUILD_DIR</span><span class="s2">/</span><span class="nv">$FULL_PRODUCT_NAME</span><span class="s2">"</span>
+  rm -rf <span class="s2">"</span><span class="nv">$DEST</span><span class="s2">"</span>
+  mv <span class="s2">"</span><span class="nv">$ORG</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$DEST</span><span class="s2">"</span>
+<span class="k">fi</span></code></pre>
+
+<p>Now you can debug with your LLDB console, enjoy!</p>
+
+    </article>
+  </body>
+</html>

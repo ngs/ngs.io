@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Migrating Coda modes to Coda 2</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2012/05/23/migrating-coda-mode-to-coda2/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Migrating Coda modes to Coda 2</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2012-05-23T02:51:00">2012-05-23 11:51</time>
+      <meta itemprop="description" content=""></meta>
+      <div class="hidden article-metadata"><meta itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?s=500" itemprop="url" /><meta content="500" itemprop="width" /><meta content="500" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2012-05-23T02:51:00" itemprop="dateModified" /></div>
+      <p>Coda 1.x modes are not compatible with Coda 2.</p>
+
+<p>This is how to migrate Coda 1.x modes to Coda 2.</p>
+
+<!--more-->
+
+<h2 id="locations">Locations</h2>
+
+<dl>
+<dt>style</dt><dd>~/Library/Application Support/Coda 2/Styles</dd>
+<dt>mode</dt><dd>~/Library/Application Support/Coda 2/Modes</dd>
+</dl>
+
+<h2 id="sss">SSS</h2>
+
+<p><code>.sss</code> elements match <code>scope</code> attributes of each nodes in <code>SyntaxDefinition.xml</code>.</p>
+<pre class="highlight xml"><code><span class="nt">&lt;keywords</span> <span class="na">id=</span><span class="s">"Tags"</span> <span class="na">useforautocomplete=</span><span class="s">"no"</span> <span class="na">scope=</span><span class="s">"markup.tag"</span><span class="nt">&gt;</span></code></pre>
+<pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span><span class="m">#881280</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span><span class="nb">normal</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+<p>The sss rules are inherited from upper scope separated by dots.</p>
+<pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span><span class="m">#881280</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span><span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">markup</span><span class="nc">.tag.attribute.name</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span><span class="m">#994500</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+<p>Style attributes defined in <code>SyntaxDefinition.xml</code> such like <code>color</code>, <code>background-color</code>, <code>font-weight</code> &hellip; would be ignored.</p>
+
+<p>This is the why the modes located in <code>~/Library/Application Support/Coda 2/Modes</code> are selectable but no effects.</p>
+<pre class="highlight diff"><code><span class="gd">-             &lt;keywords id="Arduino Functions" color="#FF8000" casesensitive="no" useforautocomplete="yes"&gt;
+</span><span class="err">+             &lt;keywords id="Arduino Functions" scope="language.function" casesensitive="no" useforautocomplete="yes"&gt;</span></code></pre>
+
+    </article>
+  </body>
+</html>

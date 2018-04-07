@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch distributions and invalidate with hubot-cloudfront</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2014/06/28/hubot-cloudfront/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Fetch distributions and invalidate with hubot-cloudfront</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2014-06-28T12:00:00">2014-06-28 21:00</time>
+      <meta itemprop="description" content="I published a Hubot script to fetch Amazon CloudFront distribution list and invalidate objects."></meta>
+      <div class="hidden article-metadata"><meta content="I published a Hubot script to fetch Amazon CloudFront distribution list and invalidate objects." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2014-06-28-hubot-cloudfront/hipchat.png" itemprop="url" /><meta content="1716" itemprop="width" /><meta content="1048" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2014-06-28T12:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2014-06-28-hubot-cloudfront/hipchat.png" layout="responsive" width="1716" height="1048"></amp-img></p>
+
+<p>I published a <a href="https://hubot.github.com/">Hubot</a> script to fetch <a href="http://aws.amazon.com/cloudfront/">Amazon CloudFront</a> distribution list and invalidate objects.</p>
+
+<p><strong><a href="https://github.com/ngs/hubot-cloudfront">ngs/hubot-cloudfront</a></strong></p>
+<pre class="highlight shell"><code>npm install --save hubot-cloudfront</code></pre>
+
+
+
+<h2 id="list-distributions">List Distributions</h2>
+
+<p>Lists distributions with ID, domain name, status, comment and number of invalidation batches (if exists).</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cloudfront list distributions
+hubot &gt; - 0: E2SO336F6AMQ08 --------------------
+          domain: d1ood20dgya2ll.cloudfront.net
+          status: InProgress
+          comment: Distribution for static.liap.us
+        - 1: E29XRZTZN1VOAV --------------------
+          domain: d290rn73xc4vfg.cloudfront.net
+          status: Deployed
+          invalidation batches in progress: 10</code></pre>
+
+<p>Shortcut:</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cf ls dist</code></pre>
+
+<h2 id="create-invalidations">Create invalidations</h2>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cloudfront invalidate E2SO336F6AMQ08 /index.html /atom.xml /javascripts/*.js
+hubot &gt; Invalidation I14NJQR76VVQAT on distribution E29XRZTZN1VOAV created.
+        It might take 10 to 15 minutes until all files are invalidated.</code></pre>
+
+<p>You can use either ID and 0-based index number (on the left of distribution ID) to specify distribution.</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cloudfront invalidate 0 /index.html /atom.xml /javascripts/*.js</code></pre>
+
+<p>Shortcut:</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cf inv 0 /index.html /atom.xml /javascripts/*.js</code></pre>
+
+<p>After creating invalidations, <a href="https://hubot.github.com/">Hubot</a> checks every 1 minute and notifies if completed.</p>
+
+<pre class="highlight plaintext"><code>hubot &gt; @ngs Invalidation I14NJQR76VVQAT on distribution E29XRZTZN1VOAV completed.</code></pre>
+
+<h2 id="list-invalidations">List invalidations</h2>
+
+<p>List distribution with ID or 0-based index number.</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cloudfront list invalidates E2SO336F6AMQ08
+hubot &gt; I14NJQR76VVQAT - InProgress
+        I3MAZE9OBGZ05X - Completed</code></pre>
+
+<p>Shortcut:</p>
+
+<pre class="highlight plaintext"><code>me &gt; hubot cf ls inv 0</code></pre>
+
+    </article>
+  </body>
+</html>

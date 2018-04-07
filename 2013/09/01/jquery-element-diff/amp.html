@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Generating JavaScript code to arrange elements to be same with specified HTML or element using jQuery Element Diff</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2013/09/01/jquery-element-diff/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Generating JavaScript code to arrange elements to be same with specified HTML or element using jQuery Element Diff</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2013-09-01T03:00:00">2013-09-01 12:00</time>
+      <meta itemprop="description" content=""></meta>
+      <div class="hidden article-metadata"><meta itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="http://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?s=500" itemprop="url" /><meta content="500" itemprop="width" /><meta content="500" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2013-09-01T03:00:00" itemprop="dateModified" /></div>
+      <p><a href="https://github.com/ngs/jquery-elementDiff">jQuery Element Diff Plugin</a> is a plugin to generate JavaScript code to arrange elements to be same.</p>
+
+
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"sample-text1"</span><span class="nt">&gt;</span>
+  Lorem ipsum
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span1"</span><span class="nt">&gt;</span>dolor<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span2"</span><span class="nt">&gt;</span>sit<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span3"</span><span class="nt">&gt;</span>amet<span class="nt">&lt;/span&gt;</span>,
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span4"</span><span class="nt">&gt;</span>consectetur<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span5"</span><span class="nt">&gt;</span>adipiscing<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span6"</span><span class="nt">&gt;</span>elit<span class="nt">&lt;/span&gt;</span>.
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"sample-text2"</span><span class="nt">&gt;</span>
+  Lorem ipsum
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span1"</span> <span class="na">id=</span><span class="s">"dolor"</span><span class="nt">&gt;</span>dolor<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span2"</span><span class="nt">&gt;</span>sit!<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">"span3"</span><span class="nt">&gt;</span>amet<span class="nt">&lt;/b&gt;</span>,
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span5"</span><span class="nt">&gt;</span>adipiscing<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"span6"</span><span class="nt">&gt;</span>elit<span class="nt">&lt;/span&gt;</span>.
+<span class="nt">&lt;/div&gt;</span></code></pre>
+<pre class="highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#sample-text1"</span><span class="p">).</span><span class="nx">getElementDiff</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#sample-text2"</span><span class="p">));</span>
+<span class="c1">// [</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(0)\").attr({\"id\":\"dolor\"})",</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(1)\").html(\"sit!\")",</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(2)\").replaceWith(\"&lt;b class=\\\"span3\\\"&gt;amet&lt;/b&gt;\")",</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(3)\").attr({\"class\":\"span5\"}).html(\"adipiscing\")",</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(4)\").attr({\"class\":\"span6\"}).html(\"elit\")",</span>
+<span class="c1">//    "$(\"#sample-text1 &gt; :eq(5)\").remove()",</span>
+<span class="c1">//    "$(\"#sample-text1\").attr({\"id\":\"sample-text2\"})"</span>
+<span class="c1">// ]</span></code></pre>
+
+<p><a href="contained%20in%20`dist`%20folder">Download</a> or clone <a href="https://github.com/ngs/jquery-elementDiff">GitHub</a> repository.</p>
+
+<p>Also available on <a href="https://npmjs.org/package/jquery-element-diff">npm</a>:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm install jquery-element-diff</code></pre>
+
+<p>or <a href="http://bower.io/">bower</a>:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>bower install jquery-elementDiff</code></pre>
+
+    </article>
+  </body>
+</html>

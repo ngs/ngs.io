@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel>
+    <title>Atsushi Nagase</title>
+    <atom:link href="https://ngs.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://ngs.io/feed.xml" type="application/atom+xml"/>
+    <language>en</language>
+    <description>Hacking recipes in my life.</description>
+    <link>https://ngs.io/</link>
+    <lastBuildDate>Thu, 22 Sep 2016 17:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Wiplock - Protect main branch from in-progress branches</title>
+      <link>https://ngs.io/2016/09/23/wiplock/</link>
+      <guid>https://ngs.io/2016/09/23/wiplock/</guid>
+      <pubDate>Thu, 22 Sep 2016 17:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks.&lt;/p&gt;
+
+&lt;p&gt;https://wiplock.com&lt;/p&gt;
+
+&lt;p&gt;Wiplock is an OSS built with Go and React + Redux. Please take a look if you’re interested in.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/ngs/wiplock&lt;/p&gt;&lt;h2&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;In our daily development flow, we send &lt;strong&gt;WIP pull requests&lt;/strong&gt; on GitHub before implementation was done.&lt;/p&gt;
+
+&lt;p&gt;Sometimes we mistakenly merge these pull requests before the tasks are completed or forget removing WIP in the title that may confuse collaborators.&lt;/p&gt;
+
+&lt;p&gt;To prevent these kind of mis-operations, I’ve built an tiny web application called Wiplock.&lt;/p&gt;
+
+&lt;h2&gt;How it works&lt;/h2&gt;
+
+ 1. Sign in with GitHub 
+
+&lt;p&gt;After visiting Wiplock, you’ll see the black Sign in with  button.&lt;/p&gt;
+
+&lt;p&gt;Hit it and Authorize this app on the next screen.&lt;/p&gt;
+
+&lt;p&gt;Make sure that organizations are granted that you want introducing Wiplock.&lt;/p&gt;
+
+ 2. Find repository and turn the switch on &lt;p&gt;After you signed in with GitHub, your repositories will be listed in Wiplock.&lt;/p&gt;
+
+&lt;p&gt;Find repositories to introduce and turn the switch on.&lt;/p&gt;
+
+ 3. Check that works &lt;p&gt;Go to your repository and edit or create pull request to contain WIP in the title.&lt;/p&gt;
+
+&lt;p&gt;Once you edit the title, Pull Request status would become Pending.&lt;/p&gt;
+
+ 4. Turn on protect branch &lt;p&gt;Go to Settings &amp;gt; Branches of your repo, turn Require branches to be up to date before merging checkbox on.&lt;/p&gt;
+
+&lt;h2&gt;Launch your own Wiplock&lt;/h2&gt;
+
+&lt;p&gt;If you won’t like to give permission to applications managed by someone else, you can launch your own Wiplock on Heroku or Docker hosts.&lt;/p&gt;
+
+ Pre-requirements 
+
+&lt;p&gt;You need to create your OAuth Application on GitHub.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/settings/applications/new&lt;/p&gt;
+
+ Heroku 
+
+&lt;p&gt;Just hit the Heroku Button on README of the repository.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/ngs/wiplock#heroku&lt;/p&gt;
+
+ Docker 
+
+&lt;p&gt;Redis server is required to launch on your host.&lt;/p&gt;
+
+&lt;p&gt;If you don’t have it yet, the Official Docker image will help you bootstrapping.&lt;/p&gt;
+ docker pull redis
+docker run --name wiplock-redis -d redis 
+
+&lt;p&gt;Pull Wiplock Docker image.&lt;/p&gt;
+ docker pull atsnngs/wiplock 
+
+&lt;p&gt;And run Wiplock by passing REDIS_URL with running container name.&lt;/p&gt;
+ docker run --name wiplock -p 8000:8000 -d --rm \
+  --link wiplock-redis:redis \
+  -e GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID} \
+  -e GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET} \
+  -e SECRET=${SECRET} \
+  -e REDIS_URL="redis://redis:6379" \
+  atsnngs/wiplock 
+
+&lt;p&gt;Then you can see your Wiplock on your localhost.&lt;/p&gt;
+
+&lt;p&gt;http://localhost:8000&lt;/p&gt;
+
+&lt;h2&gt;Milestones&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support locking pull requests labeled in progress
+&lt;/li&gt;&lt;li&gt;Support customizing locking conditions using .wiplock.yml on the repository root
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;I wish this could help your workflow safe, happy locking!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Testing Email Delivery in Nightwatch.js End to End test</title>
+      <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
+      <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ngs/nightwatch-mail-example on GitHub&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This example project tests subscribing and unsubscribing Hacker News Letter user flow.&lt;/p&gt;&lt;p&gt;The test code is like this:&lt;/p&gt;
+ page.navigate()
+//
+// Create Mandrill Email Route
+.createEmailRoute(email)
+//
+// Fill in form
+.waitForElementVisible('@form')
+.clearValue('@email')
+.setValue('@email', email)
+.click('@submit')
+//
+// Navigate to completion screen
+.waitForElementNotPresent('@form')
+.assert.urlEquals(page.url + 'almostfinished.html')
+//
+// Check Email with specified subject
+.assert.receivedEmailSubjectEquals(email,
+  'Hacker Newsletter: Please Confirm Subscription')
+//
+// Check Email contains specified string in HTML body
+.assert.receivedEmailHTMLBodyContains(email,
+  '&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=') 
+
+&lt;p&gt;See full code.&lt;/p&gt;
+
+&lt;h2&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;We recently introduced Nightwatch.js for End to End testing our product.&lt;/p&gt;
+
+&lt;p&gt;I think that is pretty easy and simple to writing test code for our web application.&lt;/p&gt;
+
+&lt;p&gt;While writing test, we wanted to test user flow through receiving Emails from our application.&lt;/p&gt;
+
+&lt;p&gt;So I tried to implement custom actions and assertions for Nightwatch.js.&lt;/p&gt;
+
+&lt;p&gt;ref: Extending Nightwatch - Nightwatch Developer Guide&lt;/p&gt;
+
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+
+ 1. Set up Mandrill Inbound Domain 
+
+&lt;p&gt;First you need to set up Inbound Email Domain by following Mandrill Documentation.&lt;/p&gt;
+
+&lt;p&gt;Just type your domain and hit the blue + Add button on Inbound Domains screen.&lt;/p&gt;&lt;p&gt;After adding test domain, you need add MX record in your DNS records indicated in MX Setup popup.&lt;/p&gt; 2. Grab your Mandrill API Key 
+
+&lt;p&gt;Next you need to grab your Mandrill API Key from settings screen&lt;/p&gt;&lt;p&gt;I recommend turning on Test Key checkbox that prevents sending Emails someone mistakenly while testing.&lt;/p&gt;
+
+ 3. (Optional) Launch your RequestBin 
+
+&lt;p&gt;Delivered Emails are shared with public users. If you mind sharing your application Emails for them, you can launch your own RequestBin on hosting services like Heroku or IBM Bluexix by deploying Open Sourced RequestBin.&lt;/p&gt;
+ git clone git://github.com/Runscope/requestbin.git
+cd requestbin
+heroku create
+heroku addons:add heroku-redis
+heroku config:set REALM=prod
+git push heroku master 
+
+ 4. Environment Variables 
+
+&lt;p&gt;To launch the example project, export environment variables according to the above steps.&lt;/p&gt;
+
+&lt;p&gt;I use direnv to manage local environment variables.&lt;/p&gt;
+ echo "export MANDRILL_API_KEY=${YOUR_API_KEY_HERE}" &amp;gt;&amp;gt; .envrc
+echo "export MAIL_DOMAIN=${YOUR_MAIL_DOMAIN_HERE}" &amp;gt;&amp;gt; .envrc
+# If you set up your own RequestBin in Step 3
+echo "export REQUEST_BIN_HOST=https://${YOUR_HEROKU_APP}.herokuapp.com" &amp;gt;&amp;gt; .envrc
+# Allow new environment variables
+direnv allow 
+
+ 5. NPM! 
+
+&lt;p&gt;Finally, you can launch example test suite by running npm command.&lt;/p&gt;
+ npm install # for first time
+npm test 
+
+&lt;h2&gt;The Custom Assertions and Commands&lt;/h2&gt;
+
+&lt;p&gt;The extension file layout is like this.&lt;/p&gt;
+ lib
+├── custom_assertions
+│   ├── receivedEmailHTMLBodyContains.js
+│   ├── receivedEmailSubjectContains.js
+│   └── receivedEmailSubjectEquals.js
+├── custom_commands
+│   ├── checkEmails.js
+│   ├── createEmailRoute.js
+│   └── deleteEmailRoutes.js
+├── globals.js
+└── page_objects
+    └── hackernewsletter.js # example specific file 
+
+&lt;p&gt;You need to specify these paths in config file.&lt;/p&gt;
+ {
+  "custom_commands_path": "./lib/custom_commands",
+  "custom_assertions_path": "./lib/custom_assertions",
+  "page_objects_path": "./lib/page_objects",
+  "globals_path": "./lib/globals.js",
+  // snip ...
+} 
+
+&lt;h2&gt;More Assertions&lt;/h2&gt;
+
+&lt;p&gt;I added receivedEmailHTMLBodyContains, receivedEmailSubjectContains, receivedEmailSubjectEquals in this example project.&lt;/p&gt;
+
+&lt;p&gt;If you want to add assertions for other field like from_email or attachments, you can implement by forking existing implementations. (See full list)&lt;/p&gt;
+ const util = require('nightwatch/lib/util/utils');
+exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) {
+  const DEFAULT_MSG = 'Testing if &amp;lt;%s&amp;gt; received with subject equals to "%s".';
+  this.message = msg || util.format(DEFAULT_MSG, address, expected);
+  this.expected = function() {
+    return expected;
+  };
+  this.pass = function(value) {
+    const expected = this.expected();
+    return value.filter(function(email) {
+      return email.subject === expected;
+      // use indexOf(expected) !== -1 for *contains* implementation.
+    }).length &amp;gt; 0;
+  };
+  this.value = function(result) {
+    return result || [];
+  };
+  this.command = function(callback) {
+    return this.api.checkEmails(address, callback);
+  };
+} 
+
+&lt;p&gt;If you write some cool assertions in your project, please fork the repository and send me a Pull Request!&lt;/p&gt;
+
+&lt;p&gt;Happy testing!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Hyperterm Tomorrow Themes</title>
+      <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
+      <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
+
+&lt;h2&gt;How to install&lt;/h2&gt;
+ npm search hyperterm-tomorrow
+$EDITOR ~/.hyperterm.js &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-blue&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-bright&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-eighties&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>PGP encrypted messages for Keybase users in our chat rooms</title>
+      <link>https://ngs.io/2016/05/14/hubot-keybase/</link>
+      <guid>https://ngs.io/2016/05/14/hubot-keybase/</guid>
+      <pubDate>Fri, 13 May 2016 22:45:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve released &lt;strong&gt;hubot-keybase&lt;/strong&gt;, a Hubot script to encrypt messages for Keybase users.&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;strong&gt;ngs/hubot-keybase on GitHub&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;How to use&lt;/h2&gt;
+
+&lt;p&gt;When you type message in your chat room like:&lt;/p&gt;
+ hubot keybase encrypt:ngs Hi there!
+#                     ^ Keybase username! 
+
+&lt;p&gt;Hubot replies PGP encrypted message using public key for specified user.&lt;/p&gt;
+ -----BEGIN PGP MESSAGE-----
+Version: OpenPGP.js v2.3.0
+Comment: http://openpgpjs.org
+wcBMA2GjYRB9O5DgA...(snip)
+-----END PGP MESSAGE----- 
+
+&lt;h2&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;1. Add hubot-keybase to dependencies.&lt;/p&gt;
+ npm install --save hubot-keybase 
+
+&lt;p&gt;2. Update external-scripts.json&lt;/p&gt;
+ ["hubot-keybase"] 
+
+&lt;h2&gt;Feedbacks&lt;/h2&gt;
+
+&lt;p&gt;If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)&lt;/p&gt;
+
+&lt;p&gt;https://github.com/ngs/hubot-keybase/issues&lt;/p&gt;
+
+&lt;p&gt;Enjoy encrypting!&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Announcing CI2Go v1.3.0</title>
+      <link>https://ngs.io/2016/03/25/ci2go/</link>
+      <guid>https://ngs.io/2016/03/25/ci2go/</guid>
+      <pubDate>Fri, 25 Mar 2016 10:15:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve released v1.3.0 of CI2Go the @circleci client for iOS.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This update contains the following new features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rebuild without Cache
+&lt;/li&gt;&lt;li&gt;Browse Build Artifacts
+&lt;/li&gt;&lt;li&gt;View circle.yml
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;and fixes Realtime Build Log Updating was unavailable due to CircleCI’s Web Socket API update.&lt;/p&gt;
+
+&lt;p&gt;This version is still having realtime updating issue with Build List screen and will be fixed in next update.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
+      <link>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</link>
+      <guid>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</guid>
+      <pubDate>Fri, 04 Mar 2016 13:50:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Developing Web applications with Swift is pretty fun &lt;/p&gt;
+
+&lt;p&gt;We can run them on Amazon EC2 Container Services and I tried to build light-weight Docker image to deploy more faster.&lt;/p&gt;
+
+&lt;p&gt;Here is an example project I made, check this out &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;https://github.com/ngs/Swifton-TodoApp
+&lt;/li&gt;&lt;li&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/
+&lt;/li&gt;&lt;li&gt;https://circleci.com/gh/ngs/Swifton-TodoApp
+&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Swift Web Frameworks&lt;/h2&gt;
+
+&lt;p&gt;Since Swift language became open source, some web application frameworks come out.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Kitsura
+&lt;/li&gt;&lt;li&gt;Nest
+&lt;/li&gt;&lt;li&gt;Perfect
+&lt;/li&gt;&lt;li&gt;Slimane
+&lt;/li&gt;&lt;li&gt;Swifton
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2&gt;Swifton&lt;/h2&gt;
+
+&lt;p&gt;I’m not yet sure about which is the best. But I started trying Swifton the Ruby on Rails port of Swift Language.&lt;/p&gt;
+
+&lt;p&gt;The interface is pretty easy to understand:&lt;/p&gt;
+ import Swifton
+import Curassow
+class MyController: ApplicationController {
+    override init() {
+        super.init()
+        action("index") { request in
+            return self.render("Index")
+            // renders Index.html.stencil in Views directory
+        }
+    }
+}
+let router = Router()
+router.get("/", MyController()["index"])
+serve { router.respond($0) } 
+
+&lt;h2&gt;Swifton TodoApp&lt;/h2&gt;
+
+&lt;p&gt;Swifton has an example Todo app project: necolt/Swifton-TodoApp&lt;/p&gt;
+
+&lt;p&gt;This already has a Dockerfile and Heroku configurations (app.json and Procfile).&lt;/p&gt;
+
+&lt;p&gt;This works, so we can get started with this. But I don’t want to use Heroku for production and tried to use Amazon EC2 Container Service (ECS) instead.&lt;/p&gt;
+
+&lt;h2&gt;Fat Docker Image&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned above, this project has a Dockerfile and we can build an image to work with ECS.&lt;/p&gt;
+
+&lt;p&gt;But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.&lt;/p&gt;
+ REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
+&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:c35f9  30 seconds ago  893.2 MB &lt;p&gt;ref: https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/&lt;/p&gt;
+
+&lt;p&gt;So I tried to build binaries outside of Docker build process and put it on the image with minimum required assets on CircleCI.&lt;/p&gt;
+
+&lt;h2&gt;CircleCI Ubuntu 14.04 Trusty Container&lt;/h2&gt;
+
+&lt;p&gt;I use the Development Snapshot Swift tarball built on Trusty Ubuntu (14.04).&lt;/p&gt;
+
+&lt;p&gt;https://swift.org/download/#latest-development-snapshots&lt;/p&gt;&lt;p&gt;So I choose CircleCI’s Trusty Container that is provided as public beta.&lt;/p&gt;
+
+&lt;p&gt;http://blog.circleci.com/trusty-image-public-beta/&lt;/p&gt;&lt;h2&gt;Required softwares for continuously building&lt;/h2&gt;
+
+&lt;p&gt;First of all, we need to install the following softwares to run swift build&lt;/p&gt;
+ sudo apt-get install libicu-dev clang-3.6 jq
+# We also need jq to handle awscli response.
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+# See: https://goo.gl/hSfhjE 
+
+&lt;h2&gt;The required assets to run Swifton application&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Swift runtime shared objects: usr/lib/swift/linux/*.so
+&lt;/li&gt;&lt;li&gt;Application binary
+&lt;/li&gt;&lt;li&gt;Stencil view files
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;So, I ignored unneeded assets with .dockerignore file. This can reduce Docker Image build time.&lt;/p&gt;
+ *
+!Views
+!swift/usr/lib/swift/linux/*.so
+!.build/release/Swifton-TodoApp 
+
+&lt;h2&gt;The Dockerfile&lt;/h2&gt;
+
+&lt;p&gt;Here is the Dockerfile. Much simpler than the original&lt;/p&gt;
+ FROM ubuntu:14.04
+MAINTAINER a@ngs.io
+RUN apt-get update &amp;amp;&amp;amp; apt-get install -y libicu52 libxml2 curl &amp;amp;&amp;amp; \
+  apt-get clean &amp;amp;&amp;amp; \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENV APP_DIR /var/www/app
+RUN mkdir -p ${APP_DIR}
+WORKDIR ${APP_DIR}
+ADD . ${APP_DIR}
+RUN ln -s ${APP_DIR}/swift/usr/lib/swift/linux/*.so /usr/lib
+EXPOSE 8000
+CMD .build/release/Swifton-TodoApp 
+
+&lt;p&gt;With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).&lt;/p&gt;
+ REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
+&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:0d31d  30 seconds ago  245.8 MB &lt;h2&gt;Test the Docker Image&lt;/h2&gt;
+
+&lt;p&gt;I use Serverspec to built Docker Images to keep it reliable.&lt;/p&gt;
+
+&lt;p&gt;There’s some tips (and monkey patches) to run Serverspec for Docker Containers on CircleCI in Japanese, and will be translate to English later.&lt;/p&gt;
+
+&lt;p&gt;https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/&lt;/p&gt;
+
+&lt;p&gt;I wrote spec for the Todo app like this:&lt;/p&gt;
+ require 'spec_helper'
+describe port(8000) do
+  it { should be_listening }
+end
+describe command('curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/') do
+  its(:exit_status) { is_expected.to eq 0 }
+  its(:stdout) { is_expected.to contain 'HTTP/1.1 200 OK' }
+  its(:stdout) { is_expected.to contain '&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;' }
+end
+1.upto(2) do|n|
+  describe command("curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos -d \'title=Test#{n}\'") do
+    its(:exit_status) { is_expected.to eq 0 }
+    its(:stdout) { is_expected.to contain 'HTTP/1.1 302 FOUND' }
+    its(:stdout) { is_expected.to contain 'Location: /todos' }
+  end
+end
+describe command('curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos') do
+  its(:exit_status) { is_expected.to eq 0 }
+  its(:stdout) { is_expected.to contain 'HTTP/1.1 200 OK' }
+  its(:stdout) { is_expected.to contain '&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;' }
+  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;Test1&amp;lt;/td&amp;gt;' }
+  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;Test2&amp;lt;/td&amp;gt;' }
+  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;&amp;lt;a href="/todos/0"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;' }
+  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;&amp;lt;a href="/todos/1"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;' }
+end &lt;h2&gt;Deploy on ECS&lt;/h2&gt;
+
+&lt;p&gt;Before deploying applications on ECS, we need to push the Docker Image on Docker Registry.&lt;/p&gt;
+ $ docker tag $DOCKER_REPO "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
+$ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}" 
+
+&lt;p&gt;I won’t describe about how to set up ECS environment this article. Please refer AWS ECS Documentation.&lt;/p&gt;
+
+&lt;p&gt;The deploy script is executed in deploy phase of build process of the example project.&lt;/p&gt;
+
+&lt;p&gt;This script runs the following operations with AWS Command Line Interface.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Renders Task Definition JSON from ERB template.
+&lt;/li&gt;&lt;li&gt;Updates or creates task definition and retrieves new revision number like swifton-example-production:123
+&lt;/li&gt;&lt;li&gt;Updates or creates with new task definition
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;After deploying it, you can browse the Todo Example App.&lt;/p&gt;&lt;p&gt;Have fun! Give me feedbacks if you found any.&lt;/p&gt;
+
+&lt;p&gt;https://github.com/ngs/Swifton-TodoApp&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
+      <link>https://ngs.io/2016/01/29/ci2go/</link>
+      <guid>https://ngs.io/2016/01/29/ci2go/</guid>
+      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to support real-time log watching, I dropped the API Refresh Interval feature from this version.&lt;/p&gt;&lt;h2&gt;Under The Hood of Real-Time Updating&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned in v1.0.0 entry, the app didn’t support watching logs in real-time due to they have no public API to access on-going build logs.&lt;/p&gt;
+
+&lt;p&gt;I investigated how they implement real-time log by reading their code hosted in GitHub and finally I could integrate with their real-time WebSocket notifications.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pusher.cjs
+&lt;/li&gt;&lt;li&gt;frontend
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;I found their Pusher Authentication Endpoint also supports API Tokens, not only login session.&lt;/p&gt;
+ curl -i "https://circleci.com/auth/pusher?circle-token=${CIRCLE_TOKEN}" \
+  --data 'socket_id=123456.87654321&amp;amp;channel_name=private-ngs' 
+ {"auth":"1cf6e0e755e419d2ac9a:..."} 
+
+&lt;p&gt;I found a bug with pusher-websocket-swift while implementing this, and that was fixed.&lt;/p&gt;
+
+&lt;p&gt;pusher-community/pusher-websocket-swift/pull/22&lt;/p&gt;
+
+&lt;h2&gt;Offline Support with Realm&lt;/h2&gt;
+
+&lt;p&gt;From this version, I changed the local database to Realm from CoreData.&lt;/p&gt;
+
+&lt;h2&gt;Watch OS 2.0&lt;/h2&gt;
+
+&lt;p&gt;I also rebuilt the Apple Watch app to base on Watch OS 2.0.&lt;/p&gt;
+
+&lt;p&gt;But this still have performance issue.&lt;/p&gt;
+
+&lt;p&gt;This version uses WatchConnectivity Framework to transfer data from iPhone to reduce application size (almost Realm.framework), because we can’t upload Watch OS apps larger than 50 MB.&lt;/p&gt;
+ ITMS-90389 Size Limit 50 MB Exceeded 
+
+&lt;p&gt;But WCSession’s data transfer is quite slow, so I’m working on updating to access the API by itself and will be fixed in next release.&lt;/p&gt;
+
+&lt;p&gt;If you’re a heavy Apple Watch user and real-time updating is not so necessary, please omit this update.&lt;/p&gt;
+
+&lt;p&gt;Drop me a New Issue if you have any.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Generate NSColor / UIColor based on Swift String</title>
+      <link>https://ngs.io/2015/12/13/color-hash-swift/</link>
+      <guid>https://ngs.io/2015/12/13/color-hash-swift/</guid>
+      <pubDate>Sun, 13 Dec 2015 08:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published a Swift library ColorHash, that generates UIColor and NSColor based on given string.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ngs/color-hash.swift&lt;/strong&gt;&lt;/p&gt;
+ import ColorHash
+let str = "こんにちは、世界"
+let saturation = CGFloat(0.30)
+let lightness = CGFloat(0.70)
+ColorHash(str, [saturation], [lightness]).color 
+
+&lt;p&gt;This is a Swift port of a JavaScript library Color Hash.&lt;/p&gt;&lt;h2&gt;Install&lt;/h2&gt;
+
+ CocoaPods 
+ pod 'ColorHash' 
+
+ Carthage 
+ github 'ngs/color-hash.swift' 
+</description>
+    </item>
+    <item>
+      <title>Copy UIColor / NSColor initializer code from Sketch app</title>
+      <link>https://ngs.io/2015/12/11/sketch-swift-color/</link>
+      <guid>https://ngs.io/2015/12/11/sketch-swift-color/</guid>
+      <pubDate>Thu, 10 Dec 2015 15:30:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published Copy Swift Code, a Sketch app plugin for generating UIColor and NSColor initializer Swift code from fill color of selected layers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ngs/sketchplugin-swift-color&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;Installing&lt;/h2&gt;
+
+&lt;p&gt;Download and unarchive the latest version from Releases page, then double click Copy Swift Code.sketchplugin.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Announcing @circleci client for Apple Watch :watch:</title>
+      <link>https://ngs.io/2015/06/30/ci2go-applewatch/</link>
+      <guid>https://ngs.io/2015/06/30/ci2go-applewatch/</guid>
+      <pubDate>Tue, 30 Jun 2015 04:40:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;Version 1.1.0 of CI2Go, the CircleCI client for iOS is now available on the AppStore.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This update includes WatchKit Extension.&lt;/p&gt;&lt;p&gt;You can check latest build from the Glance screen and recent 20 builds in the App screen.&lt;/p&gt;&lt;p&gt;Navigates to build details by selecting build from the App screen, and retries the build by selecting Retry button of the menu.&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

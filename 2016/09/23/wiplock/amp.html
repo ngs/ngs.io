@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Wiplock - Protect main branch from in-progress branches</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2016/09/23/wiplock/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Wiplock - Protect main branch from in-progress branches</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2016-09-22T17:00:00">2016-09-23 02:00</time>
+      <meta itemprop="description" content="I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks."></meta>
+      <div class="hidden article-metadata"><meta content="I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2016-09-23-wiplock/pending-status.png" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-09-22T17:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2016-09-23-wiplock/screen.gif" layout="responsive" width="992" height="525"></amp-img></p>
+
+<h2 id="tl-dr">TL;DR</h2>
+
+<p>I released <a href="https://wiplock.com">Wiplock</a> that protects main branch from pull requests that contains <code>WIP</code> in the title or incompleted tasks.</p>
+
+<p><a href="https://wiplock.com">https://wiplock.com</a></p>
+
+<p>Wiplock is an OSS built with Go and React + Redux. Please take a look if you&rsquo;re interested in.</p>
+
+<p><a href="https://github.com/ngs/wiplock">https://github.com/ngs/wiplock</a></p>
+
+
+
+<h2 id="motivation">Motivation</h2>
+
+<p>In our daily development flow, we send <strong>WIP pull requests</strong> on GitHub before implementation was done.</p>
+
+<p>Sometimes we mistakenly merge these pull requests before the tasks are completed or forget removing <code>WIP</code> in the title that may confuse collaborators.</p>
+
+<p>To prevent these kind of mis-operations, I&rsquo;ve built an tiny web application called Wiplock.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<h3 id="1-sign-in-with-github">1. Sign in with GitHub</h3>
+
+<p>After visiting <a href="https://wiplock.com">Wiplock</a>, you&rsquo;ll see the black <em>Sign in with <amp-img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png?v5" layout="fixed" width="64" height="64"></amp-img></em> button.</p>
+
+<p>Hit it and Authorize this app on the next screen.</p>
+
+<p>Make sure that organizations are granted that you want introducing Wiplock.</p>
+
+<h3 id="2-find-repository-and-turn-the-switch-on">2. Find repository and turn the switch on</h3>
+
+<p><amp-img src="/images/2016-09-23-wiplock/switch.gif" layout="responsive" width="902" height="192"></amp-img></p>
+
+<p>After you signed in with GitHub, your repositories will be listed in Wiplock.</p>
+
+<p>Find repositories to introduce and turn the switch on.</p>
+
+<h3 id="3-check-that-works">3. Check that works</h3>
+
+<p><amp-img src="/images/2016-09-23-wiplock/pending-status.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>Go to your repository and edit or create pull request to contain <code>WIP</code> in the title.</p>
+
+<p>Once you edit the title, Pull Request status would become <em>Pending</em>.</p>
+
+<h3 id="4-turn-on-protect-branch">4. Turn on protect branch</h3>
+
+<p><amp-img src="/images/2016-09-23-wiplock/protect-branch.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>Go to <code>Settings &gt; Branches</code> of your repo, turn <em>Require branches to be up to date before merging</em> checkbox on.</p>
+
+<h2 id="launch-your-own-wiplock">Launch your own Wiplock</h2>
+
+<p>If you won&rsquo;t like to give permission to applications managed by someone else, you can launch your own Wiplock on Heroku or Docker hosts.</p>
+
+<h3 id="pre-requirements">Pre-requirements</h3>
+
+<p>You need to create your OAuth Application on GitHub.</p>
+
+<p><a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a></p>
+
+<h3 id="heroku">Heroku</h3>
+
+<p>Just hit the Heroku Button on README of the repository.</p>
+
+<p><a href="https://github.com/ngs/wiplock#heroku">https://github.com/ngs/wiplock#heroku</a></p>
+
+<h3 id="docker">Docker</h3>
+
+<p>Redis server is required to launch on your host.</p>
+
+<p>If you don&rsquo;t have it yet, the Official Docker image will help you bootstrapping.</p>
+<pre class="highlight shell"><code>docker pull redis
+docker run --name wiplock-redis -d redis</code></pre>
+
+<p>Pull Wiplock Docker image.</p>
+<pre class="highlight shell"><code>docker pull atsnngs/wiplock</code></pre>
+
+<p>And run Wiplock by passing <code>REDIS_URL</code> with running container name.</p>
+<pre class="highlight shell"><code>docker run --name wiplock -p 8000:8000 -d --rm <span class="se">\</span>
+  --link wiplock-redis:redis <span class="se">\</span>
+  -e <span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_ID</span><span class="k">}</span> <span class="se">\</span>
+  -e <span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="k">}</span> <span class="se">\</span>
+  -e <span class="nv">SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">SECRET</span><span class="k">}</span> <span class="se">\</span>
+  -e <span class="nv">REDIS_URL</span><span class="o">=</span><span class="s2">"redis://redis:6379"</span> <span class="se">\</span>
+  atsnngs/wiplock</code></pre>
+
+<p>Then you can see your Wiplock on your localhost.</p>
+
+<p><a href="http://localhost:8000">http://localhost:8000</a></p>
+
+<h2 id="milestones">Milestones</h2>
+
+<ul>
+<li>Support locking pull requests labeled <code>in progress</code>
+</li><li>Support customizing locking conditions using <code>.wiplock.yml</code> on the repository root
+</li></ul>
+
+<p>I wish this could help your workflow safe, happy locking!</p>
+
+    </article>
+  </body>
+</html>

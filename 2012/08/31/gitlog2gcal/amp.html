@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Events on Google Calendar with Git Commit</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2012/08/31/gitlog2gcal/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Create Events on Google Calendar with Git Commit</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2012-08-31T03:00:00">2012-08-31 12:00</time>
+      <meta itemprop="description" content=""></meta>
+      <div class="hidden article-metadata"><meta itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2012-08-31-gitlog2gcal/gcal.png" itemprop="url" /><meta content="1280" itemprop="width" /><meta itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2012-08-31T03:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2012-08-31-gitlog2gcal/gcal.png" layout="responsive" width="1280" height="620"></amp-img></p>
+
+<p>To track colleagues&rsquo; work or let colleagues track my work, we started using Google Calendar with writing Git Commits as events.</p>
+
+
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li>google-api-python-client
+</li><li>oauth2
+</li><li>rfc3339
+</li></ul>
+
+<h2 id="set-up">Set up</h2>
+<pre class="highlight shell"><code>pip install google-api-python-client oauth2 rfc3339
+<span class="nb">cd</span> /path/to/project
+curl -L http://s.liap.us/gcal-post-commit.py &gt; .git/hooks/post-commit
+chmod +x .git/hooks/post-commit
+vim .git/hooks/post-commit</code></pre>
+
+<p>Create new client on <a href="https://code.google.com/apis/console">the console</a> and replace variables.</p>
+
+
+
+    </article>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2016/01/29/ci2go/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Real-time Log Support w/CI2Go the @circleci Client for iOS</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2016-01-29T13:15:00">2016-01-29 22:15</time>
+      <meta itemprop="description" content="I&apos;ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching."></meta>
+      <div class="hidden article-metadata"><meta content="I&apos;ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2016-01-29-ci2go/screen.png" itemprop="url" /><meta content="2208" itemprop="width" /><meta content="1242" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-01-29T13:15:00" itemprop="dateModified" /></div>
+      <p><a href="https://itunes.apple.com/app/id940028427?mt=8"><amp-img src="/images/2016-01-29-ci2go/screen.gif" layout="responsive" width="992" height="558"></amp-img></a></p>
+
+<p>I&rsquo;ve released new version of CI2Go, the <a href="https://circleci.com">@circleci</a> client for iOS that supports real-time log watching.</p>
+
+<p><strong><a href="https://itunes.apple.com/app/id940028427?mt=8">CI2Go on the App Store</a></strong></p>
+
+<p>In order to support real-time log watching, I dropped the API Refresh Interval feature from this version.</p>
+
+
+
+<h2 id="under-the-hood-of-real-time-updating">Under The Hood of Real-Time Updating</h2>
+
+<p>As I mentioned in <a href="/2014/11/26/ci2go/">v1.0.0 entry</a>, the app didn&rsquo;t support watching logs in real-time due to they have no public API to access on-going build logs.</p>
+
+<p>I investigated how they implement real-time log by reading their code hosted in GitHub and finally I could integrate with their real-time WebSocket notifications.</p>
+
+<ul>
+<li><a href="https://github.com/circleci/frontend/blob/master/src-cljs/frontend/pusher.cljs">pusher.cjs</a>
+</li><li><a href="https://github.com/circleci/frontend">frontend</a>
+</li></ul>
+
+<p>I found their <a href="https://pusher.com/docs/authenticating_users#authEndpoint/lang=ios">Pusher Authentication Endpoint</a> also supports API Tokens, not only login session.</p>
+<pre class="highlight shell"><code>curl -i <span class="s2">"https://circleci.com/auth/pusher?circle-token=</span><span class="k">${</span><span class="nv">CIRCLE_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+  --data <span class="s1">'socket_id=123456.87654321&amp;channel_name=private-ngs'</span></code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"auth"</span><span class="p">:</span><span class="s2">"1cf6e0e755e419d2ac9a:..."</span><span class="p">}</span></code></pre>
+
+<p>I found a bug with <a href="https://github.com/pusher-community/pusher-websocket-swift">pusher-websocket-swift</a> while implementing this, and that was fixed.</p>
+
+<p><a href="https://github.com/pusher-community/pusher-websocket-swift/pull/22">pusher-community/pusher-websocket-swift/pull/22</a></p>
+
+<h2 id="offline-support-with-realm">Offline Support with Realm</h2>
+
+<p>From this version, I changed the local database to <a href="https://realm.io">Realm</a> from CoreData.</p>
+
+<h2 id="watch-os-2-0">Watch OS 2.0</h2>
+
+<p>I also rebuilt the Apple Watch app to base on Watch OS 2.0.</p>
+
+<p>But this still have performance issue.</p>
+
+<p>This version uses <a href="https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/">WatchConnectivity Framework</a> to transfer data from iPhone to reduce application size (almost Realm.framework), because we can&rsquo;t upload Watch OS apps larger than 50 MB.</p>
+<pre class="highlight plaintext"><code>ITMS-90389 Size Limit 50 MB Exceeded</code></pre>
+
+<p>But <code>WCSession</code>&rsquo;s data transfer is quite slow, so I&rsquo;m working on updating to access the API by itself and will be fixed in next release.</p>
+
+<p>If you&rsquo;re a heavy Apple Watch user and real-time updating is not so necessary, please omit this update.</p>
+
+<p>Drop me a <a href="https://github.com/ngs/ci2go/issues/new">New Issue</a> if you have any.</p>
+
+    </article>
+  </body>
+</html>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Atsushi Nagase</title>
+  <subtitle>Hacking recipes in my life.</subtitle>
+  <id>https://ngs.io/</id>
+  <link href="https://ngs.io/"/>
+  <link href="https://ngs.io/feed.xml" rel="self"/>
+  <updated>2016-09-22T17:00:00Z</updated>
+  <author>
+    <name>Atsushi Nagase</name>
+  </author>
+  <entry>
+    <title>Wiplock - Protect main branch from in-progress branches</title>
+    <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
+    <id>https://ngs.io/2016/09/23/wiplock/</id>
+    <published>2016-09-22T17:00:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/screen.gif" /&gt;&lt;/p&gt;
+
+&lt;h2 id="tl-dr"&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;I released &lt;a href="https://wiplock.com"&gt;Wiplock&lt;/a&gt; that protects main branch from pull requests that contains &lt;code&gt;WIP&lt;/code&gt; in the title or incompleted tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://wiplock.com"&gt;https://wiplock.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Wiplock is an OSS built with Go and React + Redux. Please take a look if you&amp;rsquo;re interested in.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ngs/wiplock"&gt;https://github.com/ngs/wiplock&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="motivation"&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;In our daily development flow, we send &lt;strong&gt;WIP pull requests&lt;/strong&gt; on GitHub before implementation was done.&lt;/p&gt;
+
+&lt;p&gt;Sometimes we mistakenly merge these pull requests before the tasks are completed or forget removing &lt;code&gt;WIP&lt;/code&gt; in the title that may confuse collaborators.&lt;/p&gt;
+
+&lt;p&gt;To prevent these kind of mis-operations, I&amp;rsquo;ve built an tiny web application called Wiplock.&lt;/p&gt;
+
+&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
+
+&lt;h3 id="1-sign-in-with-github"&gt;1. Sign in with GitHub&lt;/h3&gt;
+
+&lt;p&gt;After visiting &lt;a href="https://wiplock.com"&gt;Wiplock&lt;/a&gt;, you&amp;rsquo;ll see the black &lt;em&gt;Sign in with &lt;img alt="octocat" src="https://assets-cdn.github.com/images/icons/emoji/octocat.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/em&gt; button.&lt;/p&gt;
+
+&lt;p&gt;Hit it and Authorize this app on the next screen.&lt;/p&gt;
+
+&lt;p&gt;Make sure that organizations are granted that you want introducing Wiplock.&lt;/p&gt;
+
+&lt;h3 id="2-find-repository-and-turn-the-switch-on"&gt;2. Find repository and turn the switch on&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/switch.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;After you signed in with GitHub, your repositories will be listed in Wiplock.&lt;/p&gt;
+
+&lt;p&gt;Find repositories to introduce and turn the switch on.&lt;/p&gt;
+
+&lt;h3 id="3-check-that-works"&gt;3. Check that works&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/pending-status.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go to your repository and edit or create pull request to contain &lt;code&gt;WIP&lt;/code&gt; in the title.&lt;/p&gt;
+
+&lt;p&gt;Once you edit the title, Pull Request status would become &lt;em&gt;Pending&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id="4-turn-on-protect-branch"&gt;4. Turn on protect branch&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/protect-branch.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go to &lt;code&gt;Settings &amp;gt; Branches&lt;/code&gt; of your repo, turn &lt;em&gt;Require branches to be up to date before merging&lt;/em&gt; checkbox on.&lt;/p&gt;
+
+&lt;h2 id="launch-your-own-wiplock"&gt;Launch your own Wiplock&lt;/h2&gt;
+
+&lt;p&gt;If you won&amp;rsquo;t like to give permission to applications managed by someone else, you can launch your own Wiplock on Heroku or Docker hosts.&lt;/p&gt;
+
+&lt;h3 id="pre-requirements"&gt;Pre-requirements&lt;/h3&gt;
+
+&lt;p&gt;You need to create your OAuth Application on GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/settings/applications/new"&gt;https://github.com/settings/applications/new&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="heroku"&gt;Heroku&lt;/h3&gt;
+
+&lt;p&gt;Just hit the Heroku Button on README of the repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ngs/wiplock#heroku"&gt;https://github.com/ngs/wiplock#heroku&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id="docker"&gt;Docker&lt;/h3&gt;
+
+&lt;p&gt;Redis server is required to launch on your host.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t have it yet, the Official Docker image will help you bootstrapping.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;docker pull redis
+docker run --name wiplock-redis -d redis&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pull Wiplock Docker image.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;docker pull atsnngs/wiplock&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And run Wiplock by passing &lt;code&gt;REDIS_URL&lt;/code&gt; with running container name.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;docker run --name wiplock -p 8000:8000 -d --rm &lt;span class="se"&gt;\&lt;/span&gt;
+  --link wiplock-redis:redis &lt;span class="se"&gt;\&lt;/span&gt;
+  -e &lt;span class="nv"&gt;GITHUB_CLIENT_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;GITHUB_CLIENT_ID&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -e &lt;span class="nv"&gt;GITHUB_CLIENT_SECRET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;GITHUB_CLIENT_SECRET&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -e &lt;span class="nv"&gt;SECRET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SECRET&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -e &lt;span class="nv"&gt;REDIS_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"redis://redis:6379"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  atsnngs/wiplock&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you can see your Wiplock on your localhost.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="milestones"&gt;Milestones&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support locking pull requests labeled &lt;code&gt;in progress&lt;/code&gt;
+&lt;/li&gt;&lt;li&gt;Support customizing locking conditions using &lt;code&gt;.wiplock.yml&lt;/code&gt; on the repository root
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;I wish this could help your workflow safe, happy locking!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Testing Email Delivery in Nightwatch.js End to End test</title>
+    <link rel="alternate" href="https://ngs.io/2016/09/08/nightwatch-mail-test/"/>
+    <id>https://ngs.io/2016/09/08/nightwatch-mail-test/</id>
+    <published>2016-09-08T08:00:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Screenshot" src="/images/2016-09-08-nightwatch-mail-test/screen.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve published an example &lt;a href="http://nightwatchjs.org/"&gt;Nightwatch.js&lt;/a&gt; End to End (E2E) testing project that contains Email delivery testing using &lt;a href="https://mandrillapp.com/"&gt;Mandrill&lt;/a&gt; and &lt;a href="http://requestb.in/"&gt;RequestBin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/ngs/nightwatch-mail-example"&gt;ngs/nightwatch-mail-example on GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This example project tests subscribing and unsubscribing &lt;a href="http://www.hackernewsletter.com/"&gt;Hacker News Letter&lt;/a&gt; user flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The test code is like this:&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="nx"&gt;page&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;navigate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// Create Mandrill Email Route&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createEmailRoute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// Fill in form&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;waitForElementVisible&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'@form'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;clearValue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'@email'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setValue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'@email'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;click&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'@submit'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// Navigate to completion screen&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;waitForElementNotPresent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'@form'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;assert&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;urlEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;page&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;'almostfinished.html'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// Check Email with specified subject&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;assert&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEmailSubjectEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="s1"&gt;'Hacker Newsletter: Please Confirm Subscription'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// Check Email contains specified string in HTML body&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;assert&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEmailHTMLBodyContains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="s1"&gt;'&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u='&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js"&gt;See full code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="motivation"&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;We recently introduced &lt;a href="http://nightwatchjs.org/"&gt;Nightwatch.js&lt;/a&gt; for End to End testing our product.&lt;/p&gt;
+
+&lt;p&gt;I think that is pretty easy and simple to writing test code for our web application.&lt;/p&gt;
+
+&lt;p&gt;While writing test, we wanted to test user flow through receiving Emails from our application.&lt;/p&gt;
+
+&lt;p&gt;So I tried to implement custom actions and assertions for &lt;a href="http://nightwatchjs.org/"&gt;Nightwatch.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;a href="http://nightwatchjs.org/guide#extending"&gt;Extending Nightwatch - Nightwatch Developer Guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id="1-set-up-mandrill-inbound-domain"&gt;1. Set up Mandrill Inbound Domain&lt;/h3&gt;
+
+&lt;p&gt;First you need to set up &lt;em&gt;Inbound Email Domain&lt;/em&gt; by following &lt;a href="https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#set-up-an-inbound-domain"&gt;Mandrill Documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just type your domain and hit the blue &lt;em&gt;+ Add&lt;/em&gt; button on &lt;a href="https://mandrillapp.com/inbound"&gt;Inbound Domains&lt;/a&gt; screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Inbound Domains" src="/images/2016-09-08-nightwatch-mail-test/inbound-domains.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;After adding test domain, you need add MX record in your DNS records indicated in &lt;em&gt;MX Setup&lt;/em&gt; popup.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="MX Setup" src="/images/2016-09-08-nightwatch-mail-test/mx-setup.png" /&gt;&lt;/p&gt;
+
+&lt;h3 id="2-grab-your-mandrill-api-key"&gt;2. Grab your Mandrill API Key&lt;/h3&gt;
+
+&lt;p&gt;Next you need to grab your Mandrill API Key from &lt;a href="https://mandrillapp.com/settings/index"&gt;settings screen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="API Key" src="/images/2016-09-08-nightwatch-mail-test/api-key.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I recommend turning on &lt;em&gt;Test Key&lt;/em&gt; checkbox that prevents sending Emails someone mistakenly while testing.&lt;/p&gt;
+
+&lt;h3 id="3-optional-launch-your-requestbin"&gt;3. (Optional) Launch your RequestBin&lt;/h3&gt;
+
+&lt;p&gt;Delivered Emails are shared with public users. If you mind sharing your application Emails for them, you can launch your own &lt;a href="http://requestb.in/"&gt;RequestBin&lt;/a&gt; on hosting services like &lt;a href="https://www.heroku.com/"&gt;Heroku&lt;/a&gt; or &lt;a href="http://www.ibm.com/cloud-computing/bluemix/"&gt;IBM Bluexix&lt;/a&gt; by deploying &lt;a href="https://github.com/Runscope/requestbin"&gt;Open Sourced RequestBin&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;git clone git://github.com/Runscope/requestbin.git
+&lt;span class="nb"&gt;cd &lt;/span&gt;requestbin
+heroku create
+heroku addons:add heroku-redis
+heroku config:set &lt;span class="nv"&gt;REALM&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;prod
+git push heroku master&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="4-environment-variables"&gt;4. Environment Variables&lt;/h3&gt;
+
+&lt;p&gt;To launch the example project, export environment variables according to the above steps.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href="http://direnv.net/"&gt;direnv&lt;/a&gt; to manage local environment variables.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"export MANDRILL_API_KEY=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;YOUR_API_KEY_HERE&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; .envrc
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"export MAIL_DOMAIN=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;YOUR_MAIL_DOMAIN_HERE&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; .envrc
+&lt;span class="c"&gt;# If you set up your own RequestBin in Step 3&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"export REQUEST_BIN_HOST=https://&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;YOUR_HEROKU_APP&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.herokuapp.com"&lt;/span&gt; &amp;gt;&amp;gt; .envrc
+&lt;span class="c"&gt;# Allow new environment variables&lt;/span&gt;
+direnv allow&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="5-npm"&gt;5. NPM!&lt;/h3&gt;
+
+&lt;p&gt;Finally, you can launch example test suite by running &lt;code&gt;npm&lt;/code&gt; command.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;npm install &lt;span class="c"&gt;# for first time&lt;/span&gt;
+npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="the-custom-assertions-and-commands"&gt;The Custom Assertions and Commands&lt;/h2&gt;
+
+&lt;p&gt;The extension file layout is like this.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;lib
+├── custom_assertions
+│   ├── receivedEmailHTMLBodyContains.js
+│   ├── receivedEmailSubjectContains.js
+│   └── receivedEmailSubjectEquals.js
+├── custom_commands
+│   ├── checkEmails.js
+│   ├── createEmailRoute.js
+│   └── deleteEmailRoutes.js
+├── globals.js
+└── page_objects
+    └── hackernewsletter.js &lt;span class="c"&gt;# example specific file&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You need to specify these paths in &lt;a href="`nightwatch.json`%20by%20default"&gt;config file&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;"custom_commands_path"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"./lib/custom_commands"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="s2"&gt;"custom_assertions_path"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"./lib/custom_assertions"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="s2"&gt;"page_objects_path"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"./lib/page_objects"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="s2"&gt;"globals_path"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"./lib/globals.js"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="c1"&gt;// snip ...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="more-assertions"&gt;More Assertions&lt;/h2&gt;
+
+&lt;p&gt;I added &lt;code&gt;receivedEmailHTMLBodyContains&lt;/code&gt;, &lt;code&gt;receivedEmailSubjectContains&lt;/code&gt;, &lt;code&gt;receivedEmailSubjectEquals&lt;/code&gt; in this example project.&lt;/p&gt;
+
+&lt;p&gt;If you want to add assertions for other field like &lt;code&gt;from_email&lt;/code&gt; or &lt;code&gt;attachments&lt;/code&gt;, you can implement by forking existing implementations. (See &lt;a href="https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format"&gt;full list&lt;/a&gt;)&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;util&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'nightwatch/lib/util/utils'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nx"&gt;exports&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;assertion&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;receivedEmailSubjectEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;expected&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;DEFAULT_MSG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Testing if &amp;lt;%s&amp;gt; received with subject equals to "%s".'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;util&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;DEFAULT_MSG&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;expected&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;expected&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;expected&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;expected&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;expected&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;email&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;subject&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="nx"&gt;expected&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="c1"&gt;// use indexOf(expected) !== -1 for *contains* implementation.&lt;/span&gt;
+    &lt;span class="p"&gt;}).&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;result&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="p"&gt;[];&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;api&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;checkEmails&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;callback&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you write some cool assertions in your project, please &lt;a href="https://github.com/ngs/nightwatch-mail-example/fork"&gt;fork the repository&lt;/a&gt; and send me a Pull Request!&lt;/p&gt;
+
+&lt;p&gt;Happy testing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Hyperterm Tomorrow Themes</title>
+    <link rel="alternate" href="https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/"/>
+    <id>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</id>
+    <published>2016-07-17T04:20:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2016-07-17-hyperterm-tomorrow-themes/screen.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve published &lt;a href="https://hyperterm.org/"&gt;Hyperterm&lt;/a&gt; themes based on &lt;a href="https://github.com/chriskempson/tomorrow-theme"&gt;Tomorrow Themes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="how-to-install"&gt;How to install&lt;/h2&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;npm search hyperterm-tomorrow
+&lt;span class="nv"&gt;$EDITOR&lt;/span&gt; ~/.hyperterm.js&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="hyperterm-tomorrow"&gt;&lt;a href="https://www.npmjs.com/package/hyperterm-tomorrow-night"&gt;hyperterm-tomorrow&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt="hyperterm-tomorrow screenshot" src="https://raw.githubusercontent.com/ngs/hyperterm-tomorrow/master/screenshot.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="hyperterm-tomorrow-night"&gt;&lt;a href="https://www.npmjs.com/package/hyperterm-tomorrow-night"&gt;hyperterm-tomorrow-night&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt="hyperterm-tomorrow-night screenshot" src="https://raw.githubusercontent.com/ngs/hyperterm-tomorrow-night/master/screenshot.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="hyperterm-tomorrow-night-blue"&gt;&lt;a href="https://www.npmjs.com/package/hyperterm-tomorrow-night-blue"&gt;hyperterm-tomorrow-night-blue&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt="hyperterm-tomorrow-night-blue screenshot" src="https://raw.githubusercontent.com/ngs/hyperterm-tomorrow-night-blue/master/screenshot.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="hyperterm-tomorrow-night-bright"&gt;&lt;a href="https://www.npmjs.com/package/hyperterm-tomorrow-night-bright"&gt;hyperterm-tomorrow-night-bright&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt="hyperterm-tomorrow-night-bright screenshot" src="https://raw.githubusercontent.com/ngs/hyperterm-tomorrow-night-bright/master/screenshot.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="hyperterm-tomorrow-night-eighties"&gt;&lt;a href="https://www.npmjs.com/package/hyperterm-tomorrow-night-eighties"&gt;hyperterm-tomorrow-night-eighties&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt="hyperterm-tomorrow-night-eighties screenshot" src="https://raw.githubusercontent.com/ngs/hyperterm-tomorrow-night-eighties/master/screenshot.png" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>PGP encrypted messages for Keybase users in our chat rooms</title>
+    <link rel="alternate" href="https://ngs.io/2016/05/14/hubot-keybase/"/>
+    <id>https://ngs.io/2016/05/14/hubot-keybase/</id>
+    <published>2016-05-13T22:45:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2016-05-14-hubot-keybase/screen.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve released &lt;strong&gt;&lt;a href="https://github.com/ngs/hubot-keybase"&gt;hubot-keybase&lt;/a&gt;&lt;/strong&gt;, a &lt;a href="https://hubot.github.com/"&gt;Hubot&lt;/a&gt; script to encrypt messages for &lt;a href="https://keybase.io/"&gt;Keybase&lt;/a&gt; users.&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;strong&gt;&lt;a href="https://github.com/ngs/hubot-keybase"&gt;ngs/hubot-keybase&lt;/a&gt; on GitHub&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="how-to-use"&gt;How to use&lt;/h2&gt;
+
+&lt;p&gt;When you type message in your chat room like:&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;hubot keybase encrypt:ngs Hi there!
+&lt;span class="c"&gt;#                     ^ Keybase username!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hubot replies PGP encrypted message using public key for specified user.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;-----BEGIN PGP MESSAGE-----
+Version: OpenPGP.js v2.3.0
+Comment: http://openpgpjs.org
+wcBMA2GjYRB9O5DgA...(snip)
+-----END PGP MESSAGE-----&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;1. Add &lt;code&gt;hubot-keybase&lt;/code&gt; to dependencies.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;npm install --save hubot-keybase&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2. Update &lt;code&gt;external-scripts.json&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="highlight json"&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"hubot-keybase"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="feedbacks"&gt;Feedbacks&lt;/h2&gt;
+
+&lt;p&gt;If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ngs/hubot-keybase/issues"&gt;https://github.com/ngs/hubot-keybase/issues&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy encrypting!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Announcing CI2Go v1.3.0</title>
+    <link rel="alternate" href="https://ngs.io/2016/03/25/ci2go/"/>
+    <id>https://ngs.io/2016/03/25/ci2go/</id>
+    <published>2016-03-25T10:15:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2016-03-25-ci2go/ci2go.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve released v1.3.0 of &lt;a href="https://github.com/ngs/ci2go"&gt;CI2Go&lt;/a&gt; the @circleci client for iOS.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore.svg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;CI2Go on the App Store&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;This update contains the following new features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rebuild without Cache
+&lt;/li&gt;&lt;li&gt;Browse Build Artifacts
+&lt;/li&gt;&lt;li&gt;View &lt;code&gt;circle.yml&lt;/code&gt;
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;and fixes &lt;em&gt;Realtime Build Log Updating&lt;/em&gt; was unavailable due to CircleCI&amp;rsquo;s Web Socket API update.&lt;/p&gt;
+
+&lt;p&gt;This version is still having realtime updating issue with &lt;em&gt;Build List&lt;/em&gt; screen and will be &lt;a href="https://github.com/ngs/ci2go/pull/55"&gt;fixed&lt;/a&gt; in next update.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
+    <link rel="alternate" href="https://ngs.io/2016/03/04/swift-webapp-on-ecs/"/>
+    <id>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</id>
+    <published>2016-03-04T13:50:00Z</published>
+    <updated>2018-04-07T02:14:36+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;h2 id="tl-dr"&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Developing Web applications with Swift is pretty fun &lt;img alt="metal" src="https://assets-cdn.github.com/images/icons/emoji/metal.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/p&gt;
+
+&lt;p&gt;We can run them on &lt;a href="https://aws.amazon.com/ecs/"&gt;Amazon EC2 Container Services&lt;/a&gt; and I tried to build light-weight &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; image to deploy more faster.&lt;/p&gt;
+
+&lt;p&gt;Here is an example project I made, check this out &lt;img alt="point_down" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f447.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ngs/Swifton-TodoApp"&gt;https://github.com/ngs/Swifton-TodoApp&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/"&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="https://circleci.com/gh/ngs/Swifton-TodoApp"&gt;https://circleci.com/gh/ngs/Swifton-TodoApp&lt;/a&gt;
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="swift-web-frameworks"&gt;Swift Web Frameworks&lt;/h2&gt;
+
+&lt;p&gt;Since Swift language became &lt;a href="https://github.com/apple/swift"&gt;open source&lt;/a&gt;, some web application frameworks come out.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://developer.ibm.com/swift/products/kitura/"&gt;Kitsura&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/nestproject/Nest"&gt;Nest&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="http://perfect.org/"&gt;Perfect&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/noppoMan/Slimane"&gt;Slimane&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/necolt/Swifton"&gt;Swifton&lt;/a&gt;
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2 id="swifton"&gt;Swifton&lt;/h2&gt;
+
+&lt;p&gt;I’m not yet sure about which is the best. But I started trying &lt;a href="https://github.com/necolt/Swifton"&gt;Swifton&lt;/a&gt; the Ruby on Rails port of Swift Language.&lt;/p&gt;
+
+&lt;p&gt;The interface is pretty easy to understand:&lt;/p&gt;
+&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="kt"&gt;Swifton&lt;/span&gt;
+&lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="kt"&gt;Curassow&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="kt"&gt;MyController&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ApplicationController&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;override&lt;/span&gt; &lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;super&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="nf"&gt;action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"index"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Index"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="c1"&gt;// renders Index.html.stencil in Views directory&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;router&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;Router&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"/"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;MyController&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s"&gt;"index"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;serve&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;respond&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="swifton-todoapp"&gt;Swifton TodoApp&lt;/h2&gt;
+
+&lt;p&gt;Swifton has an example Todo app project: &lt;a href="https://github.com/necolt/Swifton-TodoApp"&gt;necolt/Swifton-TodoApp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This already has a Dockerfile and Heroku configurations (&lt;code&gt;app.json&lt;/code&gt; and &lt;code&gt;Procfile&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;This works, so we can get started with this. But I don&amp;rsquo;t want to use Heroku for production and tried to use Amazon EC2 Container Service (ECS) instead.&lt;/p&gt;
+
+&lt;h2 id="fat-docker-image"&gt;Fat Docker Image&lt;/h2&gt;
+
+&lt;p&gt;As I mentioned above, this project has a Dockerfile and we can build an image to work with ECS.&lt;/p&gt;
+
+&lt;p&gt;But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
+&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:c35f9  30 seconds ago  893.2 MB&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-before.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;ref: &lt;a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/"&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So I tried to build binaries outside of Docker build process and put it on the image with minimum required assets on CircleCI.&lt;/p&gt;
+
+&lt;h2 id="circleci-ubuntu-14-04-trusty-container"&gt;CircleCI Ubuntu 14.04 Trusty Container&lt;/h2&gt;
+
+&lt;p&gt;I use the Development Snapshot Swift tarball built on Trusty Ubuntu (14.04).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://swift.org/download/#latest-development-snapshots"&gt;https://swift.org/download/#latest-development-snapshots&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/tarball.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;So I choose CircleCI&amp;rsquo;s Trusty Container that is provided as public beta.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blog.circleci.com/trusty-image-public-beta/"&gt;http://blog.circleci.com/trusty-image-public-beta/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/circle-ci-trusty-container.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="required-softwares-for-continuously-building"&gt;Required softwares for continuously building&lt;/h2&gt;
+
+&lt;p&gt;First of all, we need to install the following softwares to run &lt;code&gt;swift build&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;sudo apt-get install libicu-dev clang-3.6 jq
+&lt;span class="c"&gt;# We also need jq to handle awscli response.&lt;/span&gt;
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+&lt;span class="c"&gt;# See: https://goo.gl/hSfhjE&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="the-required-assets-to-run-swifton-application"&gt;The required assets to run Swifton application&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Swift runtime shared objects: &lt;code&gt;usr/lib/swift/linux/*.so&lt;/code&gt;
+&lt;/li&gt;&lt;li&gt;Application binary
+&lt;/li&gt;&lt;li&gt;Stencil view files
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;So, I ignored unneeded assets with &lt;code&gt;.dockerignore&lt;/code&gt; file. This can reduce Docker Image build time.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;*
+!Views
+!swift/usr/lib/swift/linux/*.so
+!.build/release/Swifton-TodoApp&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="the-dockerfile"&gt;The Dockerfile&lt;/h2&gt;
+
+&lt;p&gt;Here is the Dockerfile. Much simpler than the &lt;a href="https://github.com/necolt/Swifton-TodoApp/blob/master/Dockerfile"&gt;original&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;FROM ubuntu:14.04
+MAINTAINER a@ngs.io
+RUN apt-get update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get install -y libicu52 libxml2 curl &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  apt-get clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  rm -rf /var/lib/apt/lists/&lt;span class="k"&gt;*&lt;/span&gt; /tmp/&lt;span class="k"&gt;*&lt;/span&gt; /var/tmp/&lt;span class="k"&gt;*&lt;/span&gt;
+ENV APP_DIR /var/www/app
+RUN mkdir -p &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+WORKDIR &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+ADD . &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+RUN ln -s &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/swift/usr/lib/swift/linux/&lt;span class="k"&gt;*&lt;/span&gt;.so /usr/lib
+EXPOSE 8000
+CMD .build/release/Swifton-TodoApp&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
+&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:0d31d  30 seconds ago  245.8 MB&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-after.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="test-the-docker-image"&gt;Test the Docker Image&lt;/h2&gt;
+
+&lt;p&gt;I use &lt;a href="http://serverspec.org/"&gt;Serverspec&lt;/a&gt; to built Docker Images to keep it reliable.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s some tips (and monkey patches) to run Serverspec for Docker Containers on CircleCI in Japanese, and will be translate to English later.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/"&gt;https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I wrote spec for the Todo app like this:&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;'spec_helper'&lt;/span&gt;
+&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;should&lt;/span&gt; &lt;span class="n"&gt;be_listening&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 200 OK'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;upto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"curl -i -s -H &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;Accept: text/html&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt; http://0.0.0.0:8000/todos -d &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;title=Test&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 302 FOUND'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'Location: /todos'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 200 OK'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;Test1&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;Test2&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;&amp;lt;a href="/todos/0"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;&amp;lt;a href="/todos/1"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/serverspec.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="deploy-on-ecs"&gt;Deploy on ECS&lt;/h2&gt;
+
+&lt;p&gt;Before deploying applications on ECS, we need to push the Docker Image on Docker Registry.&lt;/p&gt;
+&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="gp"&gt;$ &lt;/span&gt;docker tag &lt;span class="nv"&gt;$DOCKER_REPO&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;DOCKER_REPO&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:b&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CIRCLE_BUILD_NUM&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="gp"&gt;$ &lt;/span&gt;docker push &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;DOCKER_REPO&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:b&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CIRCLE_BUILD_NUM&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I won&amp;rsquo;t describe about how to set up ECS environment this article. Please refer &lt;a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html"&gt;AWS ECS Documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh"&gt;deploy script&lt;/a&gt; is executed in deploy phase of build process of the example project.&lt;/p&gt;
+
+&lt;p&gt;This script runs the following operations with &lt;a href="https://aws.amazon.com/cli/"&gt;AWS Command Line Interface&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Renders Task Definition JSON from &lt;a href="https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh"&gt;ERB template&lt;/a&gt;.
+&lt;/li&gt;&lt;li&gt;Updates or creates task definition and retrieves new revision number like &lt;code&gt;swifton-example-production:123&lt;/code&gt;
+&lt;/li&gt;&lt;li&gt;Updates or creates with new task definition
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;After deploying it, you can browse the Todo Example App.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/todos.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Have fun! Give me feedbacks if you found any.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/ngs/Swifton-TodoApp"&gt;https://github.com/ngs/Swifton-TodoApp&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>
