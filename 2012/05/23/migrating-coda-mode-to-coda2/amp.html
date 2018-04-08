@@ -55,27 +55,23 @@
 <h2 id="sss">SSS</h2>
 
 <p><code>.sss</code> elements match <code>scope</code> attributes of each nodes in <code>SyntaxDefinition.xml</code>.</p>
-<pre class="highlight xml"><code><span class="nt">&lt;keywords</span> <span class="na">id=</span><span class="s">"Tags"</span> <span class="na">useforautocomplete=</span><span class="s">"no"</span> <span class="na">scope=</span><span class="s">"markup.tag"</span><span class="nt">&gt;</span></code></pre>
-<pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight xml"><code><span class="nt">&lt;keywords</span> <span class="na">id=</span><span class="s">"Tags"</span> <span class="na">useforautocomplete=</span><span class="s">"no"</span> <span class="na">scope=</span><span class="s">"markup.tag"</span><span class="nt">&gt;</span></code></pre></div><div class="highlight"><pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span><span class="m">#881280</span><span class="p">;</span>
   <span class="nl">font-weight</span><span class="p">:</span><span class="nb">normal</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
-
+<span class="p">}</span></code></pre></div>
 <p>The sss rules are inherited from upper scope separated by dots.</p>
-<pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight css"><code><span class="nt">markup</span><span class="nc">.tag</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span><span class="m">#881280</span><span class="p">;</span>
   <span class="nl">font-weight</span><span class="p">:</span><span class="nb">bold</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">markup</span><span class="nc">.tag.attribute.name</span> <span class="p">{</span>
   <span class="nl">color</span><span class="p">:</span><span class="m">#994500</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
-
+<span class="p">}</span></code></pre></div>
 <p>Style attributes defined in <code>SyntaxDefinition.xml</code> such like <code>color</code>, <code>background-color</code>, <code>font-weight</code> &hellip; would be ignored.</p>
 
 <p>This is the why the modes located in <code>~/Library/Application Support/Coda 2/Modes</code> are selectable but no effects.</p>
-<pre class="highlight diff"><code><span class="gd">-             &lt;keywords id="Arduino Functions" color="#FF8000" casesensitive="no" useforautocomplete="yes"&gt;
-</span><span class="err">+             &lt;keywords id="Arduino Functions" scope="language.function" casesensitive="no" useforautocomplete="yes"&gt;</span></code></pre>
-
+<div class="highlight"><pre class="highlight diff"><code><span class="gd">-             &lt;keywords id="Arduino Functions" color="#FF8000" casesensitive="no" useforautocomplete="yes"&gt;
+</span><span class="gi">+             &lt;keywords id="Arduino Functions" scope="language.function" casesensitive="no" useforautocomplete="yes"&gt;</span></code></pre></div>
     </article>
   </body>
 </html>

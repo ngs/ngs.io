@@ -39,7 +39,7 @@
       <time itemprop="datePublished" datetime="2016-05-13T22:45:00">2016-05-14 07:45</time>
       <meta itemprop="description" content="I've released hubot-keybase, a Hubot script to encrypt messages for Keybase users."></meta>
       <div class="hidden article-metadata"><meta content="I've released hubot-keybase, a Hubot script to encrypt messages for Keybase users." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2016-05-14-hubot-keybase/screen.png" itemprop="url" /><meta content="1358" itemprop="width" /><meta content="737" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-05-13T22:45:00" itemprop="dateModified" /></div>
-      <p><amp-img src="/images/2016-05-14-hubot-keybase/screen.png" layout="responsive" width="1358" height="737"></amp-img></p>
+      
 
 <p>I&rsquo;ve released <strong><a href="https://github.com/ngs/hubot-keybase">hubot-keybase</a></strong>, a <a href="https://hubot.github.com/">Hubot</a> script to encrypt messages for <a href="https://keybase.io/">Keybase</a> users.</p>
 
@@ -50,24 +50,20 @@
 <h2 id="how-to-use">How to use</h2>
 
 <p>When you type message in your chat room like:</p>
-<pre class="highlight shell"><code>hubot keybase encrypt:ngs Hi there!
-<span class="c">#                     ^ Keybase username!</span></code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>hubot keybase encrypt:ngs Hi there!
+<span class="c">#                     ^ Keybase username!</span></code></pre></div>
 <p>Hubot replies PGP encrypted message using public key for specified user.</p>
-<pre class="highlight plaintext"><code>-----BEGIN PGP MESSAGE-----
+<div class="highlight"><pre class="highlight plaintext"><code>-----BEGIN PGP MESSAGE-----
 Version: OpenPGP.js v2.3.0
 Comment: http://openpgpjs.org
 wcBMA2GjYRB9O5DgA...(snip)
------END PGP MESSAGE-----</code></pre>
-
+-----END PGP MESSAGE-----</code></pre></div>
 <h2 id="install">Install</h2>
 
 <p>1. Add <code>hubot-keybase</code> to dependencies.</p>
-<pre class="highlight shell"><code>npm install --save hubot-keybase</code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>npm install <span class="nt">--save</span> hubot-keybase</code></pre></div>
 <p>2. Update <code>external-scripts.json</code></p>
-<pre class="highlight json"><code><span class="p">[</span><span class="s2">"hubot-keybase"</span><span class="p">]</span></code></pre>
-
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="s2">"hubot-keybase"</span><span class="p">]</span></code></pre></div>
 <h2 id="feedbacks">Feedbacks</h2>
 
 <p>If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)</p>

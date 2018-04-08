@@ -39,7 +39,7 @@
       <time itemprop="datePublished" datetime="2016-09-22T17:00:00">2016-09-23 02:00</time>
       <meta itemprop="description" content="I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks."></meta>
       <div class="hidden article-metadata"><meta content="I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2016-09-23-wiplock/pending-status.png" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-09-22T17:00:00" itemprop="dateModified" /></div>
-      <p><amp-img src="/images/2016-09-23-wiplock/screen.gif" layout="responsive" width="992" height="525"></amp-img></p>
+      
 
 <h2 id="tl-dr">TL;DR</h2>
 
@@ -73,7 +73,7 @@
 
 <h3 id="2-find-repository-and-turn-the-switch-on">2. Find repository and turn the switch on</h3>
 
-<p><amp-img src="/images/2016-09-23-wiplock/switch.gif" layout="responsive" width="902" height="192"></amp-img></p>
+
 
 <p>After you signed in with GitHub, your repositories will be listed in Wiplock.</p>
 
@@ -81,7 +81,7 @@
 
 <h3 id="3-check-that-works">3. Check that works</h3>
 
-<p><amp-img src="/images/2016-09-23-wiplock/pending-status.png" layout="responsive" width="992" height="525"></amp-img></p>
+
 
 <p>Go to your repository and edit or create pull request to contain <code>WIP</code> in the title.</p>
 
@@ -89,7 +89,7 @@
 
 <h3 id="4-turn-on-protect-branch">4. Turn on protect branch</h3>
 
-<p><amp-img src="/images/2016-09-23-wiplock/protect-branch.png" layout="responsive" width="992" height="525"></amp-img></p>
+
 
 <p>Go to <code>Settings &gt; Branches</code> of your repo, turn <em>Require branches to be up to date before merging</em> checkbox on.</p>
 
@@ -114,21 +114,18 @@
 <p>Redis server is required to launch on your host.</p>
 
 <p>If you don&rsquo;t have it yet, the Official Docker image will help you bootstrapping.</p>
-<pre class="highlight shell"><code>docker pull redis
-docker run --name wiplock-redis -d redis</code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>docker pull redis
+docker run <span class="nt">--name</span> wiplock-redis <span class="nt">-d</span> redis</code></pre></div>
 <p>Pull Wiplock Docker image.</p>
-<pre class="highlight shell"><code>docker pull atsnngs/wiplock</code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>docker pull atsnngs/wiplock</code></pre></div>
 <p>And run Wiplock by passing <code>REDIS_URL</code> with running container name.</p>
-<pre class="highlight shell"><code>docker run --name wiplock -p 8000:8000 -d --rm <span class="se">\</span>
-  --link wiplock-redis:redis <span class="se">\</span>
-  -e <span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_ID</span><span class="k">}</span> <span class="se">\</span>
-  -e <span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="k">}</span> <span class="se">\</span>
-  -e <span class="nv">SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">SECRET</span><span class="k">}</span> <span class="se">\</span>
-  -e <span class="nv">REDIS_URL</span><span class="o">=</span><span class="s2">"redis://redis:6379"</span> <span class="se">\</span>
-  atsnngs/wiplock</code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">--name</span> wiplock <span class="nt">-p</span> 8000:8000 <span class="nt">-d</span> <span class="nt">--rm</span> <span class="se">\</span>
+  <span class="nt">--link</span> wiplock-redis:redis <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_ID</span><span class="k">}</span> <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="k">}</span> <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">SECRET</span><span class="k">}</span> <span class="se">\</span>
+  <span class="nt">-e</span> <span class="nv">REDIS_URL</span><span class="o">=</span><span class="s2">"redis://redis:6379"</span> <span class="se">\</span>
+  atsnngs/wiplock</code></pre></div>
 <p>Then you can see your Wiplock on your localhost.</p>
 
 <p><a href="http://localhost:8000">http://localhost:8000</a></p>

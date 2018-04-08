@@ -39,7 +39,7 @@
       <time itemprop="datePublished" datetime="2016-01-29T13:15:00">2016-01-29 22:15</time>
       <meta itemprop="description" content="I&apos;ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching."></meta>
       <div class="hidden article-metadata"><meta content="I&apos;ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/2016-01-29-ci2go/screen.png" itemprop="url" /><meta content="2208" itemprop="width" /><meta content="1242" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-01-29T13:15:00" itemprop="dateModified" /></div>
-      <p><a href="https://itunes.apple.com/app/id940028427?mt=8"><amp-img src="/images/2016-01-29-ci2go/screen.gif" layout="responsive" width="992" height="558"></amp-img></a></p>
+      <p><a href="https://itunes.apple.com/app/id940028427?mt=8"></a></p>
 
 <p>I&rsquo;ve released new version of CI2Go, the <a href="https://circleci.com">@circleci</a> client for iOS that supports real-time log watching.</p>
 
@@ -61,10 +61,8 @@
 </li></ul>
 
 <p>I found their <a href="https://pusher.com/docs/authenticating_users#authEndpoint/lang=ios">Pusher Authentication Endpoint</a> also supports API Tokens, not only login session.</p>
-<pre class="highlight shell"><code>curl -i <span class="s2">"https://circleci.com/auth/pusher?circle-token=</span><span class="k">${</span><span class="nv">CIRCLE_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-  --data <span class="s1">'socket_id=123456.87654321&amp;channel_name=private-ngs'</span></code></pre>
-<pre class="highlight json"><code><span class="p">{</span><span class="nt">"auth"</span><span class="p">:</span><span class="s2">"1cf6e0e755e419d2ac9a:..."</span><span class="p">}</span></code></pre>
-
+<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="s2">"https://circleci.com/auth/pusher?circle-token=</span><span class="k">${</span><span class="nv">CIRCLE_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'socket_id=123456.87654321&amp;channel_name=private-ngs'</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>{"auth":"1cf6e0e755e419d2ac9a:..."}</code></pre></div>
 <p>I found a bug with <a href="https://github.com/pusher-community/pusher-websocket-swift">pusher-websocket-swift</a> while implementing this, and that was fixed.</p>
 
 <p><a href="https://github.com/pusher-community/pusher-websocket-swift/pull/22">pusher-community/pusher-websocket-swift/pull/22</a></p>
@@ -80,9 +78,8 @@
 <p>But this still have performance issue.</p>
 
 <p>This version uses <a href="https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/">WatchConnectivity Framework</a> to transfer data from iPhone to reduce application size (almost Realm.framework), because we can&rsquo;t upload Watch OS apps larger than 50 MB.</p>
-<pre class="highlight plaintext"><code>ITMS-90389 Size Limit 50 MB Exceeded</code></pre>
-
-<p>But <code>WCSession</code>&rsquo;s data transfer is quite slow, so I&rsquo;m working on updating to access the API by itself and will be fixed in next release.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>ITMS-90389 Size Limit 50 MB Exceeded</code></pre></div>
+<p>But <code>WCSession</code>&lsquo;s data transfer is quite slow, so I&rsquo;m working on updating to access the API by itself and will be fixed in next release.</p>
 
 <p>If you&rsquo;re a heavy Apple Watch user and real-time updating is not so necessary, please omit this update.</p>
 
