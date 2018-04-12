@@ -101,7 +101,7 @@
 <p>But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.</p>
 <div class="highlight"><pre class="highlight plaintext"><code>REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
 &lt;none&gt;      &lt;none&gt;  sha256:c35f9  30 seconds ago  893.2 MB</code></pre></div>
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-before.png" layout="responsive" width="1460" height="240"></amp-img></p>
 
 <p>ref: <a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/">https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/</a></p>
 
@@ -113,13 +113,13 @@
 
 <p><a href="https://swift.org/download/#latest-development-snapshots">https://swift.org/download/#latest-development-snapshots</a></p>
 
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/tarball.png" layout="responsive" width="716" height="113"></amp-img></p>
 
 <p>So I choose CircleCI&rsquo;s Trusty Container that is provided as public beta.</p>
 
 <p><a href="http://blog.circleci.com/trusty-image-public-beta/">http://blog.circleci.com/trusty-image-public-beta/</a></p>
 
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/circle-ci-trusty-container.png" layout="responsive" width="1608" height="336"></amp-img></p>
 
 <h2 id="required-softwares-for-continuously-building">Required softwares for continuously building</h2>
 
@@ -160,7 +160,7 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
 <p>With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).</p>
 <div class="highlight"><pre class="highlight plaintext"><code>REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
 &lt;none&gt;      &lt;none&gt;  sha256:0d31d  30 seconds ago  245.8 MB</code></pre></div>
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-after.png" layout="responsive" width="1448" height="146"></amp-img></p>
 
 <h2 id="test-the-docker-image">Test the Docker Image</h2>
 
@@ -196,7 +196,7 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;td&gt;&lt;a href="/todos/0"&gt;Show&lt;/a&gt;&lt;/td&gt;'</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;td&gt;&lt;a href="/todos/1"&gt;Show&lt;/a&gt;&lt;/td&gt;'</span> <span class="p">}</span>
 <span class="k">end</span></code></pre></div>
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/serverspec.png" layout="responsive" width="732" height="481"></amp-img></p>
 
 <h2 id="deploy-on-ecs">Deploy on ECS</h2>
 
@@ -217,7 +217,7 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
 
 <p>After deploying it, you can browse the Todo Example App.</p>
 
-
+<p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/todos.png" layout="responsive" width="848" height="518"></amp-img></p>
 
 <p>Have fun! Give me feedbacks if you found any.</p>
 

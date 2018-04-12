@@ -515,7 +515,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Generate NSColor / UIColor based on Swift String</title>
       <link>https://ngs.io/2015/12/13/color-hash-swift/</link>
       <guid>https://ngs.io/2015/12/13/color-hash-swift/</guid>
-      <pubDate>Sun, 13 Dec 2015 08:00:00 -0000</pubDate>
+      <pubDate>Sun, 13 Dec 2015 08:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published a Swift library ColorHash, that generates UIColor and NSColor based on given string.&lt;/p&gt;
 
