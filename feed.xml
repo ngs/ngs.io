@@ -5,7 +5,7 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2016-09-22T17:00:00Z</updated>
+  <updated>2016-09-22T17:00:00+00:00</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Wiplock - Protect main branch from in-progress branches</title>
     <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
     <id>https://ngs.io/2016/09/23/wiplock/</id>
-    <published>2016-09-22T17:00:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-09-22T17:00:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -123,8 +123,8 @@ docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock-redis &lt;span cla
     <title>Testing Email Delivery in Nightwatch.js End to End test</title>
     <link rel="alternate" href="https://ngs.io/2016/09/08/nightwatch-mail-test/"/>
     <id>https://ngs.io/2016/09/08/nightwatch-mail-test/</id>
-    <published>2016-09-08T08:00:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-09-08T08:00:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -280,8 +280,8 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <title>Hyperterm Tomorrow Themes</title>
     <link rel="alternate" href="https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/"/>
     <id>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</id>
-    <published>2016-07-17T04:20:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-07-17T04:20:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -319,8 +319,8 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <title>PGP encrypted messages for Keybase users in our chat rooms</title>
     <link rel="alternate" href="https://ngs.io/2016/05/14/hubot-keybase/"/>
     <id>https://ngs.io/2016/05/14/hubot-keybase/</id>
-    <published>2016-05-13T22:45:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-05-13T22:45:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -362,8 +362,8 @@ wcBMA2GjYRB9O5DgA...(snip)
     <title>Announcing CI2Go v1.3.0</title>
     <link rel="alternate" href="https://ngs.io/2016/03/25/ci2go/"/>
     <id>https://ngs.io/2016/03/25/ci2go/</id>
-    <published>2016-03-25T10:15:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-03-25T10:15:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -394,8 +394,8 @@ wcBMA2GjYRB9O5DgA...(snip)
     <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
     <link rel="alternate" href="https://ngs.io/2016/03/04/swift-webapp-on-ecs/"/>
     <id>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</id>
-    <published>2016-03-04T13:50:00Z</published>
-    <updated>2018-04-12T01:56:01+00:00</updated>
+    <published>2016-03-04T13:50:00+00:00</published>
+    <updated>2018-04-12T03:06:35+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
