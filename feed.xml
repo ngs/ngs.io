@@ -14,7 +14,7 @@
     <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
     <id>https://ngs.io/2016/09/23/wiplock/</id>
     <published>2016-09-22T17:00:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -124,7 +124,7 @@ docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock-redis &lt;span cla
     <link rel="alternate" href="https://ngs.io/2016/09/08/nightwatch-mail-test/"/>
     <id>https://ngs.io/2016/09/08/nightwatch-mail-test/</id>
     <published>2016-09-08T08:00:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -281,7 +281,7 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <link rel="alternate" href="https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/"/>
     <id>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</id>
     <published>2016-07-17T04:20:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -320,7 +320,7 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <link rel="alternate" href="https://ngs.io/2016/05/14/hubot-keybase/"/>
     <id>https://ngs.io/2016/05/14/hubot-keybase/</id>
     <published>2016-05-13T22:45:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -363,7 +363,7 @@ wcBMA2GjYRB9O5DgA...(snip)
     <link rel="alternate" href="https://ngs.io/2016/03/25/ci2go/"/>
     <id>https://ngs.io/2016/03/25/ci2go/</id>
     <published>2016-03-25T10:15:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -395,7 +395,7 @@ wcBMA2GjYRB9O5DgA...(snip)
     <link rel="alternate" href="https://ngs.io/2016/03/04/swift-webapp-on-ecs/"/>
     <id>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</id>
     <published>2016-03-04T13:50:00+00:00</published>
-    <updated>2018-04-12T03:06:35+00:00</updated>
+    <updated>2018-06-14T00:26:44+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
