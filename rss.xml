@@ -101,7 +101,7 @@ docker run --name wiplock-redis -d redis
       <title>Testing Email Delivery in Nightwatch.js End to End test</title>
       <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
       <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
-      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
 
@@ -536,7 +536,7 @@ ColorHash(str, [saturation], [lightness]).color
       <title>Copy UIColor / NSColor initializer code from Sketch app</title>
       <link>https://ngs.io/2015/12/11/sketch-swift-color/</link>
       <guid>https://ngs.io/2015/12/11/sketch-swift-color/</guid>
-      <pubDate>Thu, 10 Dec 2015 15:30:00 -0000</pubDate>
+      <pubDate>Thu, 10 Dec 2015 15:30:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Copy Swift Code, a Sketch app plugin for generating UIColor and NSColor initializer Swift code from fill color of selected layers.&lt;/p&gt;
 
@@ -549,7 +549,7 @@ ColorHash(str, [saturation], [lightness]).color
       <title>Announcing @circleci client for Apple Watch :watch:</title>
       <link>https://ngs.io/2015/06/30/ci2go-applewatch/</link>
       <guid>https://ngs.io/2015/06/30/ci2go-applewatch/</guid>
-      <pubDate>Tue, 30 Jun 2015 04:40:00 -0000</pubDate>
+      <pubDate>Tue, 30 Jun 2015 04:40:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;Version 1.1.0 of CI2Go, the CircleCI client for iOS is now available on the AppStore.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;
 
