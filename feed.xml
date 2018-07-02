@@ -5,16 +5,78 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2016-09-22T17:00:00Z</updated>
+  <updated>2018-07-02T00:20:00Z</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
+  <entry>
+    <title>CI2Go version 2</title>
+    <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
+    <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
+    <published>2018-07-02T00:20:00Z</published>
+    <updated>2018-07-02T00:26:38+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/main.png" alt="Main" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve just released major updated version 2.0.0 of &lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;CI2Go&lt;/a&gt;, the &lt;a href="https://circleci.com"&gt;CircleCI&lt;/a&gt; client for iPhone and iPad.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="Appstore" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;V2 contains the following updates.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="iphone-x-support"&gt;iPhone X Support&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/iphonex.png" alt="Iphonex" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Started supporting iPhone X&amp;rsquo;s 5.8 inches screen.&lt;/p&gt;
+
+&lt;h2 id="single-sign-on-support"&gt;Single Sign-on Support&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/sso.gif" alt="Sso" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Update authentication flow to use Single Sign-on instead of Copy and Pasting API Tokens from CircleCI.&lt;/p&gt;
+
+&lt;p&gt;This creates &lt;a href="https://circleci.com/docs/2.0/managing-api-tokens/"&gt;Personal API Token&lt;/a&gt; internally.&lt;/p&gt;
+
+&lt;h2 id="build-artifacts-browser"&gt;Build Artifacts Browser&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/artifacts.gif" alt="Artifacts" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Redesigned Build Artifacts Browser.&lt;/p&gt;
+
+&lt;p&gt;You can browse artifacts more quickly without waiting for downloading entire files.&lt;/p&gt;
+
+&lt;p&gt;This app starts downloading when you tried to view file and continues downloading in background.&lt;/p&gt;
+
+&lt;h2 id="apple-watch-complications"&gt;Apple Watch Complications&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/watch.png" alt="Watch" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Supported Apple Watch &lt;a href="https://support.apple.com/en-us/ht205536"&gt;Complications&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can add your build status in your watch face.&lt;/p&gt;
+
+&lt;p&gt;Due to watchOS API limitation, this does not update information realtime.&lt;/p&gt;
+
+&lt;h2 id="performance-improvement"&gt;Performance improvement&lt;/h2&gt;
+
+&lt;p&gt;In this version, I&amp;rsquo;ve redesigned entire implementation from scratch.&lt;/p&gt;
+
+&lt;p&gt;Behaves more swift instead of dealing with offline data.&lt;/p&gt;
+
+&lt;p&gt;Send me &lt;a href="https://github.com/ngs/ci2go/issues/new"&gt;issues&lt;/a&gt; if you have any.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Wiplock - Protect main branch from in-progress branches</title>
     <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
     <id>https://ngs.io/2016/09/23/wiplock/</id>
     <published>2016-09-22T17:00:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
+    <updated>2018-07-02T00:26:38+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -124,7 +186,7 @@ docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock-redis &lt;span cla
     <link rel="alternate" href="https://ngs.io/2016/09/08/nightwatch-mail-test/"/>
     <id>https://ngs.io/2016/09/08/nightwatch-mail-test/</id>
     <published>2016-09-08T08:00:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
+    <updated>2018-07-02T00:26:38+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -281,7 +343,7 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <link rel="alternate" href="https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/"/>
     <id>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</id>
     <published>2016-07-17T04:20:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
+    <updated>2018-07-02T00:26:38+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -320,7 +382,7 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <link rel="alternate" href="https://ngs.io/2016/05/14/hubot-keybase/"/>
     <id>https://ngs.io/2016/05/14/hubot-keybase/</id>
     <published>2016-05-13T22:45:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
+    <updated>2018-07-02T00:26:38+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -363,7 +425,7 @@ wcBMA2GjYRB9O5DgA...(snip)
     <link rel="alternate" href="https://ngs.io/2016/03/25/ci2go/"/>
     <id>https://ngs.io/2016/03/25/ci2go/</id>
     <published>2016-03-25T10:15:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
+    <updated>2018-07-02T00:26:38+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -388,200 +450,6 @@ wcBMA2GjYRB9O5DgA...(snip)
 &lt;p&gt;and fixes &lt;em&gt;Realtime Build Log Updating&lt;/em&gt; was unavailable due to CircleCI&amp;rsquo;s Web Socket API update.&lt;/p&gt;
 
 &lt;p&gt;This version is still having realtime updating issue with &lt;em&gt;Build List&lt;/em&gt; screen and will be &lt;a href="https://github.com/ngs/ci2go/pull/55"&gt;fixed&lt;/a&gt; in next update.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
-    <link rel="alternate" href="https://ngs.io/2016/03/04/swift-webapp-on-ecs/"/>
-    <id>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</id>
-    <published>2016-03-04T13:50:00Z</published>
-    <updated>2018-06-25T08:20:11+00:00</updated>
-    <author>
-      <name>Atsushi Nagase</name>
-    </author>
-    <content type="html">&lt;h2 id="tl-dr"&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Developing Web applications with Swift is pretty fun &lt;img alt="metal" src="https://assets-cdn.github.com/images/icons/emoji/metal.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/p&gt;
-
-&lt;p&gt;We can run them on &lt;a href="https://aws.amazon.com/ecs/"&gt;Amazon EC2 Container Services&lt;/a&gt; and I tried to build light-weight &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; image to deploy more faster.&lt;/p&gt;
-
-&lt;p&gt;Here is an example project I made, check this out &lt;img alt="point_down" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f447.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/ngs/Swifton-TodoApp"&gt;https://github.com/ngs/Swifton-TodoApp&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/"&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="https://circleci.com/gh/ngs/Swifton-TodoApp"&gt;https://circleci.com/gh/ngs/Swifton-TodoApp&lt;/a&gt;
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id="swift-web-frameworks"&gt;Swift Web Frameworks&lt;/h2&gt;
-
-&lt;p&gt;Since Swift language became &lt;a href="https://github.com/apple/swift"&gt;open source&lt;/a&gt;, some web application frameworks come out.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://developer.ibm.com/swift/products/kitura/"&gt;Kitsura&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/nestproject/Nest"&gt;Nest&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="http://perfect.org/"&gt;Perfect&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/noppoMan/Slimane"&gt;Slimane&lt;/a&gt;
-&lt;/li&gt;&lt;li&gt;&lt;a href="https://github.com/necolt/Swifton"&gt;Swifton&lt;/a&gt;
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;h2 id="swifton"&gt;Swifton&lt;/h2&gt;
-
-&lt;p&gt;I’m not yet sure about which is the best. But I started trying &lt;a href="https://github.com/necolt/Swifton"&gt;Swifton&lt;/a&gt; the Ruby on Rails port of Swift Language.&lt;/p&gt;
-
-&lt;p&gt;The interface is pretty easy to understand:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="kt"&gt;Swifton&lt;/span&gt;
-&lt;span class="kd"&gt;import&lt;/span&gt; &lt;span class="kt"&gt;Curassow&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="kt"&gt;MyController&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ApplicationController&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;override&lt;/span&gt; &lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;super&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;init&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-        &lt;span class="nf"&gt;action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"index"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
-            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Index"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="c1"&gt;// renders Index.html.stencil in Views directory&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;router&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;Router&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"/"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;MyController&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s"&gt;"index"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;span class="n"&gt;serve&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;respond&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="swifton-todoapp"&gt;Swifton TodoApp&lt;/h2&gt;
-
-&lt;p&gt;Swifton has an example Todo app project: &lt;a href="https://github.com/necolt/Swifton-TodoApp"&gt;necolt/Swifton-TodoApp&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This already has a Dockerfile and Heroku configurations (&lt;code&gt;app.json&lt;/code&gt; and &lt;code&gt;Procfile&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;This works, so we can get started with this. But I don&amp;rsquo;t want to use Heroku for production and tried to use Amazon EC2 Container Service (ECS) instead.&lt;/p&gt;
-
-&lt;h2 id="fat-docker-image"&gt;Fat Docker Image&lt;/h2&gt;
-
-&lt;p&gt;As I mentioned above, this project has a Dockerfile and we can build an image to work with ECS.&lt;/p&gt;
-
-&lt;p&gt;But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:c35f9  30 seconds ago  893.2 MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-before.png" alt="Docker hub before" /&gt;&lt;/p&gt;
-
-&lt;p&gt;ref: &lt;a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/"&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;So I tried to build binaries outside of Docker build process and put it on the image with minimum required assets on CircleCI.&lt;/p&gt;
-
-&lt;h2 id="circleci-ubuntu-14-04-trusty-container"&gt;CircleCI Ubuntu 14.04 Trusty Container&lt;/h2&gt;
-
-&lt;p&gt;I use the Development Snapshot Swift tarball built on Trusty Ubuntu (14.04).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://swift.org/download/#latest-development-snapshots"&gt;https://swift.org/download/#latest-development-snapshots&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/tarball.png" alt="Tarball" /&gt;&lt;/p&gt;
-
-&lt;p&gt;So I choose CircleCI&amp;rsquo;s Trusty Container that is provided as public beta.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://blog.circleci.com/trusty-image-public-beta/"&gt;http://blog.circleci.com/trusty-image-public-beta/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/circle-ci-trusty-container.png" alt="Circle ci trusty container" /&gt;&lt;/p&gt;
-
-&lt;h2 id="required-softwares-for-continuously-building"&gt;Required softwares for continuously building&lt;/h2&gt;
-
-&lt;p&gt;First of all, we need to install the following softwares to run &lt;code&gt;swift build&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="nb"&gt;sudo &lt;/span&gt;apt-get install libicu-dev clang-3.6 jq
-&lt;span class="c"&gt;# We also need jq to handle awscli response.&lt;/span&gt;
-&lt;span class="nb"&gt;sudo &lt;/span&gt;update-alternatives &lt;span class="nt"&gt;--install&lt;/span&gt; /usr/bin/clang clang /usr/bin/clang-3.6 100
-&lt;span class="nb"&gt;sudo &lt;/span&gt;update-alternatives &lt;span class="nt"&gt;--install&lt;/span&gt; /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
-&lt;span class="c"&gt;# See: https://goo.gl/hSfhjE&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="the-required-assets-to-run-swifton-application"&gt;The required assets to run Swifton application&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Swift runtime shared objects: &lt;code&gt;usr/lib/swift/linux/*.so&lt;/code&gt;
-&lt;/li&gt;&lt;li&gt;Application binary
-&lt;/li&gt;&lt;li&gt;Stencil view files
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;So, I ignored unneeded assets with &lt;code&gt;.dockerignore&lt;/code&gt; file. This can reduce Docker Image build time.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;*
-!Views
-!swift/usr/lib/swift/linux/*.so
-!.build/release/Swifton-TodoApp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="the-dockerfile"&gt;The Dockerfile&lt;/h2&gt;
-
-&lt;p&gt;Here is the Dockerfile. Much simpler than the &lt;a href="https://github.com/necolt/Swifton-TodoApp/blob/master/Dockerfile"&gt;original&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;FROM ubuntu:14.04
-MAINTAINER a@ngs.io
-RUN apt-get update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get install &lt;span class="nt"&gt;-y&lt;/span&gt; libicu52 libxml2 curl &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  apt-get clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  rm &lt;span class="nt"&gt;-rf&lt;/span&gt; /var/lib/apt/lists/&lt;span class="k"&gt;*&lt;/span&gt; /tmp/&lt;span class="k"&gt;*&lt;/span&gt; /var/tmp/&lt;span class="k"&gt;*&lt;/span&gt;
-ENV APP_DIR /var/www/app
-RUN mkdir &lt;span class="nt"&gt;-p&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
-WORKDIR &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
-ADD &lt;span class="nb"&gt;.&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
-RUN ln &lt;span class="nt"&gt;-s&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;APP_DIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/swift/usr/lib/swift/linux/&lt;span class="k"&gt;*&lt;/span&gt;.so /usr/lib
-EXPOSE 8000
-CMD .build/release/Swifton-TodoApp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:0d31d  30 seconds ago  245.8 MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-after.png" alt="Docker hub after" /&gt;&lt;/p&gt;
-
-&lt;h2 id="test-the-docker-image"&gt;Test the Docker Image&lt;/h2&gt;
-
-&lt;p&gt;I use &lt;a href="http://serverspec.org/"&gt;Serverspec&lt;/a&gt; to built Docker Images to keep it reliable.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s some tips (and monkey patches) to run Serverspec for Docker Containers on CircleCI in Japanese, and will be translate to English later.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/"&gt;https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I wrote spec for the Todo app like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;'spec_helper'&lt;/span&gt;
-&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;should&lt;/span&gt; &lt;span class="n"&gt;be_listening&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 200 OK'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;upto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
-  &lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"curl -i -s -H &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;Accept: text/html&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt; http://0.0.0.0:8000/todos -d &lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;title=Test&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\'&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 302 FOUND'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'Location: /todos'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:exit_status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'HTTP/1.1 200 OK'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;Test1&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;Test2&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;&amp;lt;a href="/todos/0"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-  &lt;span class="n"&gt;its&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;is_expected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;td&amp;gt;&amp;lt;a href="/todos/1"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/serverspec.png" alt="Serverspec" /&gt;&lt;/p&gt;
-
-&lt;h2 id="deploy-on-ecs"&gt;Deploy on ECS&lt;/h2&gt;
-
-&lt;p&gt;Before deploying applications on ECS, we need to push the Docker Image on Docker Registry.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;docker tag &lt;span class="nv"&gt;$DOCKER_REPO&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;DOCKER_REPO&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:b&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CIRCLE_BUILD_NUM&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;docker push &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;DOCKER_REPO&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;:b&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CIRCLE_BUILD_NUM&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I won&amp;rsquo;t describe about how to set up ECS environment this article. Please refer &lt;a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html"&gt;AWS ECS Documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href="https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh"&gt;deploy script&lt;/a&gt; is executed in deploy phase of build process of the example project.&lt;/p&gt;
-
-&lt;p&gt;This script runs the following operations with &lt;a href="https://aws.amazon.com/cli/"&gt;AWS Command Line Interface&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Renders Task Definition JSON from &lt;a href="https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh"&gt;ERB template&lt;/a&gt;.
-&lt;/li&gt;&lt;li&gt;Updates or creates task definition and retrieves new revision number like &lt;code&gt;swifton-example-production:123&lt;/code&gt;
-&lt;/li&gt;&lt;li&gt;Updates or creates with new task definition
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;After deploying it, you can browse the Todo Example App.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-03-04-swift-webapp-on-ecs/todos.png" alt="Todos" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Have fun! Give me feedbacks if you found any.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ngs/Swifton-TodoApp"&gt;https://github.com/ngs/Swifton-TodoApp&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>

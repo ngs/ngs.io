@@ -7,7 +7,40 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Thu, 22 Sep 2016 17:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jul 2018 00:20:00 -0000</lastBuildDate>
+    <item>
+      <title>CI2Go version 2</title>
+      <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
+      <guid>https://ngs.io/2018/07/02/ci2go-v2/</guid>
+      <pubDate>Mon, 02 Jul 2018 00:20:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve just released major updated version 2.0.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;V2 contains the following updates.&lt;/p&gt;&lt;h2&gt;iPhone X Support&lt;/h2&gt;&lt;p&gt;Started supporting iPhone X’s 5.8 inches screen.&lt;/p&gt;
+
+&lt;h2&gt;Single Sign-on Support&lt;/h2&gt;&lt;p&gt;Update authentication flow to use Single Sign-on instead of Copy and Pasting API Tokens from CircleCI.&lt;/p&gt;
+
+&lt;p&gt;This creates Personal API Token internally.&lt;/p&gt;
+
+&lt;h2&gt;Build Artifacts Browser&lt;/h2&gt;&lt;p&gt;Redesigned Build Artifacts Browser.&lt;/p&gt;
+
+&lt;p&gt;You can browse artifacts more quickly without waiting for downloading entire files.&lt;/p&gt;
+
+&lt;p&gt;This app starts downloading when you tried to view file and continues downloading in background.&lt;/p&gt;
+
+&lt;h2&gt;Apple Watch Complications&lt;/h2&gt;&lt;p&gt;Supported Apple Watch Complications.&lt;/p&gt;
+
+&lt;p&gt;You can add your build status in your watch face.&lt;/p&gt;
+
+&lt;p&gt;Due to watchOS API limitation, this does not update information realtime.&lt;/p&gt;
+
+&lt;h2&gt;Performance improvement&lt;/h2&gt;
+
+&lt;p&gt;In this version, I’ve redesigned entire implementation from scratch.&lt;/p&gt;
+
+&lt;p&gt;Behaves more swift instead of dealing with offline data.&lt;/p&gt;
+
+&lt;p&gt;Send me issues if you have any.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Wiplock - Protect main branch from in-progress branches</title>
       <link>https://ngs.io/2016/09/23/wiplock/</link>
@@ -101,7 +134,7 @@ docker run --name wiplock-redis -d redis
       <title>Testing Email Delivery in Nightwatch.js End to End test</title>
       <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
       <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
-      <pubDate>Thu, 08 Sep 2016 08:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
 
@@ -302,7 +335,7 @@ wcBMA2GjYRB9O5DgA...(snip)
       <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
       <link>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</link>
       <guid>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</guid>
-      <pubDate>Fri, 04 Mar 2016 13:50:00 -0000</pubDate>
+      <pubDate>Fri, 04 Mar 2016 13:50:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -468,7 +501,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
       <link>https://ngs.io/2016/01/29/ci2go/</link>
       <guid>https://ngs.io/2016/01/29/ci2go/</guid>
-      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
+      <pubDate>Fri, 29 Jan 2016 13:15:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
 
@@ -515,7 +548,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Generate NSColor / UIColor based on Swift String</title>
       <link>https://ngs.io/2015/12/13/color-hash-swift/</link>
       <guid>https://ngs.io/2015/12/13/color-hash-swift/</guid>
-      <pubDate>Sun, 13 Dec 2015 08:00:00 -0000</pubDate>
+      <pubDate>Sun, 13 Dec 2015 08:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published a Swift library ColorHash, that generates UIColor and NSColor based on given string.&lt;/p&gt;
 
@@ -543,17 +576,6 @@ ColorHash(str, [saturation], [lightness]).color
 &lt;p&gt;&lt;strong&gt;ngs/sketchplugin-swift-color&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;Installing&lt;/h2&gt;
 
 &lt;p&gt;Download and unarchive the latest version from Releases page, then double click Copy Swift Code.sketchplugin.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Announcing @circleci client for Apple Watch :watch:</title>
-      <link>https://ngs.io/2015/06/30/ci2go-applewatch/</link>
-      <guid>https://ngs.io/2015/06/30/ci2go-applewatch/</guid>
-      <pubDate>Tue, 30 Jun 2015 04:40:00 +0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;Version 1.1.0 of CI2Go, the CircleCI client for iOS is now available on the AppStore.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This update includes WatchKit Extension.&lt;/p&gt;&lt;p&gt;You can check latest build from the Glance screen and recent 20 builds in the App screen.&lt;/p&gt;&lt;p&gt;Navigates to build details by selecting build from the App screen, and retries the build by selecting Retry button of the menu.&lt;/p&gt;
 </description>
     </item>
   </channel>
