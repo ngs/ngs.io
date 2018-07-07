@@ -7,7 +7,48 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Mon, 02 Jul 2018 00:20:00 -0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jul 2018 14:59:00 -0000</lastBuildDate>
+    <item>
+      <title>Coveralls plugin for fastlane</title>
+      <link>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</link>
+      <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
+      <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve just published a fastlane plugin that sends Xcode testing coverage information to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ngs/fastlane-plugin-coveralls
+&lt;/li&gt;&lt;li&gt;ngs/xccoveralls
+&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Quick Start&lt;/h2&gt;
+
+&lt;p&gt;Run the following command&lt;/p&gt;
+  fastlane add_plugin coveralls  
+&lt;p&gt;Add the following line to your Fastfile&lt;/p&gt;
+  lane :send_coveralls do
+  coveralls
+end  
+&lt;p&gt;Make sure Code Coverage checkbox is turned on for your test target.&lt;/p&gt;&lt;p&gt;Then you can send coverage data from fastlane command&lt;/p&gt;
+  export XCCOVERALLS_REPO_TOKEN=... # grab yours from Coveralls.io
+bundle exec fastlane send_coveralls  
+&lt;p&gt;You can check CI2Go coverage on Coveralls and Fastfile.&lt;/p&gt;
+
+&lt;h2&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;I tried to introduce Xcov which is built into fastlane action, but it does not send covered lines because it uses .xccovreport or .xccoverage file which contains only summary of test coverage.&lt;/p&gt;
+
+&lt;p&gt;So I started implementing with xcrun xccov which was introduced in Xcode 9.3.&lt;/p&gt;
+  # List files
+$ xcrun xccov view --file-list DerivedData/Logs/Build/*.xccovarchive
+# Code coverage for specific file
+$ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
+    DerivedData/Logs/Build/*.xccovarchive  
+&lt;p&gt;ref: xccov: Xcode Code Coverage Report for Humans&lt;/p&gt;
+
+&lt;p&gt;Please send me issues if you have any.&lt;/p&gt;
+
+&lt;p&gt;Enjoy XCTesting &lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>CI2Go version 2</title>
       <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
@@ -335,7 +376,7 @@ wcBMA2GjYRB9O5DgA...(snip)
       <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
       <link>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</link>
       <guid>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</guid>
-      <pubDate>Fri, 04 Mar 2016 13:50:00 +0000</pubDate>
+      <pubDate>Fri, 04 Mar 2016 13:50:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -501,7 +542,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
       <link>https://ngs.io/2016/01/29/ci2go/</link>
       <guid>https://ngs.io/2016/01/29/ci2go/</guid>
-      <pubDate>Fri, 29 Jan 2016 13:15:00 +0000</pubDate>
+      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
 
@@ -548,7 +589,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Generate NSColor / UIColor based on Swift String</title>
       <link>https://ngs.io/2015/12/13/color-hash-swift/</link>
       <guid>https://ngs.io/2015/12/13/color-hash-swift/</guid>
-      <pubDate>Sun, 13 Dec 2015 08:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Dec 2015 08:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published a Swift library ColorHash, that generates UIColor and NSColor based on given string.&lt;/p&gt;
 
@@ -564,19 +605,6 @@ ColorHash(str, [saturation], [lightness]).color
   pod 'ColorHash'  
  Carthage 
   github 'ngs/color-hash.swift'  </description>
-    </item>
-    <item>
-      <title>Copy UIColor / NSColor initializer code from Sketch app</title>
-      <link>https://ngs.io/2015/12/11/sketch-swift-color/</link>
-      <guid>https://ngs.io/2015/12/11/sketch-swift-color/</guid>
-      <pubDate>Thu, 10 Dec 2015 15:30:00 +0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve published Copy Swift Code, a Sketch app plugin for generating UIColor and NSColor initializer Swift code from fill color of selected layers.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ngs/sketchplugin-swift-color&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;Installing&lt;/h2&gt;
-
-&lt;p&gt;Download and unarchive the latest version from Releases page, then double click Copy Swift Code.sketchplugin.&lt;/p&gt;
-</description>
     </item>
   </channel>
 </rss>
