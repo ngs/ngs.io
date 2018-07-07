@@ -14,7 +14,7 @@
       <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
       <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve just published a fastlane plugin that sends Xcode testing coverage information to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
+      <description>&lt;p&gt;I’ve just published a fastlane plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ngs/fastlane-plugin-coveralls
