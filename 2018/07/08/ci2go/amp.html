@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>CI2Go Today widget support</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2018/07/08/ci2go/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">CI2Go Today widget support</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2018-07-08T00:00:00">2018-07-08 09:00</time>
+      <meta itemprop="description" content="Released CI2Go 2.1.0 including Today widget support"></meta>
+      <div class="hidden article-metadata"><meta content="Released CI2Go 2.1.0 including Today widget support" itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="2018-07-08-ci2go/main.jpg" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2018-07-08T00:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2018-07-08-ci2go/main.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>I&rsquo;ve just released version 2.1.0 of <a href="https://itunes.apple.com/app/id940028427?mt=8">CI2Go</a>, the <a href="https://circleci.com">CircleCI</a> client for iPhone and iPad.</p>
+
+<p><a href="https://itunes.apple.com/app/id940028427?mt=8"></a></p>
+
+<p>v2.1.0 contains the following:</p>
+
+<ul>
+<li>Today widget
+</li><li>SSH connect
+</li><li>Delete local artifacts
+</li><li>Open application by URL
+</li></ul>
+
+
+
+<h2 id="today-widget">Today widget</h2>
+
+<p><amp-img src="/images/2018-07-08-ci2go/widget.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>You can add CI2Go widget to <a href="https://support.apple.com/en-us/ht207122">Today</a> view. This shows recent 5 builds of selected project/branch or your following projects.</p>
+
+<h2 id="ssh-connect">SSH connect</h2>
+
+<p><amp-img src="/images/2018-07-08-ci2go/ssh.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p><code>SSH</code> section will be shown while running SSH enabled builds if you installed SSH client which supports <code>ssh://</code> URI scheme such as Panic&rsquo;s <a href="https://panic.com/prompt/">Prompt</a>.</p>
+
+<p>Launches SSH client when row of container was selected.</p>
+
+<h2 id="delete-local-artifacts">Delete local artifacts</h2>
+
+<p><amp-img src="/images/2018-07-08-ci2go/artifacts.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>You can delete downloaded build artifacts from trash can icon which appears by swiping table rows left.</p>
+
+<h2 id="open-application-by-url">Open application by URL</h2>
+
+<p>CI2Go now handles URI schemes: <code>chttps://</code>, <code>ci2go://</code>, <code>ci2go+https://</code>.</p>
+
+<p>You can open CI2Go by replacing or prefixing protocol part of CircleCI build URL like:</p>
+
+<p><a href="https://circleci.com/gh/circleci/frontend/3439">https://circleci.com/gh/circleci/frontend/3439</a> to <a href="ci2go://circleci.com/gh/circleci/frontend/3439">ci2go://circleci.com/gh/circleci/frontend/3439</a></p>
+
+<p>Send me <a href="https://github.com/ngs/ci2go/issues/new">issues</a> if you have any.</p>
+
+    </article>
+  </body>
+</html>

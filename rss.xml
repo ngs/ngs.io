@@ -7,7 +7,39 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Sat, 07 Jul 2018 14:59:00 -0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 -0000</lastBuildDate>
+    <item>
+      <title>CI2Go Today widget support</title>
+      <link>https://ngs.io/2018/07/08/ci2go/</link>
+      <guid>https://ngs.io/2018/07/08/ci2go/</guid>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve just released version 2.1.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;v2.1.0 contains the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Today widget
+&lt;/li&gt;&lt;li&gt;SSH connect
+&lt;/li&gt;&lt;li&gt;Delete local artifacts
+&lt;/li&gt;&lt;li&gt;Open application by URL
+&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Today widget&lt;/h2&gt;&lt;p&gt;You can add CI2Go widget to Today view. This shows recent 5 builds of selected project/branch or your following projects.&lt;/p&gt;
+
+&lt;h2&gt;SSH connect&lt;/h2&gt;&lt;p&gt;SSH section will be shown while running SSH enabled builds if you installed SSH client which supports ssh:// URI scheme such as Panic’s Prompt.&lt;/p&gt;
+
+&lt;p&gt;Launches SSH client when row of container was selected.&lt;/p&gt;
+
+&lt;h2&gt;Delete local artifacts&lt;/h2&gt;&lt;p&gt;You can delete downloaded build artifacts from trash can icon which appears by swiping table rows left.&lt;/p&gt;
+
+&lt;h2&gt;Open application by URL&lt;/h2&gt;
+
+&lt;p&gt;CI2Go now handles URI schemes: chttps://, ci2go://, ci2go+https://.&lt;/p&gt;
+
+&lt;p&gt;You can open CI2Go by replacing or prefixing protocol part of CircleCI build URL like:&lt;/p&gt;
+
+&lt;p&gt;https://circleci.com/gh/circleci/frontend/3439 to ci2go://circleci.com/gh/circleci/frontend/3439&lt;/p&gt;
+
+&lt;p&gt;Send me issues if you have any.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Coveralls plugin for fastlane</title>
       <link>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</link>
@@ -53,7 +85,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>CI2Go version 2</title>
       <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
       <guid>https://ngs.io/2018/07/02/ci2go-v2/</guid>
-      <pubDate>Mon, 02 Jul 2018 00:20:00 -0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released major updated version 2.0.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;V2 contains the following updates.&lt;/p&gt;&lt;h2&gt;iPhone X Support&lt;/h2&gt;&lt;p&gt;Started supporting iPhone X’s 5.8 inches screen.&lt;/p&gt;
 
@@ -86,7 +118,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>Wiplock - Protect main branch from in-progress branches</title>
       <link>https://ngs.io/2016/09/23/wiplock/</link>
       <guid>https://ngs.io/2016/09/23/wiplock/</guid>
-      <pubDate>Thu, 22 Sep 2016 17:00:00 -0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 17:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -311,7 +343,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
@@ -323,7 +355,7 @@ $EDITOR ~/.hyperterm.js  &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hypert
       <title>PGP encrypted messages for Keybase users in our chat rooms</title>
       <link>https://ngs.io/2016/05/14/hubot-keybase/</link>
       <guid>https://ngs.io/2016/05/14/hubot-keybase/</guid>
-      <pubDate>Fri, 13 May 2016 22:45:00 -0000</pubDate>
+      <pubDate>Fri, 13 May 2016 22:45:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released &lt;strong&gt;hubot-keybase&lt;/strong&gt;, a Hubot script to encrypt messages for Keybase users.&lt;/p&gt;
 
@@ -542,7 +574,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
       <link>https://ngs.io/2016/01/29/ci2go/</link>
       <guid>https://ngs.io/2016/01/29/ci2go/</guid>
-      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
+      <pubDate>Fri, 29 Jan 2016 13:15:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
 
@@ -584,27 +616,6 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
 
 &lt;p&gt;Drop me a New Issue if you have any.&lt;/p&gt;
 </description>
-    </item>
-    <item>
-      <title>Generate NSColor / UIColor based on Swift String</title>
-      <link>https://ngs.io/2015/12/13/color-hash-swift/</link>
-      <guid>https://ngs.io/2015/12/13/color-hash-swift/</guid>
-      <pubDate>Sun, 13 Dec 2015 08:00:00 -0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve published a Swift library ColorHash, that generates UIColor and NSColor based on given string.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ngs/color-hash.swift&lt;/strong&gt;&lt;/p&gt;
-  import ColorHash
-let str = "こんにちは、世界"
-let saturation = CGFloat(0.30)
-let lightness = CGFloat(0.70)
-ColorHash(str, [saturation], [lightness]).color  
-&lt;p&gt;This is a Swift port of a JavaScript library Color Hash.&lt;/p&gt;&lt;h2&gt;Install&lt;/h2&gt;
-
- CocoaPods 
-  pod 'ColorHash'  
- Carthage 
-  github 'ngs/color-hash.swift'  </description>
     </item>
   </channel>
 </rss>
