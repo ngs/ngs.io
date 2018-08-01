@@ -5,7 +5,7 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2018-07-08T00:00:00+00:00</updated>
+  <updated>2018-07-08T00:00:00Z</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
@@ -13,8 +13,8 @@
     <title>CI2Go Today widget support</title>
     <link rel="alternate" href="https://ngs.io/2018/07/08/ci2go/"/>
     <id>https://ngs.io/2018/07/08/ci2go/</id>
-    <published>2018-07-08T00:00:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2018-07-08T00:00:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -70,8 +70,8 @@
     <title>Coveralls plugin for fastlane</title>
     <link rel="alternate" href="https://ngs.io/2018/07/07/fastlane-plugin-coveralls/"/>
     <id>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</id>
-    <published>2018-07-07T14:59:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2018-07-07T14:59:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -124,8 +124,8 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls&lt;/code
     <title>CI2Go version 2</title>
     <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
     <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
-    <published>2018-07-02T00:20:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2018-07-02T00:20:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -186,8 +186,8 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls&lt;/code
     <title>Wiplock - Protect main branch from in-progress branches</title>
     <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
     <id>https://ngs.io/2016/09/23/wiplock/</id>
-    <published>2016-09-22T17:00:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2016-09-22T17:00:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -296,8 +296,8 @@ docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock-redis &lt;span cla
     <title>Testing Email Delivery in Nightwatch.js End to End test</title>
     <link rel="alternate" href="https://ngs.io/2016/09/08/nightwatch-mail-test/"/>
     <id>https://ngs.io/2016/09/08/nightwatch-mail-test/</id>
-    <published>2016-09-08T08:00:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2016-09-08T08:00:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -453,8 +453,8 @@ npm &lt;span class="nb"&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt
     <title>Hyperterm Tomorrow Themes</title>
     <link rel="alternate" href="https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/"/>
     <id>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</id>
-    <published>2016-07-17T04:20:00+00:00</published>
-    <updated>2018-07-08T00:55:57+00:00</updated>
+    <published>2016-07-17T04:20:00Z</published>
+    <updated>2018-08-01T17:05:58+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
