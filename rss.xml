@@ -46,7 +46,7 @@
       <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
       <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve just published a fastlane plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
+      <description>&lt;p&gt;I’ve just published a fastlane&amp;nbsp;plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ngs/fastlane-plugin-coveralls
@@ -290,13 +290,13 @@ npm test
 &lt;p&gt;The extension file layout is like this.&lt;/p&gt;
   lib
 ├── custom_assertions
-│   ├── receivedEmailHTMLBodyContains.js
-│   ├── receivedEmailSubjectContains.js
-│   └── receivedEmailSubjectEquals.js
+│&amp;nbsp;&amp;nbsp; ├── receivedEmailHTMLBodyContains.js
+│&amp;nbsp;&amp;nbsp; ├── receivedEmailSubjectContains.js
+│&amp;nbsp;&amp;nbsp; └── receivedEmailSubjectEquals.js
 ├── custom_commands
-│   ├── checkEmails.js
-│   ├── createEmailRoute.js
-│   └── deleteEmailRoutes.js
+│&amp;nbsp;&amp;nbsp; ├── checkEmails.js
+│&amp;nbsp;&amp;nbsp; ├── createEmailRoute.js
+│&amp;nbsp;&amp;nbsp; └── deleteEmailRoutes.js
 ├── globals.js
 └── page_objects
     └── hackernewsletter.js # example specific file  
