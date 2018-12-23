@@ -7,12 +7,12 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     <item>
       <title>CI2Go Today widget support</title>
       <link>https://ngs.io/2018/07/08/ci2go/</link>
       <guid>https://ngs.io/2018/07/08/ci2go/</guid>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 -0000</pubDate>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released version 2.1.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;v2.1.0 contains the following:&lt;/p&gt;
 
@@ -85,7 +85,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>CI2Go version 2</title>
       <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
       <guid>https://ngs.io/2018/07/02/ci2go-v2/</guid>
-      <pubDate>Mon, 02 Jul 2018 00:20:00 -0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released major updated version 2.0.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;V2 contains the following updates.&lt;/p&gt;&lt;h2&gt;iPhone X Support&lt;/h2&gt;&lt;p&gt;Started supporting iPhone X’s 5.8 inches screen.&lt;/p&gt;
 
@@ -207,7 +207,7 @@ docker run --name wiplock-redis -d redis
       <title>Testing Email Delivery in Nightwatch.js End to End test</title>
       <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
       <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
-      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
 
@@ -343,7 +343,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
@@ -355,7 +355,7 @@ $EDITOR ~/.hyperterm.js  &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hypert
       <title>PGP encrypted messages for Keybase users in our chat rooms</title>
       <link>https://ngs.io/2016/05/14/hubot-keybase/</link>
       <guid>https://ngs.io/2016/05/14/hubot-keybase/</guid>
-      <pubDate>Fri, 13 May 2016 22:45:00 -0000</pubDate>
+      <pubDate>Fri, 13 May 2016 22:45:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released &lt;strong&gt;hubot-keybase&lt;/strong&gt;, a Hubot script to encrypt messages for Keybase users.&lt;/p&gt;
 
@@ -389,7 +389,7 @@ wcBMA2GjYRB9O5DgA...(snip)
       <title>Announcing CI2Go v1.3.0</title>
       <link>https://ngs.io/2016/03/25/ci2go/</link>
       <guid>https://ngs.io/2016/03/25/ci2go/</guid>
-      <pubDate>Fri, 25 Mar 2016 10:15:00 -0000</pubDate>
+      <pubDate>Fri, 25 Mar 2016 10:15:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released v1.3.0 of CI2Go the @circleci client for iOS.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This update contains the following new features:&lt;/p&gt;
 
