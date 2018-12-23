@@ -44,7 +44,7 @@
       <title>Coveralls plugin for fastlane</title>
       <link>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</link>
       <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
-      <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
+      <pubDate>Sat, 07 Jul 2018 14:59:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just published a fastlane&amp;nbsp;plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
 
@@ -118,7 +118,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>Wiplock - Protect main branch from in-progress branches</title>
       <link>https://ngs.io/2016/09/23/wiplock/</link>
       <guid>https://ngs.io/2016/09/23/wiplock/</guid>
-      <pubDate>Thu, 22 Sep 2016 17:00:00 -0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 17:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -408,7 +408,7 @@ wcBMA2GjYRB9O5DgA...(snip)
       <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
       <link>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</link>
       <guid>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</guid>
-      <pubDate>Fri, 04 Mar 2016 13:50:00 -0000</pubDate>
+      <pubDate>Fri, 04 Mar 2016 13:50:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -574,7 +574,7 @@ $ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
       <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
       <link>https://ngs.io/2016/01/29/ci2go/</link>
       <guid>https://ngs.io/2016/01/29/ci2go/</guid>
-      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
+      <pubDate>Fri, 29 Jan 2016 13:15:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
 
