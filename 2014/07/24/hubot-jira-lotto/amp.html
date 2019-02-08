@@ -44,11 +44,13 @@
 <p>I published a <a href="https://hubot.github.com/">Hubot</a> script to pick assignee for <a href="https://www.atlassian.com/software/jira">JIRA</a> issues.</p>
 
 <p><strong><a href="https://github.com/ngs/hubot-jira-lotto">ngs/hubot-jira-lotto</a></strong></p>
-<div class="highlight"><pre class="highlight shell"><code>npm install <span class="nt">--save</span> hubot-jira-lotto</code></pre></div>
+<div class="highlight"><pre class="highlight shell"><code>npm <span class="nb">install</span> <span class="nt">--save</span> hubot-jira-lotto
+</code></pre></div>
 
 
 <h2 id="commands">Commands</h2>
-<div class="highlight"><pre class="highlight plaintext"><code>hubot pick (an) assignee (for) &lt;ISSUE-NUMBER&gt; from &lt;ASSIGNEE-GROUP&gt;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>hubot pick (an) assignee (for) &lt;ISSUE-NUMBER&gt; from &lt;ASSIGNEE-GROUP&gt;
+</code></pre></div>
 <p>This command picks an assignee for the issue randomly from <code>&lt;ASSIGNEE-GROUP&gt;</code>.</p>
 
 <p>Random logic is weighted with number of issues in same project already assigned to.</p>
@@ -58,7 +60,8 @@
 <div class="highlight"><pre class="highlight shell"><code>heroku config:set <span class="se">\</span>
   <span class="nv">HUBOT_JIRA_LOGIN</span><span class="o">=</span>hubot <span class="se">\</span>
   <span class="nv">HUBOT_JIRA_PASSWORD</span><span class="o">=</span>password <span class="se">\</span>
-  <span class="nv">HUBOT_JIRA_DOMAIN</span><span class="o">=</span>myjira.atlassian.net</code></pre></div>
+  <span class="nv">HUBOT_JIRA_DOMAIN</span><span class="o">=</span>myjira.atlassian.net
+</code></pre></div>
 
 <p>This Hubot script require <strong>Admin priviledges</strong> for the login account.</p>
 
@@ -75,7 +78,8 @@
   <span class="nx">map</span> <span class="o">=</span>
     <span class="na">ngs</span><span class="o">:</span> <span class="s">'atsushi_nagase'</span>
   <span class="nx">robot</span><span class="p">.</span><span class="na">convertHandle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="o">-&gt;</span>
-    <span class="nx">map</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">||</span> <span class="nx">name</span></code></pre></div>
+    <span class="nx">map</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">||</span> <span class="nx">name</span>
+</code></pre></div>
 
     </article>
   </body>

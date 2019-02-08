@@ -51,19 +51,24 @@
 
 <p>When you type message in your chat room like:</p>
 <div class="highlight"><pre class="highlight shell"><code>hubot keybase encrypt:ngs Hi there!
-<span class="c">#                     ^ Keybase username!</span></code></pre></div>
+<span class="c">#                     ^ Keybase username!</span>
+</code></pre></div>
 <p>Hubot replies PGP encrypted message using public key for specified user.</p>
 <div class="highlight"><pre class="highlight plaintext"><code>-----BEGIN PGP MESSAGE-----
 Version: OpenPGP.js v2.3.0
 Comment: http://openpgpjs.org
+
 wcBMA2GjYRB9O5DgA...(snip)
------END PGP MESSAGE-----</code></pre></div>
+-----END PGP MESSAGE-----
+</code></pre></div>
 <h2 id="install">Install</h2>
 
 <p>1. Add <code>hubot-keybase</code> to dependencies.</p>
-<div class="highlight"><pre class="highlight shell"><code>npm install <span class="nt">--save</span> hubot-keybase</code></pre></div>
+<div class="highlight"><pre class="highlight shell"><code>npm <span class="nb">install</span> <span class="nt">--save</span> hubot-keybase
+</code></pre></div>
 <p>2. Update <code>external-scripts.json</code></p>
-<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="s2">"hubot-keybase"</span><span class="p">]</span></code></pre></div>
+<div class="highlight"><pre class="highlight json"><code><span class="p">[</span><span class="s2">"hubot-keybase"</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
 <h2 id="feedbacks">Feedbacks</h2>
 
 <p>If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)</p>

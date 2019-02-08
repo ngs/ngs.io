@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Import AWS credentials.csv to 1Password using aws1pif</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2019/02/07/aws1pif/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Import AWS credentials.csv to 1Password using aws1pif</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2019-02-07T12:00:00+00:00">2019-02-07 12:00</time>
+      <meta itemprop="description" content="Open-sourced aws1pif, a command line tool that converts AWS credentials.csv to 1Password .1pif file format"></meta>
+      <div class="hidden article-metadata"><meta content="Open-sourced aws1pif, a command line tool that converts AWS credentials.csv to 1Password .1pif file format" itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="2019-02-07-aws1pif/import.jpg" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2019-02-07T12:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2019-02-07-aws1pif/desktop.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>I&rsquo;ve just open-sourced <strong>aws1pif</strong>, a command line tool that converts AWS credentials.csv to 1Password .1pif file format</p>
+
+<p><a href="https://github.com/ngs/aws1pif">ngs/aws1pif</a></p>
+
+
+
+<h2 id="install">Install</h2>
+
+<p>You can install aws1pif using Homebrew or <code>go install</code> command</p>
+<div class="highlight"><pre class="highlight shell"><code>brew <span class="nb">install </span>ngs/formulae/aws1pif
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre class="highlight shell"><code>go <span class="nb">install </span>github.com/ngs/aws1pif
+</code></pre></div>
+<h2 id="how-to-use">How to Use</h2>
+
+<p><code>aws1pif</code> converts CSV standard input to .1pif JSON file format as standard output.</p>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">cat</span> ~/Downloads/credentials.csv | aws1pif <span class="o">&gt;</span> aws.1pif
+</code></pre></div>
+<p>1Password will launch when opening .1pif file and show confirmation dialog</p>
+
+<p><amp-img src="/images/2019-02-07-aws1pif/import.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>Currently CSV with multiple credentials is not supported.</p>
+
+    </article>
+  </body>
+</html>

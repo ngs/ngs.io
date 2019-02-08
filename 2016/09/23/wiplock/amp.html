@@ -115,9 +115,11 @@
 
 <p>If you don&rsquo;t have it yet, the Official Docker image will help you bootstrapping.</p>
 <div class="highlight"><pre class="highlight shell"><code>docker pull redis
-docker run <span class="nt">--name</span> wiplock-redis <span class="nt">-d</span> redis</code></pre></div>
+docker run <span class="nt">--name</span> wiplock-redis <span class="nt">-d</span> redis
+</code></pre></div>
 <p>Pull Wiplock Docker image.</p>
-<div class="highlight"><pre class="highlight shell"><code>docker pull atsnngs/wiplock</code></pre></div>
+<div class="highlight"><pre class="highlight shell"><code>docker pull atsnngs/wiplock
+</code></pre></div>
 <p>And run Wiplock by passing <code>REDIS_URL</code> with running container name.</p>
 <div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">--name</span> wiplock <span class="nt">-p</span> 8000:8000 <span class="nt">-d</span> <span class="nt">--rm</span> <span class="se">\</span>
   <span class="nt">--link</span> wiplock-redis:redis <span class="se">\</span>
@@ -125,7 +127,8 @@ docker run <span class="nt">--name</span> wiplock-redis <span class="nt">-d</spa
   <span class="nt">-e</span> <span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="k">}</span> <span class="se">\</span>
   <span class="nt">-e</span> <span class="nv">SECRET</span><span class="o">=</span><span class="k">${</span><span class="nv">SECRET</span><span class="k">}</span> <span class="se">\</span>
   <span class="nt">-e</span> <span class="nv">REDIS_URL</span><span class="o">=</span><span class="s2">"redis://redis:6379"</span> <span class="se">\</span>
-  atsnngs/wiplock</code></pre></div>
+  atsnngs/wiplock
+</code></pre></div>
 <p>Then you can see your Wiplock on your localhost.</p>
 
 <p><a href="http://localhost:8000">http://localhost:8000</a></p>

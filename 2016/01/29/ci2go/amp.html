@@ -62,7 +62,9 @@
 
 <p>I found their <a href="https://pusher.com/docs/authenticating_users#authEndpoint/lang=ios">Pusher Authentication Endpoint</a> also supports API Tokens, not only login session.</p>
 <div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-i</span> <span class="s2">"https://circleci.com/auth/pusher?circle-token=</span><span class="k">${</span><span class="nv">CIRCLE_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-  <span class="nt">--data</span> <span class="s1">'socket_id=123456.87654321&amp;channel_name=private-ngs'</span></code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>{"auth":"1cf6e0e755e419d2ac9a:..."}</code></pre></div>
+  <span class="nt">--data</span> <span class="s1">'socket_id=123456.87654321&amp;channel_name=private-ngs'</span>
+</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>{"auth":"1cf6e0e755e419d2ac9a:..."}
+</code></pre></div>
 <p>I found a bug with <a href="https://github.com/pusher-community/pusher-websocket-swift">pusher-websocket-swift</a> while implementing this, and that was fixed.</p>
 
 <p><a href="https://github.com/pusher-community/pusher-websocket-swift/pull/22">pusher-community/pusher-websocket-swift/pull/22</a></p>
@@ -78,7 +80,8 @@
 <p>But this still have performance issue.</p>
 
 <p>This version uses <a href="https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/">WatchConnectivity Framework</a> to transfer data from iPhone to reduce application size (almost Realm.framework), because we can&rsquo;t upload Watch OS apps larger than 50 MB.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>ITMS-90389 Size Limit 50 MB Exceeded</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>ITMS-90389 Size Limit 50 MB Exceeded
+</code></pre></div>
 <p>But <code>WCSession</code>&lsquo;s data transfer is quite slow, so I&rsquo;m working on updating to access the API by itself and will be fixed in next release.</p>
 
 <p>If you&rsquo;re a heavy Apple Watch user and real-time updating is not so necessary, please omit this update.</p>

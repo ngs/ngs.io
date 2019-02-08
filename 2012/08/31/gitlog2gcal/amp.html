@@ -54,11 +54,14 @@
 </li></ul>
 
 <h2 id="set-up">Set up</h2>
-<div class="highlight"><pre class="highlight shell"><code>pip install google-api-python-client oauth2 rfc3339
+<div class="highlight"><pre class="highlight shell"><code>pip <span class="nb">install </span>google-api-python-client oauth2 rfc3339
+
 <span class="nb">cd</span> /path/to/project
 curl <span class="nt">-L</span> http://s.liap.us/gcal-post-commit.py <span class="o">&gt;</span> .git/hooks/post-commit
-chmod +x .git/hooks/post-commit
-vim .git/hooks/post-commit</code></pre></div>
+<span class="nb">chmod</span> +x .git/hooks/post-commit
+
+vim .git/hooks/post-commit
+</code></pre></div>
 <p>Create new client on <a href="https://code.google.com/apis/console">the console</a> and replace variables.</p>
 
 

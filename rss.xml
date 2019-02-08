@@ -7,7 +7,83 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 12:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Go Release Binary GitHub Action</title>
+      <link>https://ngs.io/2019/02/08/go-release-action/</link>
+      <guid>https://ngs.io/2019/02/08/go-release-action/</guid>
+      <pubDate>Fri, 08 Feb 2019 12:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published Go Release Binary Action on GitHub Marketplace.&lt;/p&gt;
+
+&lt;p&gt;Go Release Binary Action on GitHub Marketplace&lt;/p&gt;
+
+&lt;p&gt;This GitHub Action builds and uploads Go build artifacts as Release Artifacts automatically when Release was created on GitHub repository.&lt;/p&gt;&lt;h2&gt;How to Use&lt;/h2&gt;&lt;p&gt;ngs/aws1pif@v1.0.0&lt;/p&gt;
+
+&lt;p&gt;Place .workflow file like the below. The workflow builds and uploads build artifacts from referencing commit when new Release was created using GitHub Releases feature.&lt;/p&gt;
+  # .github/main.workflow
+
+workflow "Build" {
+  on = "release"
+  resolves = [
+    "release darwin/amd64",
+    "release windows/amd64",
+    "release linux/amd64",
+  ]
+}
+
+action "release darwin/amd64" {
+  uses = "ngs/go-release.action@v1.0.0"
+  env = {
+    GOOS = "darwin"
+    GOARCH = "amd64"
+  }
+  secrets = ["GITHUB_TOKEN"]
+}
+
+action "release windows/amd64" {
+  uses = "ngs/go-release.action@v1.0.0"
+  env = {
+    GOOS = "windows"
+    GOARCH = "amd64"
+  }
+  secrets = ["GITHUB_TOKEN"]
+}
+
+action "release linux/amd64" {
+  uses = "ngs/go-release.action@v1.0.0"
+  env = {
+    GOOS = "linux"
+    GOARCH = "amd64"
+  }
+  secrets = ["GITHUB_TOKEN"]
+}
+  </description>
+    </item>
+    <item>
+      <title>Import AWS credentials.csv to 1Password using aws1pif</title>
+      <link>https://ngs.io/2019/02/07/aws1pif/</link>
+      <guid>https://ngs.io/2019/02/07/aws1pif/</guid>
+      <pubDate>Thu, 07 Feb 2019 12:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve just open-sourced &lt;strong&gt;aws1pif&lt;/strong&gt;, a command line tool that converts AWS credentials.csv to 1Password .1pif file format&lt;/p&gt;
+
+&lt;p&gt;ngs/aws1pif&lt;/p&gt;&lt;h2&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;You can install aws1pif using Homebrew or go install command&lt;/p&gt;
+  brew install ngs/formulae/aws1pif
+  
+&lt;p&gt;or&lt;/p&gt;
+  go install github.com/ngs/aws1pif
+  
+&lt;h2&gt;How to Use&lt;/h2&gt;
+
+&lt;p&gt;aws1pif converts CSV standard input to .1pif JSON file format as standard output.&lt;/p&gt;
+  cat ~/Downloads/credentials.csv | aws1pif &amp;gt; aws.1pif
+  
+&lt;p&gt;1Password will launch when opening .1pif file and show confirmation dialog&lt;/p&gt;&lt;p&gt;Currently CSV with multiple credentials is not supported.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>CI2Go Today widget support</title>
       <link>https://ngs.io/2018/07/08/ci2go/</link>
@@ -54,14 +130,17 @@
 &lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Quick Start&lt;/h2&gt;
 
 &lt;p&gt;Run the following command&lt;/p&gt;
-  fastlane add_plugin coveralls  
+  fastlane add_plugin coveralls
+  
 &lt;p&gt;Add the following line to your Fastfile&lt;/p&gt;
   lane :send_coveralls do
   coveralls
-end  
+end
+  
 &lt;p&gt;Make sure Code Coverage checkbox is turned on for your test target.&lt;/p&gt;&lt;p&gt;Then you can send coverage data from fastlane command&lt;/p&gt;
   export XCCOVERALLS_REPO_TOKEN=... # grab yours from Coveralls.io
-bundle exec fastlane send_coveralls  
+bundle exec fastlane send_coveralls
+  
 &lt;p&gt;You can check CI2Go coverage on Coveralls and Fastfile.&lt;/p&gt;
 
 &lt;h2&gt;Motivation&lt;/h2&gt;
@@ -71,9 +150,11 @@ bundle exec fastlane send_coveralls
 &lt;p&gt;So I started implementing with xcrun xccov which was introduced in Xcode 9.3.&lt;/p&gt;
   # List files
 $ xcrun xccov view --file-list DerivedData/Logs/Build/*.xccovarchive
+
 # Code coverage for specific file
 $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
-    DerivedData/Logs/Build/*.xccovarchive  
+    DerivedData/Logs/Build/*.xccovarchive
+  
 &lt;p&gt;ref: xccov: Xcode Code Coverage Report for Humans&lt;/p&gt;
 
 &lt;p&gt;Please send me issues if you have any.&lt;/p&gt;
@@ -178,9 +259,11 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
 
 &lt;p&gt;If you don’t have it yet, the Official Docker image will help you bootstrapping.&lt;/p&gt;
   docker pull redis
-docker run --name wiplock-redis -d redis  
+docker run --name wiplock-redis -d redis
+  
 &lt;p&gt;Pull Wiplock Docker image.&lt;/p&gt;
-  docker pull atsnngs/wiplock  
+  docker pull atsnngs/wiplock
+  
 &lt;p&gt;And run Wiplock by passing REDIS_URL with running container name.&lt;/p&gt;
   docker run --name wiplock -p 8000:8000 -d --rm \
   --link wiplock-redis:redis \
@@ -188,7 +271,8 @@ docker run --name wiplock-redis -d redis
   -e GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET} \
   -e SECRET=${SECRET} \
   -e REDIS_URL="redis://redis:6379" \
-  atsnngs/wiplock  
+  atsnngs/wiplock
+  
 &lt;p&gt;Then you can see your Wiplock on your localhost.&lt;/p&gt;
 
 &lt;p&gt;http://localhost:8000&lt;/p&gt;
@@ -235,7 +319,8 @@ docker run --name wiplock-redis -d redis
 //
 // Check Email contains specified string in HTML body
 .assert.receivedEmailHTMLBodyContains(email,
-  '&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')  
+  '&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')
+  
 &lt;p&gt;See full code.&lt;/p&gt;
 
 &lt;h2&gt;Motivation&lt;/h2&gt;
@@ -265,10 +350,13 @@ docker run --name wiplock-redis -d redis
 &lt;p&gt;Delivered Emails are shared with public users. If you mind sharing your application Emails for them, you can launch your own RequestBin on hosting services like Heroku or IBM Bluexix by deploying Open Sourced RequestBin.&lt;/p&gt;
   git clone git://github.com/Runscope/requestbin.git
 cd requestbin
+
 heroku create
 heroku addons:add heroku-redis
 heroku config:set REALM=prod
-git push heroku master  
+
+git push heroku master
+  
  4. Environment Variables 
 
 &lt;p&gt;To launch the example project, export environment variables according to the above steps.&lt;/p&gt;
@@ -276,15 +364,19 @@ git push heroku master
 &lt;p&gt;I use direnv to manage local environment variables.&lt;/p&gt;
   echo "export MANDRILL_API_KEY=${YOUR_API_KEY_HERE}" &amp;gt;&amp;gt; .envrc
 echo "export MAIL_DOMAIN=${YOUR_MAIL_DOMAIN_HERE}" &amp;gt;&amp;gt; .envrc
+
 # If you set up your own RequestBin in Step 3
 echo "export REQUEST_BIN_HOST=https://${YOUR_HEROKU_APP}.herokuapp.com" &amp;gt;&amp;gt; .envrc
+
 # Allow new environment variables
-direnv allow  
+direnv allow
+  
  5. NPM! 
 
 &lt;p&gt;Finally, you can launch example test suite by running npm command.&lt;/p&gt;
   npm install # for first time
-npm test  
+npm test
+  
 &lt;h2&gt;The Custom Assertions and Commands&lt;/h2&gt;
 
 &lt;p&gt;The extension file layout is like this.&lt;/p&gt;
@@ -299,7 +391,8 @@ npm test
 │&amp;nbsp;&amp;nbsp; └── deleteEmailRoutes.js
 ├── globals.js
 └── page_objects
-    └── hackernewsletter.js # example specific file  
+    └── hackernewsletter.js # example specific file
+  
 &lt;p&gt;You need to specify these paths in config file.&lt;/p&gt;
   {
   "custom_commands_path": "./lib/custom_commands",
@@ -307,19 +400,23 @@ npm test
   "page_objects_path": "./lib/page_objects",
   "globals_path": "./lib/globals.js",
   // snip ...
-}  
+}
+  
 &lt;h2&gt;More Assertions&lt;/h2&gt;
 
 &lt;p&gt;I added receivedEmailHTMLBodyContains, receivedEmailSubjectContains, receivedEmailSubjectEquals in this example project.&lt;/p&gt;
 
 &lt;p&gt;If you want to add assertions for other field like from_email or attachments, you can implement by forking existing implementations. (See full list)&lt;/p&gt;
   const util = require('nightwatch/lib/util/utils');
+
 exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) {
   const DEFAULT_MSG = 'Testing if &amp;lt;%s&amp;gt; received with subject equals to "%s".';
   this.message = msg || util.format(DEFAULT_MSG, address, expected);
+
   this.expected = function() {
     return expected;
   };
+
   this.pass = function(value) {
     const expected = this.expected();
     return value.filter(function(email) {
@@ -327,13 +424,17 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       // use indexOf(expected) !== -1 for *contains* implementation.
     }).length &amp;gt; 0;
   };
+
   this.value = function(result) {
     return result || [];
   };
+
   this.command = function(callback) {
     return this.api.checkEmails(address, callback);
   };
-}  
+
+}
+  
 &lt;p&gt;If you write some cool assertions in your project, please fork the repository and send me a Pull Request!&lt;/p&gt;
 
 &lt;p&gt;Happy testing!&lt;/p&gt;
@@ -349,7 +450,8 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
 
 &lt;h2&gt;How to install&lt;/h2&gt;
   npm search hyperterm-tomorrow
-$EDITOR ~/.hyperterm.js  &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-blue&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-bright&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-eighties&lt;/h2&gt;</description>
+$EDITOR ~/.hyperterm.js
+  &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-blue&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-bright&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-eighties&lt;/h2&gt;</description>
     </item>
     <item>
       <title>PGP encrypted messages for Keybase users in our chat rooms</title>
@@ -363,19 +465,24 @@ $EDITOR ~/.hyperterm.js  &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hypert
 
 &lt;p&gt;When you type message in your chat room like:&lt;/p&gt;
   hubot keybase encrypt:ngs Hi there!
-#                     ^ Keybase username!  
+#                     ^ Keybase username!
+  
 &lt;p&gt;Hubot replies PGP encrypted message using public key for specified user.&lt;/p&gt;
   -----BEGIN PGP MESSAGE-----
 Version: OpenPGP.js v2.3.0
 Comment: http://openpgpjs.org
+
 wcBMA2GjYRB9O5DgA...(snip)
------END PGP MESSAGE-----  
+-----END PGP MESSAGE-----
+  
 &lt;h2&gt;Install&lt;/h2&gt;
 
 &lt;p&gt;1. Add hubot-keybase to dependencies.&lt;/p&gt;
-  npm install --save hubot-keybase  
+  npm install --save hubot-keybase
+  
 &lt;p&gt;2. Update external-scripts.json&lt;/p&gt;
-  ["hubot-keybase"]  
+  ["hubot-keybase"]
+  
 &lt;h2&gt;Feedbacks&lt;/h2&gt;
 
 &lt;p&gt;If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)&lt;/p&gt;
@@ -402,219 +509,6 @@ wcBMA2GjYRB9O5DgA...(snip)
 &lt;p&gt;and fixes Realtime Build Log Updating was unavailable due to CircleCI’s Web Socket API update.&lt;/p&gt;
 
 &lt;p&gt;This version is still having realtime updating issue with Build List screen and will be fixed in next update.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Deploy Swift WebApps on Amazon EC2 Container Services (ECS)</title>
-      <link>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</link>
-      <guid>https://ngs.io/2016/03/04/swift-webapp-on-ecs/</guid>
-      <pubDate>Fri, 04 Mar 2016 13:50:00 -0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Developing Web applications with Swift is pretty fun &lt;/p&gt;
-
-&lt;p&gt;We can run them on Amazon EC2 Container Services and I tried to build light-weight Docker image to deploy more faster.&lt;/p&gt;
-
-&lt;p&gt;Here is an example project I made, check this out &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;https://github.com/ngs/Swifton-TodoApp
-&lt;/li&gt;&lt;li&gt;https://hub.docker.com/r/atsnngs/docker-swifton-example/
-&lt;/li&gt;&lt;li&gt;https://circleci.com/gh/ngs/Swifton-TodoApp
-&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;Swift Web Frameworks&lt;/h2&gt;
-
-&lt;p&gt;Since Swift language became open source, some web application frameworks come out.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Kitsura
-&lt;/li&gt;&lt;li&gt;Nest
-&lt;/li&gt;&lt;li&gt;Perfect
-&lt;/li&gt;&lt;li&gt;Slimane
-&lt;/li&gt;&lt;li&gt;Swifton
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;h2&gt;Swifton&lt;/h2&gt;
-
-&lt;p&gt;I’m not yet sure about which is the best. But I started trying Swifton the Ruby on Rails port of Swift Language.&lt;/p&gt;
-
-&lt;p&gt;The interface is pretty easy to understand:&lt;/p&gt;
-  import Swifton
-import Curassow
-class MyController: ApplicationController {
-    override init() {
-        super.init()
-        action("index") { request in
-            return self.render("Index")
-            // renders Index.html.stencil in Views directory
-        }
-    }
-}
-let router = Router()
-router.get("/", MyController()["index"])
-serve { router.respond($0) }  
-&lt;h2&gt;Swifton TodoApp&lt;/h2&gt;
-
-&lt;p&gt;Swifton has an example Todo app project: necolt/Swifton-TodoApp&lt;/p&gt;
-
-&lt;p&gt;This already has a Dockerfile and Heroku configurations (app.json and Procfile).&lt;/p&gt;
-
-&lt;p&gt;This works, so we can get started with this. But I don’t want to use Heroku for production and tried to use Amazon EC2 Container Service (ECS) instead.&lt;/p&gt;
-
-&lt;h2&gt;Fat Docker Image&lt;/h2&gt;
-
-&lt;p&gt;As I mentioned above, this project has a Dockerfile and we can build an image to work with ECS.&lt;/p&gt;
-
-&lt;p&gt;But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.&lt;/p&gt;
-  REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:c35f9  30 seconds ago  893.2 MB  &lt;p&gt;ref: https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/&lt;/p&gt;
-
-&lt;p&gt;So I tried to build binaries outside of Docker build process and put it on the image with minimum required assets on CircleCI.&lt;/p&gt;
-
-&lt;h2&gt;CircleCI Ubuntu 14.04 Trusty Container&lt;/h2&gt;
-
-&lt;p&gt;I use the Development Snapshot Swift tarball built on Trusty Ubuntu (14.04).&lt;/p&gt;
-
-&lt;p&gt;https://swift.org/download/#latest-development-snapshots&lt;/p&gt;&lt;p&gt;So I choose CircleCI’s Trusty Container that is provided as public beta.&lt;/p&gt;
-
-&lt;p&gt;http://blog.circleci.com/trusty-image-public-beta/&lt;/p&gt;&lt;h2&gt;Required softwares for continuously building&lt;/h2&gt;
-
-&lt;p&gt;First of all, we need to install the following softwares to run swift build&lt;/p&gt;
-  sudo apt-get install libicu-dev clang-3.6 jq
-# We also need jq to handle awscli response.
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
-# See: https://goo.gl/hSfhjE  
-&lt;h2&gt;The required assets to run Swifton application&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Swift runtime shared objects: usr/lib/swift/linux/*.so
-&lt;/li&gt;&lt;li&gt;Application binary
-&lt;/li&gt;&lt;li&gt;Stencil view files
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;So, I ignored unneeded assets with .dockerignore file. This can reduce Docker Image build time.&lt;/p&gt;
-  *
-!Views
-!swift/usr/lib/swift/linux/*.so
-!.build/release/Swifton-TodoApp  
-&lt;h2&gt;The Dockerfile&lt;/h2&gt;
-
-&lt;p&gt;Here is the Dockerfile. Much simpler than the original&lt;/p&gt;
-  FROM ubuntu:14.04
-MAINTAINER a@ngs.io
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y libicu52 libxml2 curl &amp;amp;&amp;amp; \
-  apt-get clean &amp;amp;&amp;amp; \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-ENV APP_DIR /var/www/app
-RUN mkdir -p ${APP_DIR}
-WORKDIR ${APP_DIR}
-ADD . ${APP_DIR}
-RUN ln -s ${APP_DIR}/swift/usr/lib/swift/linux/*.so /usr/lib
-EXPOSE 8000
-CMD .build/release/Swifton-TodoApp  
-&lt;p&gt;With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).&lt;/p&gt;
-  REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&amp;lt;none&amp;gt;      &amp;lt;none&amp;gt;  sha256:0d31d  30 seconds ago  245.8 MB  &lt;h2&gt;Test the Docker Image&lt;/h2&gt;
-
-&lt;p&gt;I use Serverspec to built Docker Images to keep it reliable.&lt;/p&gt;
-
-&lt;p&gt;There’s some tips (and monkey patches) to run Serverspec for Docker Containers on CircleCI in Japanese, and will be translate to English later.&lt;/p&gt;
-
-&lt;p&gt;https://ja.ngs.io/2015/09/26/circleci-docker-serverspec/&lt;/p&gt;
-
-&lt;p&gt;I wrote spec for the Todo app like this:&lt;/p&gt;
-  require 'spec_helper'
-describe port(8000) do
-  it { should be_listening }
-end
-describe command('curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/') do
-  its(:exit_status) { is_expected.to eq 0 }
-  its(:stdout) { is_expected.to contain 'HTTP/1.1 200 OK' }
-  its(:stdout) { is_expected.to contain '&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;' }
-end
-1.upto(2) do|n|
-  describe command("curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos -d \'title=Test#{n}\'") do
-    its(:exit_status) { is_expected.to eq 0 }
-    its(:stdout) { is_expected.to contain 'HTTP/1.1 302 FOUND' }
-    its(:stdout) { is_expected.to contain 'Location: /todos' }
-  end
-end
-describe command('curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos') do
-  its(:exit_status) { is_expected.to eq 0 }
-  its(:stdout) { is_expected.to contain 'HTTP/1.1 200 OK' }
-  its(:stdout) { is_expected.to contain '&amp;lt;h1&amp;gt;Listing Todos&amp;lt;/h1&amp;gt;' }
-  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;Test1&amp;lt;/td&amp;gt;' }
-  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;Test2&amp;lt;/td&amp;gt;' }
-  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;&amp;lt;a href="/todos/0"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;' }
-  its(:stdout) { is_expected.to contain '&amp;lt;td&amp;gt;&amp;lt;a href="/todos/1"&amp;gt;Show&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;' }
-end  &lt;h2&gt;Deploy on ECS&lt;/h2&gt;
-
-&lt;p&gt;Before deploying applications on ECS, we need to push the Docker Image on Docker Registry.&lt;/p&gt;
-  $ docker tag $DOCKER_REPO "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"
-$ docker push "${DOCKER_REPO}:b${CIRCLE_BUILD_NUM}"  
-&lt;p&gt;I won’t describe about how to set up ECS environment this article. Please refer AWS ECS Documentation.&lt;/p&gt;
-
-&lt;p&gt;The deploy script is executed in deploy phase of build process of the example project.&lt;/p&gt;
-
-&lt;p&gt;This script runs the following operations with AWS Command Line Interface.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Renders Task Definition JSON from ERB template.
-&lt;/li&gt;&lt;li&gt;Updates or creates task definition and retrieves new revision number like swifton-example-production:123
-&lt;/li&gt;&lt;li&gt;Updates or creates with new task definition
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;After deploying it, you can browse the Todo Example App.&lt;/p&gt;&lt;p&gt;Have fun! Give me feedbacks if you found any.&lt;/p&gt;
-
-&lt;p&gt;https://github.com/ngs/Swifton-TodoApp&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Real-time Log Support w/CI2Go the @circleci Client for iOS</title>
-      <link>https://ngs.io/2016/01/29/ci2go/</link>
-      <guid>https://ngs.io/2016/01/29/ci2go/</guid>
-      <pubDate>Fri, 29 Jan 2016 13:15:00 -0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In order to support real-time log watching, I dropped the API Refresh Interval feature from this version.&lt;/p&gt;&lt;h2&gt;Under The Hood of Real-Time Updating&lt;/h2&gt;
-
-&lt;p&gt;As I mentioned in v1.0.0 entry, the app didn’t support watching logs in real-time due to they have no public API to access on-going build logs.&lt;/p&gt;
-
-&lt;p&gt;I investigated how they implement real-time log by reading their code hosted in GitHub and finally I could integrate with their real-time WebSocket notifications.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;pusher.cjs
-&lt;/li&gt;&lt;li&gt;frontend
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;I found their Pusher Authentication Endpoint also supports API Tokens, not only login session.&lt;/p&gt;
-  curl -i "https://circleci.com/auth/pusher?circle-token=${CIRCLE_TOKEN}" \
-  --data 'socket_id=123456.87654321&amp;amp;channel_name=private-ngs'    {"auth":"1cf6e0e755e419d2ac9a:..."}  
-&lt;p&gt;I found a bug with pusher-websocket-swift while implementing this, and that was fixed.&lt;/p&gt;
-
-&lt;p&gt;pusher-community/pusher-websocket-swift/pull/22&lt;/p&gt;
-
-&lt;h2&gt;Offline Support with Realm&lt;/h2&gt;
-
-&lt;p&gt;From this version, I changed the local database to Realm from CoreData.&lt;/p&gt;
-
-&lt;h2&gt;Watch OS 2.0&lt;/h2&gt;
-
-&lt;p&gt;I also rebuilt the Apple Watch app to base on Watch OS 2.0.&lt;/p&gt;
-
-&lt;p&gt;But this still have performance issue.&lt;/p&gt;
-
-&lt;p&gt;This version uses WatchConnectivity Framework to transfer data from iPhone to reduce application size (almost Realm.framework), because we can’t upload Watch OS apps larger than 50 MB.&lt;/p&gt;
-  ITMS-90389 Size Limit 50 MB Exceeded  
-&lt;p&gt;But WCSession‘s data transfer is quite slow, so I’m working on updating to access the API by itself and will be fixed in next release.&lt;/p&gt;
-
-&lt;p&gt;If you’re a heavy Apple Watch user and real-time updating is not so necessary, please omit this update.&lt;/p&gt;
-
-&lt;p&gt;Drop me a New Issue if you have any.&lt;/p&gt;
 </description>
     </item>
   </channel>

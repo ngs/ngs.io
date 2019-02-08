@@ -74,6 +74,7 @@
 <p>The interface is pretty easy to understand:</p>
 <div class="highlight"><pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Swifton</span>
 <span class="kd">import</span> <span class="kt">Curassow</span>
+
 <span class="kd">class</span> <span class="kt">MyController</span><span class="p">:</span> <span class="kt">ApplicationController</span> <span class="p">{</span>
     <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
@@ -83,9 +84,12 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
 <span class="k">let</span> <span class="nv">router</span> <span class="o">=</span> <span class="kt">Router</span><span class="p">()</span>
 <span class="n">router</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="kt">MyController</span><span class="p">()[</span><span class="s">"index"</span><span class="p">])</span>
-<span class="n">serve</span> <span class="p">{</span> <span class="n">router</span><span class="o">.</span><span class="nf">respond</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span></code></pre></div>
+
+<span class="n">serve</span> <span class="p">{</span> <span class="n">router</span><span class="o">.</span><span class="nf">respond</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div>
 <h2 id="swifton-todoapp">Swifton TodoApp</h2>
 
 <p>Swifton has an example Todo app project: <a href="https://github.com/necolt/Swifton-TodoApp">necolt/Swifton-TodoApp</a></p>
@@ -100,7 +104,8 @@
 
 <p>But the image contains entire depending libraries to build Swift source code in itself. That becomes 326 MB image size and 893.2 MB virtual size.</p>
 <div class="highlight"><pre class="highlight plaintext"><code>REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&lt;none&gt;      &lt;none&gt;  sha256:c35f9  30 seconds ago  893.2 MB</code></pre></div>
+&lt;none&gt;      &lt;none&gt;  sha256:c35f9  30 seconds ago  893.2 MB
+</code></pre></div>
 <p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-before.png" layout="responsive" width="1460" height="240"></amp-img></p>
 
 <p>ref: <a href="https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/">https://hub.docker.com/r/atsnngs/docker-swifton-example/tags/</a></p>
@@ -124,11 +129,13 @@
 <h2 id="required-softwares-for-continuously-building">Required softwares for continuously building</h2>
 
 <p>First of all, we need to install the following softwares to run <code>swift build</code></p>
-<div class="highlight"><pre class="highlight shell"><code><span class="nb">sudo </span>apt-get install libicu-dev clang-3.6 jq
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>libicu-dev clang-3.6 jq
 <span class="c"># We also need jq to handle awscli response.</span>
+
 <span class="nb">sudo </span>update-alternatives <span class="nt">--install</span> /usr/bin/clang clang /usr/bin/clang-3.6 100
 <span class="nb">sudo </span>update-alternatives <span class="nt">--install</span> /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
-<span class="c"># See: https://goo.gl/hSfhjE</span></code></pre></div>
+<span class="c"># See: https://goo.gl/hSfhjE</span>
+</code></pre></div>
 <h2 id="the-required-assets-to-run-swifton-application">The required assets to run Swifton application</h2>
 
 <ul>
@@ -141,25 +148,31 @@
 <div class="highlight"><pre class="highlight plaintext"><code>*
 !Views
 !swift/usr/lib/swift/linux/*.so
-!.build/release/Swifton-TodoApp</code></pre></div>
+!.build/release/Swifton-TodoApp
+</code></pre></div>
 <h2 id="the-dockerfile">The Dockerfile</h2>
 
 <p>Here is the Dockerfile. Much simpler than the <a href="https://github.com/necolt/Swifton-TodoApp/blob/master/Dockerfile">original</a></p>
 <div class="highlight"><pre class="highlight shell"><code>FROM ubuntu:14.04
 MAINTAINER a@ngs.io
-RUN apt-get update <span class="o">&amp;&amp;</span> apt-get install <span class="nt">-y</span> libicu52 libxml2 curl <span class="o">&amp;&amp;</span> <span class="se">\</span>
+
+RUN apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> libicu52 libxml2 curl <span class="o">&amp;&amp;</span> <span class="se">\</span>
   apt-get clean <span class="o">&amp;&amp;</span> <span class="se">\</span>
-  rm <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span> /tmp/<span class="k">*</span> /var/tmp/<span class="k">*</span>
+  <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span> /tmp/<span class="k">*</span> /var/tmp/<span class="k">*</span>
+
 ENV APP_DIR /var/www/app
-RUN mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>
+RUN <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>
 WORKDIR <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>
 ADD <span class="nb">.</span> <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>
-RUN ln <span class="nt">-s</span> <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>/swift/usr/lib/swift/linux/<span class="k">*</span>.so /usr/lib
+RUN <span class="nb">ln</span> <span class="nt">-s</span> <span class="k">${</span><span class="nv">APP_DIR</span><span class="k">}</span>/swift/usr/lib/swift/linux/<span class="k">*</span>.so /usr/lib
+
 EXPOSE 8000
-CMD .build/release/Swifton-TodoApp</code></pre></div>
+CMD .build/release/Swifton-TodoApp
+</code></pre></div>
 <p>With this Dockerfile, I could reduce the image size to 88 MB, virtual size to 245.8 MB (27.5%).</p>
 <div class="highlight"><pre class="highlight plaintext"><code>REPOSITORY  TAG     IMAGE ID      CREATED         VIRTUAL SIZE
-&lt;none&gt;      &lt;none&gt;  sha256:0d31d  30 seconds ago  245.8 MB</code></pre></div>
+&lt;none&gt;      &lt;none&gt;  sha256:0d31d  30 seconds ago  245.8 MB
+</code></pre></div>
 <p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/docker-hub-after.png" layout="responsive" width="1448" height="146"></amp-img></p>
 
 <h2 id="test-the-docker-image">Test the Docker Image</h2>
@@ -172,14 +185,17 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
 
 <p>I wrote spec for the Todo app like this:</p>
 <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
 <span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">8000</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
 <span class="k">end</span>
+
 <span class="n">describe</span> <span class="n">command</span><span class="p">(</span><span class="s1">'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/'</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:exit_status</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">eq</span> <span class="mi">0</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'HTTP/1.1 200 OK'</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;h1&gt;Listing Todos&lt;/h1&gt;'</span> <span class="p">}</span>
 <span class="k">end</span>
+
 <span class="mi">1</span><span class="p">.</span><span class="nf">upto</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span><span class="o">|</span><span class="n">n</span><span class="o">|</span>
   <span class="n">describe</span> <span class="n">command</span><span class="p">(</span><span class="s2">"curl -i -s -H </span><span class="se">\'</span><span class="s2">Accept: text/html</span><span class="se">\'</span><span class="s2"> http://0.0.0.0:8000/todos -d </span><span class="se">\'</span><span class="s2">title=Test</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="se">\'</span><span class="s2">"</span><span class="p">)</span> <span class="k">do</span>
     <span class="n">its</span><span class="p">(</span><span class="ss">:exit_status</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">eq</span> <span class="mi">0</span> <span class="p">}</span>
@@ -187,6 +203,7 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
     <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'Location: /todos'</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
+
 <span class="n">describe</span> <span class="n">command</span><span class="p">(</span><span class="s1">'curl -i -s -H \'Accept: text/html\' http://0.0.0.0:8000/todos'</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:exit_status</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">eq</span> <span class="mi">0</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'HTTP/1.1 200 OK'</span> <span class="p">}</span>
@@ -195,14 +212,16 @@ CMD .build/release/Swifton-TodoApp</code></pre></div>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;td&gt;Test2&lt;/td&gt;'</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;td&gt;&lt;a href="/todos/0"&gt;Show&lt;/a&gt;&lt;/td&gt;'</span> <span class="p">}</span>
   <span class="n">its</span><span class="p">(</span><span class="ss">:stdout</span><span class="p">)</span> <span class="p">{</span> <span class="n">is_expected</span><span class="p">.</span><span class="nf">to</span> <span class="n">contain</span> <span class="s1">'&lt;td&gt;&lt;a href="/todos/1"&gt;Show&lt;/a&gt;&lt;/td&gt;'</span> <span class="p">}</span>
-<span class="k">end</span></code></pre></div>
+<span class="k">end</span>
+</code></pre></div>
 <p><amp-img src="/images/2016-03-04-swift-webapp-on-ecs/serverspec.png" layout="responsive" width="732" height="481"></amp-img></p>
 
 <h2 id="deploy-on-ecs">Deploy on ECS</h2>
 
 <p>Before deploying applications on ECS, we need to push the Docker Image on Docker Registry.</p>
 <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>docker tag <span class="nv">$DOCKER_REPO</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DOCKER_REPO</span><span class="k">}</span><span class="s2">:b</span><span class="k">${</span><span class="nv">CIRCLE_BUILD_NUM</span><span class="k">}</span><span class="s2">"</span>
-<span class="nv">$ </span>docker push <span class="s2">"</span><span class="k">${</span><span class="nv">DOCKER_REPO</span><span class="k">}</span><span class="s2">:b</span><span class="k">${</span><span class="nv">CIRCLE_BUILD_NUM</span><span class="k">}</span><span class="s2">"</span></code></pre></div>
+<span class="nv">$ </span>docker push <span class="s2">"</span><span class="k">${</span><span class="nv">DOCKER_REPO</span><span class="k">}</span><span class="s2">:b</span><span class="k">${</span><span class="nv">CIRCLE_BUILD_NUM</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div>
 <p>I won&rsquo;t describe about how to set up ECS environment this article. Please refer <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html">AWS ECS Documentation</a>.</p>
 
 <p>The <a href="https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh">deploy script</a> is executed in deploy phase of build process of the example project.</p>
