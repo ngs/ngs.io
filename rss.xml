@@ -450,7 +450,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
