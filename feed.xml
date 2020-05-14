@@ -5,16 +5,16 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2020-05-14T15:00:00+00:00</updated>
+  <updated>2020-05-14T15:00:00Z</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
   <entry>
-    <title>Released CI2Go for macOS</title>
+    <title>CI2Go for macOS</title>
     <link rel="alternate" href="https://ngs.io/2020/05/15/ci2go-maccatalyst/"/>
     <id>https://ngs.io/2020/05/15/ci2go-maccatalyst/</id>
-    <published>2020-05-14T15:00:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2020-05-14T15:00:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -114,8 +114,8 @@
     <title>Go Release Binary GitHub Action</title>
     <link rel="alternate" href="https://ngs.io/2019/02/08/go-release-action/"/>
     <id>https://ngs.io/2019/02/08/go-release-action/</id>
-    <published>2019-02-08T12:00:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2019-02-08T12:00:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -185,8 +185,8 @@
     <title>Import AWS credentials.csv to 1Password using aws1pif</title>
     <link rel="alternate" href="https://ngs.io/2019/02/07/aws1pif/"/>
     <id>https://ngs.io/2019/02/07/aws1pif/</id>
-    <published>2019-02-07T12:00:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2019-02-07T12:00:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -222,8 +222,8 @@
     <title>CI2Go Today widget support</title>
     <link rel="alternate" href="https://ngs.io/2018/07/08/ci2go/"/>
     <id>https://ngs.io/2018/07/08/ci2go/</id>
-    <published>2018-07-08T00:00:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2018-07-08T00:00:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -279,8 +279,8 @@
     <title>Coveralls plugin for fastlane</title>
     <link rel="alternate" href="https://ngs.io/2018/07/07/fastlane-plugin-coveralls/"/>
     <id>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</id>
-    <published>2018-07-07T14:59:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2018-07-07T14:59:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -338,8 +338,8 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
     <title>CI2Go version 2</title>
     <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
     <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
-    <published>2018-07-02T00:20:00+00:00</published>
-    <updated>2020-05-14T16:25:07+00:00</updated>
+    <published>2018-07-02T00:20:00Z</published>
+    <updated>2020-05-14T16:43:49+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
