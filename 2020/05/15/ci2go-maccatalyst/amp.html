@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Released CI2Go for macOS</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2020/05/15/ci2go-maccatalyst/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Released CI2Go for macOS</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2020-05-14T15:00:00+00:00">2020-05-14 15:00</time>
+      <meta itemprop="description" content="I've published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst."></meta>
+      <div class="hidden article-metadata"><meta content="I've published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="2020-05-15-ci2go-maccatalyst/main.jpg" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2020-05-14T15:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2020-05-15-ci2go-maccatalyst/main.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>I&rsquo;ve published <a href="https://ci2go.app">CI2Go</a> the CircleCI client for macOS by porting existing iOS app using <a href="https://developer.apple.com/mac-catalyst/">Mac Catalyst</a>.</p>
+
+<p>Both iOS and macOS versions are available on App Store in same URL.</p>
+
+<p><a href="https://itunes.apple.com/app/id940028427?mt=8"></a></p>
+
+<p>Product website: <a href="https://ci2go.app">ci2go.app</a></p>
+
+
+
+<p>New version for both iOS and macOS includes the following new features.</p>
+
+<h2 id="dark-mode">Dark Mode</h2>
+
+<p><amp-img src="/images/2020-05-15-ci2go-maccatalyst/dark-and-light.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>Changed color theme to support <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/dark-mode/">Dark Mode</a>.</p>
+
+<p>Color Scheme feature is no longer available.</p>
+
+<h2 id="ipad-keyboard-shortcuts">iPad Keyboard Shortcuts</h2>
+
+<p><amp-img src="/images/2020-05-15-ci2go-maccatalyst/shortcuts.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>iPad Keyboard shortcuts are supported from this update.</p>
+
+<p>You can use <kbd>&#x2318; [</kbd> to back navigation, <kbd>&#x2318; R</kbd> to reload and <kbd>&#8997; &#8679;　&#x2318; L</kbd> to logout.</p>
+
+<h2 id="wip-workflows">WIP: Workflows</h2>
+
+<p>CircleCI <a href="https://circleci.com/docs/2.0/workflows/">Workflows</a> are not yet completely supported but already in future milestones.</p>
+
+<h2 id="under-the-hood">Under The Hood</h2>
+
+<p><amp-img src="/images/2020-05-15-ci2go-maccatalyst/workflow.png" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>Of course, I&rsquo;ve setup Mac Catalyst app Continuous Delivery as well as iOS version.</p>
+
+<p>Also, I&rsquo;ve migrated package management from <a href="https://github.com/Carthage/Carthage">Carthage</a> to <a href="https://swift.org/package-manager/">Swift Package Manager</a>.</p>
+
+<p>These are managed in public <a href="https://github.com/ngs/ci2go">GitHub repository</a> so anyone can refer.</p>
+
+<p>Hope this could help other developers to try building the Mac Catalyst app on CircleCI like me.</p>
+
+<p>I did some workarounds like the follows.</p>
+
+<ul>
+<li>Swift Package build fails on macOS platform if containing Build Dependencies
+
+<ul>
+<li>Like: <code>multiple configured targets of &#39;KeychainAccess&#39; are being created for macOS</code>
+</li><li>Duplicated build target and removed them.
+</li><li>ref: <a href="https://forums.swift.org/t/swift-pm-app-in-xcode-11-beta-5-gets-four-my-mac-platform-options/27521">Swift PM app in Xcode 11 (beta 5) gets four “My Mac” platform options</a>
+</li></ul>
+</li><li><p><a href="https://docs.fastlane.tools/actions/match/">fastlane match</a> can not create Provisioning Profile for Mac Catalyst.</p>
+
+<ul>
+<li>Creates for Mac when providing <code>platform: &#39;macos&#39;</code>
+</li><li>Set <code>skip_provisioning_profiles</code> to <code>true</code>, added <code>.provisioningprofile</code> files to version control and copy them to <code>~/Library/MobileDevice/Provisioning Profiles/</code> on CI build step.
+</li></ul>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">match</span><span class="p">(</span>
+  <span class="ss">type: </span><span class="s1">'development'</span><span class="p">,</span>
+  <span class="ss">app_identifier: </span><span class="sx">%w(com.ci2go.ios.Circle)</span><span class="p">,</span>
+  <span class="ss">skip_provisioning_profiles: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">platform: </span><span class="s1">'macos'</span>
+<span class="p">)</span>
+</code></pre></div></li><li><p><a href="https://docs.fastlane.tools/actions/deliver/">fastlane deliver</a> rejects iOS app binary with <code>reject_if_possible: true</code> even if <code>platform</code> is set to <code>osx</code>.</p>
+
+<ul>
+<li>Set <code>reject_if_possible</code> to <code>false</code> in Mac platform settings and reject manually if I need to select new build for now.
+</li></ul>
+</li><li><p><a href="https://docs.fastlane.tools/actions/deliver/">fastlane deliver</a> fails submitting Mac app for review.</p>
+
+<ul>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/spaceship">Spaceship</a> fails handling App Store Connect API response.
+</li><li>ref: <a href="https://github.com/fastlane/fastlane/blob/feb8cc09c9976f7f460203cf9486fd28d31f6955/spaceship/lib/spaceship/tunes/tunes_client.rb#L1138">tunes_client.rb</a>
+</li><li><code>rescue</code> d the exception.
+</li></ul>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">rescue</span> <span class="no">NoMethodError</span> <span class="o">=&gt;</span> <span class="n">e</span>
+  <span class="nb">puts</span> <span class="n">e</span>
+  <span class="k">raise</span> <span class="n">e</span> <span class="k">unless</span> <span class="n">e</span><span class="p">.</span><span class="nf">message</span> <span class="o">==</span> <span class="sx">%q(undefined method `fetch' for nil:NilClass)</span>
+  <span class="nb">puts</span> <span class="s2">"... Caught error, but omitting"</span>
+<span class="k">end</span>
+</code></pre></div></li></ul>
+
+<h2 id="become-a-sponsor">Become a sponsor</h2>
+
+<p>I&rsquo;ve publish my sponsors page on <a href="https://github.com/sponsors/ngs">GitHub Sponsors</a>. Please support me polishing CI2Go if you&rsquo;d like 🙇‍♂️</p>
+
+    </article>
+  </body>
+</html>

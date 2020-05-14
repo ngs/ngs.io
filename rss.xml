@@ -7,12 +7,88 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Fri, 08 Feb 2019 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 15:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Released CI2Go for macOS</title>
+      <link>https://ngs.io/2020/05/15/ci2go-maccatalyst/</link>
+      <guid>https://ngs.io/2020/05/15/ci2go-maccatalyst/</guid>
+      <pubDate>Thu, 14 May 2020 15:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.&lt;/p&gt;
+
+&lt;p&gt;Both iOS and macOS versions are available on App Store in same URL.&lt;/p&gt;&lt;p&gt;Product website: ci2go.app&lt;/p&gt;&lt;p&gt;New version for both iOS and macOS includes the following new features.&lt;/p&gt;
+
+&lt;h2&gt;Dark Mode&lt;/h2&gt;&lt;p&gt;Changed color theme to support Dark Mode.&lt;/p&gt;
+
+&lt;p&gt;Color Scheme feature is no longer available.&lt;/p&gt;
+
+&lt;h2&gt;iPad Keyboard Shortcuts&lt;/h2&gt;&lt;p&gt;iPad Keyboard shortcuts are supported from this update.&lt;/p&gt;
+
+&lt;p&gt;You can use ⌘ [ to back navigation, ⌘ R to reload and ⌥ ⇧　⌘ L to logout.&lt;/p&gt;
+
+&lt;h2&gt;WIP: Workflows&lt;/h2&gt;
+
+&lt;p&gt;CircleCI Workflows are not yet completely supported but already in future milestones.&lt;/p&gt;
+
+&lt;h2&gt;Under The Hood&lt;/h2&gt;&lt;p&gt;Of course, I’ve setup Mac Catalyst app Continuous Delivery as well as iOS version.&lt;/p&gt;
+
+&lt;p&gt;Also, I’ve migrated package management from Carthage to Swift Package Manager.&lt;/p&gt;
+
+&lt;p&gt;These are managed in public GitHub repository so anyone can refer.&lt;/p&gt;
+
+&lt;p&gt;Hope this could help other developers to try building the Mac Catalyst app on CircleCI like me.&lt;/p&gt;
+
+&lt;p&gt;I did some workarounds like the follows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Swift Package build fails on macOS platform if containing Build Dependencies
+
+&lt;ul&gt;
+&lt;li&gt;Like: multiple configured targets of 'KeychainAccess' are being created for macOS
+&lt;/li&gt;&lt;li&gt;Duplicated build target and removed them.
+&lt;/li&gt;&lt;li&gt;ref: Swift PM app in Xcode 11 (beta 5) gets four “My Mac” platform options
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;li&gt;&lt;p&gt;fastlane match can not create Provisioning Profile for Mac Catalyst.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creates for Mac when providing platform: 'macos'
+&lt;/li&gt;&lt;li&gt;Set skip_provisioning_profiles to true, added .provisioningprofile files to version control and copy them to ~/Library/MobileDevice/Provisioning Profiles/ on CI build step.
+&lt;/li&gt;&lt;/ul&gt;
+  match(
+  type: 'development',
+  app_identifier: %w(com.ci2go.ios.Circle),
+  skip_provisioning_profiles: true,
+  platform: 'macos'
+)
+  &lt;/li&gt;&lt;li&gt;&lt;p&gt;fastlane deliver rejects iOS app binary with reject_if_possible: true even if platform is set to osx.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set reject_if_possible to false in Mac platform settings and reject manually if I need to select new build for now.
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;li&gt;&lt;p&gt;fastlane deliver fails submitting Mac app for review.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spaceship fails handling App Store Connect API response.
+&lt;/li&gt;&lt;li&gt;ref: tunes_client.rb
+&lt;/li&gt;&lt;li&gt;rescue d the exception.
+&lt;/li&gt;&lt;/ul&gt;
+  rescue NoMethodError =&amp;gt; e
+  puts e
+  raise e unless e.message == %q(undefined method `fetch' for nil:NilClass)
+  puts "... Caught error, but omitting"
+end
+  &lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2&gt;Become a sponsor&lt;/h2&gt;
+
+&lt;p&gt;I’ve publish my sponsors page on GitHub Sponsors. Please support me polishing CI2Go if you’d like 🙇‍♂️&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Go Release Binary GitHub Action</title>
       <link>https://ngs.io/2019/02/08/go-release-action/</link>
       <guid>https://ngs.io/2019/02/08/go-release-action/</guid>
-      <pubDate>Fri, 08 Feb 2019 12:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Feb 2019 12:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Go Release Binary Action on GitHub Marketplace.&lt;/p&gt;
 
@@ -165,14 +241,14 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
 
 &lt;p&gt;Please send me issues if you have any.&lt;/p&gt;
 
-&lt;p&gt;Enjoy XCTesting &lt;/p&gt;
+&lt;p&gt;Enjoy XCTesting 👨‍💻&lt;/p&gt;
 </description>
     </item>
     <item>
       <title>CI2Go version 2</title>
       <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
       <guid>https://ngs.io/2018/07/02/ci2go-v2/</guid>
-      <pubDate>Mon, 02 Jul 2018 00:20:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:20:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released major updated version 2.0.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;V2 contains the following updates.&lt;/p&gt;&lt;h2&gt;iPhone X Support&lt;/h2&gt;&lt;p&gt;Started supporting iPhone X’s 5.8 inches screen.&lt;/p&gt;
 
@@ -227,7 +303,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
 
  1. Sign in with GitHub 
 
-&lt;p&gt;After visiting Wiplock, you’ll see the black Sign in with  button.&lt;/p&gt;
+&lt;p&gt;After visiting Wiplock, you’ll see the black Sign in with GitHub button.&lt;/p&gt;
 
 &lt;p&gt;Hit it and Authorize this app on the next screen.&lt;/p&gt;
 
@@ -297,7 +373,7 @@ docker run --name wiplock-redis -d redis
       <title>Testing Email Delivery in Nightwatch.js End to End test</title>
       <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
       <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
-      <pubDate>Thu, 08 Sep 2016 08:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
 
@@ -450,7 +526,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
@@ -496,25 +572,6 @@ wcBMA2GjYRB9O5DgA...(snip)
 &lt;p&gt;https://github.com/ngs/hubot-keybase/issues&lt;/p&gt;
 
 &lt;p&gt;Enjoy encrypting!&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Announcing CI2Go v1.3.0</title>
-      <link>https://ngs.io/2016/03/25/ci2go/</link>
-      <guid>https://ngs.io/2016/03/25/ci2go/</guid>
-      <pubDate>Fri, 25 Mar 2016 10:15:00 +0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve released v1.3.0 of CI2Go the @circleci client for iOS.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CI2Go on the App Store&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This update contains the following new features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rebuild without Cache
-&lt;/li&gt;&lt;li&gt;Browse Build Artifacts
-&lt;/li&gt;&lt;li&gt;View circle.yml
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;and fixes Realtime Build Log Updating was unavailable due to CircleCI’s Web Socket API update.&lt;/p&gt;
-
-&lt;p&gt;This version is still having realtime updating issue with Build List screen and will be fixed in next update.&lt;/p&gt;
 </description>
     </item>
   </channel>

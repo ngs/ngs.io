@@ -5,16 +5,117 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2019-02-08T12:00:00+00:00</updated>
+  <updated>2020-05-14T15:00:00+00:00</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
+  <entry>
+    <title>Released CI2Go for macOS</title>
+    <link rel="alternate" href="https://ngs.io/2020/05/15/ci2go-maccatalyst/"/>
+    <id>https://ngs.io/2020/05/15/ci2go-maccatalyst/</id>
+    <published>2020-05-14T15:00:00+00:00</published>
+    <updated>2020-05-14T16:25:07+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/main.jpg" alt="Main" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve published &lt;a href="https://ci2go.app"&gt;CI2Go&lt;/a&gt; the CircleCI client for macOS by porting existing iOS app using &lt;a href="https://developer.apple.com/mac-catalyst/"&gt;Mac Catalyst&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Both iOS and macOS versions are available on App Store in same URL.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="Appstore" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Product website: &lt;a href="https://ci2go.app"&gt;ci2go.app&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;New version for both iOS and macOS includes the following new features.&lt;/p&gt;
+
+&lt;h2 id="dark-mode"&gt;Dark Mode&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/dark-and-light.jpg" alt="Dark and light" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Changed color theme to support &lt;a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/dark-mode/"&gt;Dark Mode&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Color Scheme feature is no longer available.&lt;/p&gt;
+
+&lt;h2 id="ipad-keyboard-shortcuts"&gt;iPad Keyboard Shortcuts&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/shortcuts.png" alt="Shortcuts" /&gt;&lt;/p&gt;
+
+&lt;p&gt;iPad Keyboard shortcuts are supported from this update.&lt;/p&gt;
+
+&lt;p&gt;You can use &lt;kbd&gt;&amp;#x2318; [&lt;/kbd&gt; to back navigation, &lt;kbd&gt;&amp;#x2318; R&lt;/kbd&gt; to reload and &lt;kbd&gt;&amp;#8997; &amp;#8679;　&amp;#x2318; L&lt;/kbd&gt; to logout.&lt;/p&gt;
+
+&lt;h2 id="wip-workflows"&gt;WIP: Workflows&lt;/h2&gt;
+
+&lt;p&gt;CircleCI &lt;a href="https://circleci.com/docs/2.0/workflows/"&gt;Workflows&lt;/a&gt; are not yet completely supported but already in future milestones.&lt;/p&gt;
+
+&lt;h2 id="under-the-hood"&gt;Under The Hood&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/workflow.png" alt="Workflow" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, I&amp;rsquo;ve setup Mac Catalyst app Continuous Delivery as well as iOS version.&lt;/p&gt;
+
+&lt;p&gt;Also, I&amp;rsquo;ve migrated package management from &lt;a href="https://github.com/Carthage/Carthage"&gt;Carthage&lt;/a&gt; to &lt;a href="https://swift.org/package-manager/"&gt;Swift Package Manager&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;These are managed in public &lt;a href="https://github.com/ngs/ci2go"&gt;GitHub repository&lt;/a&gt; so anyone can refer.&lt;/p&gt;
+
+&lt;p&gt;Hope this could help other developers to try building the Mac Catalyst app on CircleCI like me.&lt;/p&gt;
+
+&lt;p&gt;I did some workarounds like the follows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Swift Package build fails on macOS platform if containing Build Dependencies
+
+&lt;ul&gt;
+&lt;li&gt;Like: &lt;code&gt;multiple configured targets of &amp;#39;KeychainAccess&amp;#39; are being created for macOS&lt;/code&gt;
+&lt;/li&gt;&lt;li&gt;Duplicated build target and removed them.
+&lt;/li&gt;&lt;li&gt;ref: &lt;a href="https://forums.swift.org/t/swift-pm-app-in-xcode-11-beta-5-gets-four-my-mac-platform-options/27521"&gt;Swift PM app in Xcode 11 (beta 5) gets four “My Mac” platform options&lt;/a&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.fastlane.tools/actions/match/"&gt;fastlane match&lt;/a&gt; can not create Provisioning Profile for Mac Catalyst.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creates for Mac when providing &lt;code&gt;platform: &amp;#39;macos&amp;#39;&lt;/code&gt;
+&lt;/li&gt;&lt;li&gt;Set &lt;code&gt;skip_provisioning_profiles&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;, added &lt;code&gt;.provisioningprofile&lt;/code&gt; files to version control and copy them to &lt;code&gt;~/Library/MobileDevice/Provisioning Profiles/&lt;/code&gt; on CI build step.
+&lt;/li&gt;&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+  &lt;span class="ss"&gt;type: &lt;/span&gt;&lt;span class="s1"&gt;'development'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="ss"&gt;app_identifier: &lt;/span&gt;&lt;span class="sx"&gt;%w(com.ci2go.ios.Circle)&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="ss"&gt;skip_provisioning_profiles: &lt;/span&gt;&lt;span class="kp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="ss"&gt;platform: &lt;/span&gt;&lt;span class="s1"&gt;'macos'&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.fastlane.tools/actions/deliver/"&gt;fastlane deliver&lt;/a&gt; rejects iOS app binary with &lt;code&gt;reject_if_possible: true&lt;/code&gt; even if &lt;code&gt;platform&lt;/code&gt; is set to &lt;code&gt;osx&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set &lt;code&gt;reject_if_possible&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; in Mac platform settings and reject manually if I need to select new build for now.
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.fastlane.tools/actions/deliver/"&gt;fastlane deliver&lt;/a&gt; fails submitting Mac app for review.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/fastlane/fastlane/tree/master/spaceship"&gt;Spaceship&lt;/a&gt; fails handling App Store Connect API response.
+&lt;/li&gt;&lt;li&gt;ref: &lt;a href="https://github.com/fastlane/fastlane/blob/feb8cc09c9976f7f460203cf9486fd28d31f6955/spaceship/lib/spaceship/tunes/tunes_client.rb#L1138"&gt;tunes_client.rb&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;code&gt;rescue&lt;/code&gt; d the exception.
+&lt;/li&gt;&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;rescue&lt;/span&gt; &lt;span class="no"&gt;NoMethodError&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+  &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;
+  &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="k"&gt;unless&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;message&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="sx"&gt;%q(undefined method `fetch' for nil:NilClass)&lt;/span&gt;
+  &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;"... Caught error, but omitting"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2 id="become-a-sponsor"&gt;Become a sponsor&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve publish my sponsors page on &lt;a href="https://github.com/sponsors/ngs"&gt;GitHub Sponsors&lt;/a&gt;. Please support me polishing CI2Go if you&amp;rsquo;d like 🙇‍♂️&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Go Release Binary GitHub Action</title>
     <link rel="alternate" href="https://ngs.io/2019/02/08/go-release-action/"/>
     <id>https://ngs.io/2019/02/08/go-release-action/</id>
     <published>2019-02-08T12:00:00+00:00</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
+    <updated>2020-05-14T16:25:07+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -84,8 +185,8 @@
     <title>Import AWS credentials.csv to 1Password using aws1pif</title>
     <link rel="alternate" href="https://ngs.io/2019/02/07/aws1pif/"/>
     <id>https://ngs.io/2019/02/07/aws1pif/</id>
-    <published>2019-02-07T12:00:00Z</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
+    <published>2019-02-07T12:00:00+00:00</published>
+    <updated>2020-05-14T16:25:07+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -121,8 +222,8 @@
     <title>CI2Go Today widget support</title>
     <link rel="alternate" href="https://ngs.io/2018/07/08/ci2go/"/>
     <id>https://ngs.io/2018/07/08/ci2go/</id>
-    <published>2018-07-08T00:00:00Z</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
+    <published>2018-07-08T00:00:00+00:00</published>
+    <updated>2020-05-14T16:25:07+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -178,8 +279,8 @@
     <title>Coveralls plugin for fastlane</title>
     <link rel="alternate" href="https://ngs.io/2018/07/07/fastlane-plugin-coveralls/"/>
     <id>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</id>
-    <published>2018-07-07T14:59:00Z</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
+    <published>2018-07-07T14:59:00+00:00</published>
+    <updated>2020-05-14T16:25:07+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -230,7 +331,7 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 
 &lt;p&gt;Please send me &lt;a href="https://github.com/ngs/fastlane-plugin-coveralls/issues"&gt;issues&lt;/a&gt; if you have any.&lt;/p&gt;
 
-&lt;p&gt;Enjoy XCTesting &lt;img alt="computer" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4bb.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/p&gt;
+&lt;p&gt;Enjoy XCTesting 👨‍💻&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -238,7 +339,7 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
     <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
     <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
     <published>2018-07-02T00:20:00+00:00</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
+    <updated>2020-05-14T16:25:07+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -293,119 +394,6 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 &lt;p&gt;Behaves more swift instead of dealing with offline data.&lt;/p&gt;
 
 &lt;p&gt;Send me &lt;a href="https://github.com/ngs/ci2go/issues/new"&gt;issues&lt;/a&gt; if you have any.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Wiplock - Protect main branch from in-progress branches</title>
-    <link rel="alternate" href="https://ngs.io/2016/09/23/wiplock/"/>
-    <id>https://ngs.io/2016/09/23/wiplock/</id>
-    <published>2016-09-22T17:00:00Z</published>
-    <updated>2020-01-16T16:01:21+00:00</updated>
-    <author>
-      <name>Atsushi Nagase</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/screen.gif" alt="Screen" /&gt;&lt;/p&gt;
-
-&lt;h2 id="tl-dr"&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;I released &lt;a href="https://wiplock.com"&gt;Wiplock&lt;/a&gt; that protects main branch from pull requests that contains &lt;code&gt;WIP&lt;/code&gt; in the title or incompleted tasks.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://wiplock.com"&gt;https://wiplock.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Wiplock is an OSS built with Go and React + Redux. Please take a look if you&amp;rsquo;re interested in.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ngs/wiplock"&gt;https://github.com/ngs/wiplock&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id="motivation"&gt;Motivation&lt;/h2&gt;
-
-&lt;p&gt;In our daily development flow, we send &lt;strong&gt;WIP pull requests&lt;/strong&gt; on GitHub before implementation was done.&lt;/p&gt;
-
-&lt;p&gt;Sometimes we mistakenly merge these pull requests before the tasks are completed or forget removing &lt;code&gt;WIP&lt;/code&gt; in the title that may confuse collaborators.&lt;/p&gt;
-
-&lt;p&gt;To prevent these kind of mis-operations, I&amp;rsquo;ve built an tiny web application called Wiplock.&lt;/p&gt;
-
-&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
-
-&lt;h3 id="1-sign-in-with-github"&gt;1. Sign in with GitHub&lt;/h3&gt;
-
-&lt;p&gt;After visiting &lt;a href="https://wiplock.com"&gt;Wiplock&lt;/a&gt;, you&amp;rsquo;ll see the black &lt;em&gt;Sign in with &lt;img alt="octocat" src="https://assets-cdn.github.com/images/icons/emoji/octocat.png?v5" style="width: 1em; vertical-align:middle" class="gemoji"&gt;&lt;/em&gt; button.&lt;/p&gt;
-
-&lt;p&gt;Hit it and Authorize this app on the next screen.&lt;/p&gt;
-
-&lt;p&gt;Make sure that organizations are granted that you want introducing Wiplock.&lt;/p&gt;
-
-&lt;h3 id="2-find-repository-and-turn-the-switch-on"&gt;2. Find repository and turn the switch on&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/switch.gif" alt="Switch" /&gt;&lt;/p&gt;
-
-&lt;p&gt;After you signed in with GitHub, your repositories will be listed in Wiplock.&lt;/p&gt;
-
-&lt;p&gt;Find repositories to introduce and turn the switch on.&lt;/p&gt;
-
-&lt;h3 id="3-check-that-works"&gt;3. Check that works&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/pending-status.png" alt="Pending status" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go to your repository and edit or create pull request to contain &lt;code&gt;WIP&lt;/code&gt; in the title.&lt;/p&gt;
-
-&lt;p&gt;Once you edit the title, Pull Request status would become &lt;em&gt;Pending&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id="4-turn-on-protect-branch"&gt;4. Turn on protect branch&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src="/images/2016-09-23-wiplock/protect-branch.png" alt="Protect branch" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go to &lt;code&gt;Settings &amp;gt; Branches&lt;/code&gt; of your repo, turn &lt;em&gt;Require branches to be up to date before merging&lt;/em&gt; checkbox on.&lt;/p&gt;
-
-&lt;h2 id="launch-your-own-wiplock"&gt;Launch your own Wiplock&lt;/h2&gt;
-
-&lt;p&gt;If you won&amp;rsquo;t like to give permission to applications managed by someone else, you can launch your own Wiplock on Heroku or Docker hosts.&lt;/p&gt;
-
-&lt;h3 id="pre-requirements"&gt;Pre-requirements&lt;/h3&gt;
-
-&lt;p&gt;You need to create your OAuth Application on GitHub.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/settings/applications/new"&gt;https://github.com/settings/applications/new&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="heroku"&gt;Heroku&lt;/h3&gt;
-
-&lt;p&gt;Just hit the Heroku Button on README of the repository.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/ngs/wiplock#heroku"&gt;https://github.com/ngs/wiplock#heroku&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="docker"&gt;Docker&lt;/h3&gt;
-
-&lt;p&gt;Redis server is required to launch on your host.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;rsquo;t have it yet, the Official Docker image will help you bootstrapping.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;docker pull redis
-docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock-redis &lt;span class="nt"&gt;-d&lt;/span&gt; redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Pull Wiplock Docker image.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;docker pull atsnngs/wiplock
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And run Wiplock by passing &lt;code&gt;REDIS_URL&lt;/code&gt; with running container name.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;docker run &lt;span class="nt"&gt;--name&lt;/span&gt; wiplock &lt;span class="nt"&gt;-p&lt;/span&gt; 8000:8000 &lt;span class="nt"&gt;-d&lt;/span&gt; &lt;span class="nt"&gt;--rm&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="nt"&gt;--link&lt;/span&gt; wiplock-redis:redis &lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="nt"&gt;-e&lt;/span&gt; &lt;span class="nv"&gt;GITHUB_CLIENT_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;GITHUB_CLIENT_ID&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="nt"&gt;-e&lt;/span&gt; &lt;span class="nv"&gt;GITHUB_CLIENT_SECRET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;GITHUB_CLIENT_SECRET&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="nt"&gt;-e&lt;/span&gt; &lt;span class="nv"&gt;SECRET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SECRET&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="nt"&gt;-e&lt;/span&gt; &lt;span class="nv"&gt;REDIS_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"redis://redis:6379"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  atsnngs/wiplock
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then you can see your Wiplock on your localhost.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id="milestones"&gt;Milestones&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Support locking pull requests labeled &lt;code&gt;in progress&lt;/code&gt;
-&lt;/li&gt;&lt;li&gt;Support customizing locking conditions using &lt;code&gt;.wiplock.yml&lt;/code&gt; on the repository root
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;I wish this could help your workflow safe, happy locking!&lt;/p&gt;
 </content>
   </entry>
 </feed>
