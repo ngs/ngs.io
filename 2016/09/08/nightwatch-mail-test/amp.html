@@ -56,22 +56,22 @@
 <span class="p">.</span><span class="nx">createEmailRoute</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span>
 <span class="c1">//</span>
 <span class="c1">// Fill in form</span>
-<span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="s1">'@form'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="s1">'@email'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">'@email'</span><span class="p">,</span> <span class="nx">email</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">'@submit'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="dl">'</span><span class="s1">@form</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">@email</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">@email</span><span class="dl">'</span><span class="p">,</span> <span class="nx">email</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="dl">'</span><span class="s1">@submit</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//</span>
 <span class="c1">// Navigate to completion screen</span>
-<span class="p">.</span><span class="nx">waitForElementNotPresent</span><span class="p">(</span><span class="s1">'@form'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">urlEquals</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s1">'almostfinished.html'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">waitForElementNotPresent</span><span class="p">(</span><span class="dl">'</span><span class="s1">@form</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">urlEquals</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">almostfinished.html</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//</span>
 <span class="c1">// Check Email with specified subject</span>
 <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span>
-  <span class="s1">'Hacker Newsletter: Please Confirm Subscription'</span><span class="p">)</span>
+  <span class="dl">'</span><span class="s1">Hacker Newsletter: Please Confirm Subscription</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">//</span>
 <span class="c1">// Check Email contains specified string in HTML body</span>
 <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailHTMLBodyContains</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span>
-  <span class="s1">'&lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u='</span><span class="p">)</span>
+  <span class="dl">'</span><span class="s1">&lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div>
 <p><a href="https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js">See full code</a>.</p>
 
@@ -159,10 +159,10 @@ npm <span class="nb">test</span>
 </code></pre></div>
 <p>You need to specify these paths in <a href="`nightwatch.json`%20by%20default">config file</a>.</p>
 <div class="highlight"><pre class="highlight javascript"><code><span class="p">{</span>
-  <span class="s2">"custom_commands_path"</span><span class="p">:</span> <span class="s2">"./lib/custom_commands"</span><span class="p">,</span>
-  <span class="s2">"custom_assertions_path"</span><span class="p">:</span> <span class="s2">"./lib/custom_assertions"</span><span class="p">,</span>
-  <span class="s2">"page_objects_path"</span><span class="p">:</span> <span class="s2">"./lib/page_objects"</span><span class="p">,</span>
-  <span class="s2">"globals_path"</span><span class="p">:</span> <span class="s2">"./lib/globals.js"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">custom_commands_path</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./lib/custom_commands</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">custom_assertions_path</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./lib/custom_assertions</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">page_objects_path</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./lib/page_objects</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">globals_path</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./lib/globals.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="c1">// snip ...</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -171,10 +171,10 @@ npm <span class="nb">test</span>
 <p>I added <code>receivedEmailHTMLBodyContains</code>, <code>receivedEmailSubjectContains</code>, <code>receivedEmailSubjectEquals</code> in this example project.</p>
 
 <p>If you want to add assertions for other field like <code>from_email</code> or <code>attachments</code>, you can implement by forking existing implementations. (See <a href="https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format">full list</a>)</p>
-<div class="highlight"><pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'nightwatch/lib/util/utils'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">nightwatch/lib/util/utils</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">assertion</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">DEFAULT_MSG</span> <span class="o">=</span> <span class="s1">'Testing if &lt;%s&gt; received with subject equals to "%s".'</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">DEFAULT_MSG</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Testing if &lt;%s&gt; received with subject equals to "%s".</span><span class="dl">'</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">msg</span> <span class="o">||</span> <span class="nx">util</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">DEFAULT_MSG</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">expected</span><span class="p">);</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">expected</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>

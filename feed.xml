@@ -5,7 +5,7 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2020-05-14T15:00:00+00:00</updated>
+  <updated>2020-05-14T15:00:00Z</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
@@ -13,18 +13,18 @@
     <title>CI2Go for macOS</title>
     <link rel="alternate" href="https://ngs.io/2020/05/15/ci2go-maccatalyst/"/>
     <id>https://ngs.io/2020/05/15/ci2go-maccatalyst/</id>
-    <published>2020-05-14T15:00:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <published>2020-05-14T15:00:00Z</published>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/main.jpg" alt="Main" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/main.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve published &lt;a href="https://ci2go.app"&gt;CI2Go&lt;/a&gt; the CircleCI client for macOS by porting existing iOS app using &lt;a href="https://developer.apple.com/mac-catalyst/"&gt;Mac Catalyst&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Both iOS and macOS versions are available on App Store in same URL.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="Appstore" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Product website: &lt;a href="https://ci2go.app"&gt;ci2go.app&lt;/a&gt;&lt;/p&gt;
 
@@ -34,7 +34,7 @@
 
 &lt;h2 id="dark-mode"&gt;Dark Mode&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/dark-and-light.jpg" alt="Dark and light" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/dark-and-light.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Changed color theme to support &lt;a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/dark-mode/"&gt;Dark Mode&lt;/a&gt;.&lt;/p&gt;
 
@@ -42,7 +42,7 @@
 
 &lt;h2 id="ipad-keyboard-shortcuts"&gt;iPad Keyboard Shortcuts&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/shortcuts.png" alt="Shortcuts" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/shortcuts.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;iPad Keyboard shortcuts are supported from this update.&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 
 &lt;h2 id="under-the-hood"&gt;Under The Hood&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/workflow.png" alt="Workflow" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2020-05-15-ci2go-maccatalyst/workflow.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Of course, I&amp;rsquo;ve setup Mac Catalyst app Continuous Delivery as well as iOS version.&lt;/p&gt;
 
@@ -115,11 +115,11 @@
     <link rel="alternate" href="https://ngs.io/2019/02/08/go-release-action/"/>
     <id>https://ngs.io/2019/02/08/go-release-action/</id>
     <published>2019-02-08T12:00:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2019-02-08-go-release-action/main.png" alt="Main" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2019-02-08-go-release-action/main.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve published Go Release Binary Action on GitHub Marketplace.&lt;/p&gt;
 
@@ -137,7 +137,7 @@
 
 &lt;h2 id="how-to-use"&gt;How to Use&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2019-02-08-go-release-action/release.png" alt="Release" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2019-02-08-go-release-action/release.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="https://github.com/ngs/aws1pif/releases/tag/v1.0.0"&gt;ngs/aws1pif@v1.0.0&lt;/a&gt;&lt;/p&gt;
 
@@ -185,12 +185,12 @@
     <title>Import AWS credentials.csv to 1Password using aws1pif</title>
     <link rel="alternate" href="https://ngs.io/2019/02/07/aws1pif/"/>
     <id>https://ngs.io/2019/02/07/aws1pif/</id>
-    <published>2019-02-07T12:00:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <published>2019-02-07T12:00:00Z</published>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2019-02-07-aws1pif/desktop.jpg" alt="Desktop" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2019-02-07-aws1pif/desktop.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;aws1pif&lt;/strong&gt;, a command line tool that converts AWS credentials.csv to 1Password .1pif file format&lt;/p&gt;
 
@@ -213,7 +213,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;1Password will launch when opening .1pif file and show confirmation dialog&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="/images/2019-02-07-aws1pif/import.jpg" alt="Import" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2019-02-07-aws1pif/import.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Currently CSV with multiple credentials is not supported.&lt;/p&gt;
 </content>
@@ -222,16 +222,16 @@
     <title>CI2Go Today widget support</title>
     <link rel="alternate" href="https://ngs.io/2018/07/08/ci2go/"/>
     <id>https://ngs.io/2018/07/08/ci2go/</id>
-    <published>2018-07-08T00:00:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <published>2018-07-08T00:00:00Z</published>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/main.jpg" alt="Main" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/main.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve just released version 2.1.0 of &lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;CI2Go&lt;/a&gt;, the &lt;a href="https://circleci.com"&gt;CircleCI&lt;/a&gt; client for iPhone and iPad.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="Appstore" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;v2.1.0 contains the following:&lt;/p&gt;
 
@@ -246,13 +246,13 @@
 
 &lt;h2 id="today-widget"&gt;Today widget&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/widget.jpg" alt="Widget" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/widget.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can add CI2Go widget to &lt;a href="https://support.apple.com/en-us/ht207122"&gt;Today&lt;/a&gt; view. This shows recent 5 builds of selected project/branch or your following projects.&lt;/p&gt;
 
 &lt;h2 id="ssh-connect"&gt;SSH connect&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/ssh.png" alt="Ssh" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/ssh.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;SSH&lt;/code&gt; section will be shown while running SSH enabled builds if you installed SSH client which supports &lt;code&gt;ssh://&lt;/code&gt; URI scheme such as Panic&amp;rsquo;s &lt;a href="https://panic.com/prompt/"&gt;Prompt&lt;/a&gt;.&lt;/p&gt;
 
@@ -260,7 +260,7 @@
 
 &lt;h2 id="delete-local-artifacts"&gt;Delete local artifacts&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/artifacts.png" alt="Artifacts" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-08-ci2go/artifacts.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can delete downloaded build artifacts from trash can icon which appears by swiping table rows left.&lt;/p&gt;
 
@@ -279,12 +279,12 @@
     <title>Coveralls plugin for fastlane</title>
     <link rel="alternate" href="https://ngs.io/2018/07/07/fastlane-plugin-coveralls/"/>
     <id>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</id>
-    <published>2018-07-07T14:59:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <published>2018-07-07T14:59:00Z</published>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-07-fastlane-plugin-coveralls/main.png" alt="Main" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-07-fastlane-plugin-coveralls/main.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve just published a &lt;a href="https://fastlane.tools/"&gt;fastlane&lt;/a&gt;&amp;nbsp;&lt;a href="https://github.com/ngs/fastlane-plugin-coveralls"&gt;plugin&lt;/a&gt; that sends Xcode code coverage to &lt;a href="https://coveralls.io/"&gt;Coveralls&lt;/a&gt; and its depending library &lt;a href="https://github.com/ngs/xccoveralls"&gt;xccoveralls&lt;/a&gt; that also works as standalone command line tool.&lt;/p&gt;
 
@@ -307,7 +307,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Make sure &lt;code&gt;Code Coverage&lt;/code&gt; checkbox is turned on for your test target.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-07-fastlane-plugin-coveralls/checkbox.png" alt="Checkbox" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-07-fastlane-plugin-coveralls/checkbox.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then you can send coverage data from &lt;code&gt;fastlane&lt;/code&gt; command&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;XCCOVERALLS_REPO_TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;... &lt;span class="c"&gt;# grab yours from Coveralls.io&lt;/span&gt;
@@ -339,15 +339,15 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
     <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
     <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
     <published>2018-07-02T00:20:00+00:00</published>
-    <updated>2020-05-29T22:57:44+00:00</updated>
+    <updated>2020-06-04T00:19:25+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/main.png" alt="Main" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/main.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve just released major updated version 2.0.0 of &lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;CI2Go&lt;/a&gt;, the &lt;a href="https://circleci.com"&gt;CircleCI&lt;/a&gt; client for iPhone and iPad.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="Appstore" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;V2 contains the following updates.&lt;/p&gt;
 
@@ -355,13 +355,13 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 
 &lt;h2 id="iphone-x-support"&gt;iPhone X Support&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/iphonex.png" alt="Iphonex" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/iphonex.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Started supporting iPhone X&amp;rsquo;s 5.8 inches screen.&lt;/p&gt;
 
 &lt;h2 id="single-sign-on-support"&gt;Single Sign-on Support&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/sso.gif" alt="Sso" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/sso.gif" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Update authentication flow to use Single Sign-on instead of Copy and Pasting API Tokens from CircleCI.&lt;/p&gt;
 
@@ -369,7 +369,7 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 
 &lt;h2 id="build-artifacts-browser"&gt;Build Artifacts Browser&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/artifacts.gif" alt="Artifacts" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/artifacts.gif" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Redesigned Build Artifacts Browser.&lt;/p&gt;
 
@@ -379,7 +379,7 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 
 &lt;h2 id="apple-watch-complications"&gt;Apple Watch Complications&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/watch.png" alt="Watch" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/watch.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Supported Apple Watch &lt;a href="https://support.apple.com/en-us/ht205536"&gt;Complications&lt;/a&gt;.&lt;/p&gt;
 
