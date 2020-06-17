@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ⚡ itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <title>Scrapmd - the Markdown formatted Webpage Scrapbook</title>
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://ngs.io/2020/06/17/scrapmd/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+      body {
+        background-color: white;
+        color: #404040;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+      amp-img {
+        background-color: gray;
+      }
+
+      .container {
+        padding: 0 8px;
+      }
+
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <h1 itemprop="headline">Scrapmd - the Markdown formatted Webpage Scrapbook</h1>
+      <h2 itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">Atsushi Nagase</span>
+      </h2>
+      <time itemprop="datePublished" datetime="2020-06-16T15:00:00+00:00">2020-06-16 15:00</time>
+      <meta itemprop="description" content="I’ve published initial version of Scrapmd."></meta>
+      <div class="hidden article-metadata"><meta content="I’ve published initial version of Scrapmd." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="2020-06-17-scrapmd/main.jpg" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2020-06-16T15:00:00" itemprop="dateModified" /></div>
+      <p><amp-img src="/images/2020-06-17-scrapmd/main.jpg" layout="responsive" width="992" height="525"></amp-img></p>
+
+<p>I’ve published initial version of <a href="https://scrapmd.app">Scrapmd</a>, an app that clips webpage content into iCloud Drive with Markdown formatted article body and embedded images.</p>
+
+<p><a href="https://apps.apple.com/app/id1517295689"></a></p>
+
+
+
+<h2 id="motivation">Motivation</h2>
+
+<p>I have used to gather webpage URLs and its content on Social Bookmarking Service (Like <a href="https://en.wikipedia.org/wiki/Delicious_(website)">del.icio.us</a> or <a href="https://b.hatena.ne.jp/">Hatena Bookmarks</a>), Self-hosted <a href="OSS%20bookmarking%20service,%20mine%20is%20[b.ngs.io]">Lobsteres</a>, Slack channels and Evernote.</p>
+
+<p>But I&rsquo;ve thought those are not quite reliable (some of those shut down) so I started building File System based Web Clipping application.</p>
+
+<h2 id="how-it-worked">How it worked</h2>
+
+<p><amp-img src="/images/2020-06-17-scrapmd/screen.gif" layout="responsive" width="820" height="568"></amp-img></p>
+
+<p><strong>Originally</strong>, the app was available to clip any webpage all around the World Wide Web.</p>
+
+<p>Clip from browser share menu, direct URL input or URL in users&rsquo; pasteboard.</p>
+
+<h2 id="app-store-rejection">App Store Rejection</h2>
+
+<p>First time I submitted the app, unfortunately, that was rejected due to the feature is conflicting legal property:</p>
+
+<blockquote>
+<p>Guideline 5.2.3 - Legal - Intellectual Property</p>
+
+<p>Your app allows users to save or download music, video, or other media content without authorization from the relevant third-party sources.</p>
+</blockquote>
+
+<p>ref: <a href="https://developer.apple.com/app-store/review/guidelines/#5.2.3">App Store Review Guidelines 5.2.3</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>So I changed this app to check webpages containing custom attribute that indicates allow Scrapmd to clip their content.</p>
+<div class="highlight"><pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">data-scrapmd-ok=</span><span class="s">"ok"</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>This was unintentional feature for usability but better than keep the app private for me.</p>
+
+<p>I will opt-in allowing full functionality <strong>PERSONALLY</strong>.</p>
+
+<h2 id="full-open-sourced">Full Open Sourced</h2>
+
+<p>The app and its backend API source code are hosted publicly on <a href="https://github.com/scrapmd">GitHub</a>.</p>
+
+<p>You can fork and build this app and use full feature personally like me.</p>
+
+<p>Feature proposals or pull requests are welcomed, fell free to send some.</p>
+
+<p>Happy Scrapping 🍢</p>
+
+    </article>
+  </body>
+</html>

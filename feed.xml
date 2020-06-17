@@ -5,16 +5,79 @@
   <id>https://ngs.io/</id>
   <link href="https://ngs.io/"/>
   <link href="https://ngs.io/feed.xml" rel="self"/>
-  <updated>2020-05-14T15:00:00+00:00</updated>
+  <updated>2020-06-16T15:00:00+00:00</updated>
   <author>
     <name>Atsushi Nagase</name>
   </author>
+  <entry>
+    <title>Scrapmd - the Markdown formatted Webpage Scrapbook</title>
+    <link rel="alternate" href="https://ngs.io/2020/06/17/scrapmd/"/>
+    <id>https://ngs.io/2020/06/17/scrapmd/</id>
+    <published>2020-06-16T15:00:00+00:00</published>
+    <updated>2020-06-17T08:22:12+00:00</updated>
+    <author>
+      <name>Atsushi Nagase</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/images/2020-06-17-scrapmd/main.jpg" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve published initial version of &lt;a href="https://scrapmd.app"&gt;Scrapmd&lt;/a&gt;, an app that clips webpage content into iCloud Drive with Markdown formatted article body and embedded images.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://apps.apple.com/app/id1517295689"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="motivation"&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;I have used to gather webpage URLs and its content on Social Bookmarking Service (Like &lt;a href="https://en.wikipedia.org/wiki/Delicious_(website)"&gt;del.icio.us&lt;/a&gt; or &lt;a href="https://b.hatena.ne.jp/"&gt;Hatena Bookmarks&lt;/a&gt;), Self-hosted &lt;a href="OSS%20bookmarking%20service,%20mine%20is%20[b.ngs.io]"&gt;Lobsteres&lt;/a&gt;, Slack channels and Evernote.&lt;/p&gt;
+
+&lt;p&gt;But I&amp;rsquo;ve thought those are not quite reliable (some of those shut down) so I started building File System based Web Clipping application.&lt;/p&gt;
+
+&lt;h2 id="how-it-worked"&gt;How it worked&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/images/2020-06-17-scrapmd/screen.gif" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Originally&lt;/strong&gt;, the app was available to clip any webpage all around the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;Clip from browser share menu, direct URL input or URL in users&amp;rsquo; pasteboard.&lt;/p&gt;
+
+&lt;h2 id="app-store-rejection"&gt;App Store Rejection&lt;/h2&gt;
+
+&lt;p&gt;First time I submitted the app, unfortunately, that was rejected due to the feature is conflicting legal property:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Guideline 5.2.3 - Legal - Intellectual Property&lt;/p&gt;
+
+&lt;p&gt;Your app allows users to save or download music, video, or other media content without authorization from the relevant third-party sources.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ref: &lt;a href="https://developer.apple.com/app-store/review/guidelines/#5.2.3"&gt;App Store Review Guidelines 5.2.3&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;So I changed this app to check webpages containing custom attribute that indicates allow Scrapmd to clip their content.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight html"&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;data-scrapmd-ok=&lt;/span&gt;&lt;span class="s"&gt;"ok"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This was unintentional feature for usability but better than keep the app private for me.&lt;/p&gt;
+
+&lt;p&gt;I will opt-in allowing full functionality &lt;strong&gt;PERSONALLY&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id="full-open-sourced"&gt;Full Open Sourced&lt;/h2&gt;
+
+&lt;p&gt;The app and its backend API source code are hosted publicly on &lt;a href="https://github.com/scrapmd"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can fork and build this app and use full feature personally like me.&lt;/p&gt;
+
+&lt;p&gt;Feature proposals or pull requests are welcomed, fell free to send some.&lt;/p&gt;
+
+&lt;p&gt;Happy Scrapping 🍢&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>CI2Go for macOS</title>
     <link rel="alternate" href="https://ngs.io/2020/05/15/ci2go-maccatalyst/"/>
     <id>https://ngs.io/2020/05/15/ci2go-maccatalyst/</id>
     <published>2020-05-14T15:00:00+00:00</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
+    <updated>2020-06-17T08:22:12+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -114,8 +177,8 @@
     <title>Go Release Binary GitHub Action</title>
     <link rel="alternate" href="https://ngs.io/2019/02/08/go-release-action/"/>
     <id>https://ngs.io/2019/02/08/go-release-action/</id>
-    <published>2019-02-08T12:00:00Z</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
+    <published>2019-02-08T12:00:00+00:00</published>
+    <updated>2020-06-17T08:22:12+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -186,7 +249,7 @@
     <link rel="alternate" href="https://ngs.io/2019/02/07/aws1pif/"/>
     <id>https://ngs.io/2019/02/07/aws1pif/</id>
     <published>2019-02-07T12:00:00+00:00</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
+    <updated>2020-06-17T08:22:12+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -222,8 +285,8 @@
     <title>CI2Go Today widget support</title>
     <link rel="alternate" href="https://ngs.io/2018/07/08/ci2go/"/>
     <id>https://ngs.io/2018/07/08/ci2go/</id>
-    <published>2018-07-08T00:00:00Z</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
+    <published>2018-07-08T00:00:00+00:00</published>
+    <updated>2020-06-17T08:22:12+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -279,8 +342,8 @@
     <title>Coveralls plugin for fastlane</title>
     <link rel="alternate" href="https://ngs.io/2018/07/07/fastlane-plugin-coveralls/"/>
     <id>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</id>
-    <published>2018-07-07T14:59:00Z</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
+    <published>2018-07-07T14:59:00+00:00</published>
+    <updated>2020-06-17T08:22:12+00:00</updated>
     <author>
       <name>Atsushi Nagase</name>
     </author>
@@ -332,68 +395,6 @@ bundle &lt;span class="nb"&gt;exec &lt;/span&gt;fastlane send_coveralls
 &lt;p&gt;Please send me &lt;a href="https://github.com/ngs/fastlane-plugin-coveralls/issues"&gt;issues&lt;/a&gt; if you have any.&lt;/p&gt;
 
 &lt;p&gt;Enjoy XCTesting 👨‍💻&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>CI2Go version 2</title>
-    <link rel="alternate" href="https://ngs.io/2018/07/02/ci2go-v2/"/>
-    <id>https://ngs.io/2018/07/02/ci2go-v2/</id>
-    <published>2018-07-02T00:20:00Z</published>
-    <updated>2020-06-14T23:23:03+00:00</updated>
-    <author>
-      <name>Atsushi Nagase</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/main.png" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve just released major updated version 2.0.0 of &lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;CI2Go&lt;/a&gt;, the &lt;a href="https://circleci.com"&gt;CircleCI&lt;/a&gt; client for iPhone and iPad.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://itunes.apple.com/app/id940028427?mt=8"&gt;&lt;img src="/images/appstore-5eb1a238.svg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;V2 contains the following updates.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id="iphone-x-support"&gt;iPhone X Support&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/iphonex.png" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Started supporting iPhone X&amp;rsquo;s 5.8 inches screen.&lt;/p&gt;
-
-&lt;h2 id="single-sign-on-support"&gt;Single Sign-on Support&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/sso.gif" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Update authentication flow to use Single Sign-on instead of Copy and Pasting API Tokens from CircleCI.&lt;/p&gt;
-
-&lt;p&gt;This creates &lt;a href="https://circleci.com/docs/2.0/managing-api-tokens/"&gt;Personal API Token&lt;/a&gt; internally.&lt;/p&gt;
-
-&lt;h2 id="build-artifacts-browser"&gt;Build Artifacts Browser&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/artifacts.gif" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Redesigned Build Artifacts Browser.&lt;/p&gt;
-
-&lt;p&gt;You can browse artifacts more quickly without waiting for downloading entire files.&lt;/p&gt;
-
-&lt;p&gt;This app starts downloading when you tried to view file and continues downloading in background.&lt;/p&gt;
-
-&lt;h2 id="apple-watch-complications"&gt;Apple Watch Complications&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src="/images/2018-07-02-ci2go-v2/watch.png" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Supported Apple Watch &lt;a href="https://support.apple.com/en-us/ht205536"&gt;Complications&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can add your build status in your watch face.&lt;/p&gt;
-
-&lt;p&gt;Due to watchOS API limitation, this does not update information realtime.&lt;/p&gt;
-
-&lt;h2 id="performance-improvement"&gt;Performance improvement&lt;/h2&gt;
-
-&lt;p&gt;In this version, I&amp;rsquo;ve redesigned entire implementation from scratch.&lt;/p&gt;
-
-&lt;p&gt;Behaves more swift instead of dealing with offline data.&lt;/p&gt;
-
-&lt;p&gt;Send me &lt;a href="https://github.com/ngs/ci2go/issues/new"&gt;issues&lt;/a&gt; if you have any.&lt;/p&gt;
 </content>
   </entry>
 </feed>

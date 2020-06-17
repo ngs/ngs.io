@@ -7,12 +7,60 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Thu, 14 May 2020 15:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 15:00:00 -0000</lastBuildDate>
+    <item>
+      <title>Scrapmd - the Markdown formatted Webpage Scrapbook</title>
+      <link>https://ngs.io/2020/06/17/scrapmd/</link>
+      <guid>https://ngs.io/2020/06/17/scrapmd/</guid>
+      <pubDate>Tue, 16 Jun 2020 15:00:00 -0000</pubDate>
+      <author>a@ngs.io (Atsushi Nagase)</author>
+      <description>&lt;p&gt;I’ve published initial version of Scrapmd, an app that clips webpage content into iCloud Drive with Markdown formatted article body and embedded images.&lt;/p&gt;&lt;h2&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;I have used to gather webpage URLs and its content on Social Bookmarking Service (Like del.icio.us or Hatena Bookmarks), Self-hosted Lobsteres, Slack channels and Evernote.&lt;/p&gt;
+
+&lt;p&gt;But I’ve thought those are not quite reliable (some of those shut down) so I started building File System based Web Clipping application.&lt;/p&gt;
+
+&lt;h2&gt;How it worked&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Originally&lt;/strong&gt;, the app was available to clip any webpage all around the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;Clip from browser share menu, direct URL input or URL in users’ pasteboard.&lt;/p&gt;
+
+&lt;h2&gt;App Store Rejection&lt;/h2&gt;
+
+&lt;p&gt;First time I submitted the app, unfortunately, that was rejected due to the feature is conflicting legal property:&lt;/p&gt;
+
+ 
+&lt;p&gt;Guideline 5.2.3 - Legal - Intellectual Property&lt;/p&gt;
+
+&lt;p&gt;Your app allows users to save or download music, video, or other media content without authorization from the relevant third-party sources.&lt;/p&gt;
+ 
+
+&lt;p&gt;ref: App Store Review Guidelines 5.2.3&lt;/p&gt;
+
+&lt;h2&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;So I changed this app to check webpages containing custom attribute that indicates allow Scrapmd to clip their content.&lt;/p&gt;
+  &amp;lt;div data-scrapmd-ok="ok"&amp;gt;
+  
+&lt;p&gt;This was unintentional feature for usability but better than keep the app private for me.&lt;/p&gt;
+
+&lt;p&gt;I will opt-in allowing full functionality &lt;strong&gt;PERSONALLY&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Full Open Sourced&lt;/h2&gt;
+
+&lt;p&gt;The app and its backend API source code are hosted publicly on GitHub.&lt;/p&gt;
+
+&lt;p&gt;You can fork and build this app and use full feature personally like me.&lt;/p&gt;
+
+&lt;p&gt;Feature proposals or pull requests are welcomed, fell free to send some.&lt;/p&gt;
+
+&lt;p&gt;Happy Scrapping 🍢&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>CI2Go for macOS</title>
       <link>https://ngs.io/2020/05/15/ci2go-maccatalyst/</link>
       <guid>https://ngs.io/2020/05/15/ci2go-maccatalyst/</guid>
-      <pubDate>Thu, 14 May 2020 15:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 May 2020 15:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.&lt;/p&gt;
 
@@ -146,7 +194,7 @@ action "release linux/amd64" {
       <title>Import AWS credentials.csv to 1Password using aws1pif</title>
       <link>https://ngs.io/2019/02/07/aws1pif/</link>
       <guid>https://ngs.io/2019/02/07/aws1pif/</guid>
-      <pubDate>Thu, 07 Feb 2019 12:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 Feb 2019 12:00:00 -0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just open-sourced &lt;strong&gt;aws1pif&lt;/strong&gt;, a command line tool that converts AWS credentials.csv to 1Password .1pif file format&lt;/p&gt;
 
@@ -534,45 +582,6 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
   npm search hyperterm-tomorrow
 $EDITOR ~/.hyperterm.js
   &lt;h2&gt;hyperterm-tomorrow&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-blue&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-bright&lt;/h2&gt;&lt;h2&gt;hyperterm-tomorrow-night-eighties&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>PGP encrypted messages for Keybase users in our chat rooms</title>
-      <link>https://ngs.io/2016/05/14/hubot-keybase/</link>
-      <guid>https://ngs.io/2016/05/14/hubot-keybase/</guid>
-      <pubDate>Fri, 13 May 2016 22:45:00 -0000</pubDate>
-      <author>a@ngs.io (Atsushi Nagase)</author>
-      <description>&lt;p&gt;I’ve released &lt;strong&gt;hubot-keybase&lt;/strong&gt;, a Hubot script to encrypt messages for Keybase users.&lt;/p&gt;
-
-&lt;p&gt;ref: &lt;strong&gt;ngs/hubot-keybase on GitHub&lt;/strong&gt;&lt;/p&gt;&lt;h2&gt;How to use&lt;/h2&gt;
-
-&lt;p&gt;When you type message in your chat room like:&lt;/p&gt;
-  hubot keybase encrypt:ngs Hi there!
-#                     ^ Keybase username!
-  
-&lt;p&gt;Hubot replies PGP encrypted message using public key for specified user.&lt;/p&gt;
-  -----BEGIN PGP MESSAGE-----
-Version: OpenPGP.js v2.3.0
-Comment: http://openpgpjs.org
-
-wcBMA2GjYRB9O5DgA...(snip)
------END PGP MESSAGE-----
-  
-&lt;h2&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;1. Add hubot-keybase to dependencies.&lt;/p&gt;
-  npm install --save hubot-keybase
-  
-&lt;p&gt;2. Update external-scripts.json&lt;/p&gt;
-  ["hubot-keybase"]
-  
-&lt;h2&gt;Feedbacks&lt;/h2&gt;
-
-&lt;p&gt;If you find some bugs or request, feel free to drop me an issue on GitHub repository or PRs are welcome :)&lt;/p&gt;
-
-&lt;p&gt;https://github.com/ngs/hubot-keybase/issues&lt;/p&gt;
-
-&lt;p&gt;Enjoy encrypting!&lt;/p&gt;
-</description>
     </item>
   </channel>
 </rss>
