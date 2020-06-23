@@ -7,12 +7,12 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Tue, 16 Jun 2020 15:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 15:00:00 +0000</lastBuildDate>
     <item>
       <title>Scrapmd - the Markdown formatted Webpage Scrapbook</title>
       <link>https://ngs.io/2020/06/17/scrapmd/</link>
       <guid>https://ngs.io/2020/06/17/scrapmd/</guid>
-      <pubDate>Tue, 16 Jun 2020 15:00:00 -0000</pubDate>
+      <pubDate>Tue, 16 Jun 2020 15:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published initial version of Scrapmd, an app that clips webpage content into iCloud Drive with Markdown formatted article body and embedded images.&lt;/p&gt;&lt;h2&gt;Motivation&lt;/h2&gt;
 
@@ -60,7 +60,7 @@
       <title>CI2Go for macOS</title>
       <link>https://ngs.io/2020/05/15/ci2go-maccatalyst/</link>
       <guid>https://ngs.io/2020/05/15/ci2go-maccatalyst/</guid>
-      <pubDate>Thu, 14 May 2020 15:00:00 -0000</pubDate>
+      <pubDate>Thu, 14 May 2020 15:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.&lt;/p&gt;
 
@@ -136,7 +136,7 @@ end
       <title>Go Release Binary GitHub Action</title>
       <link>https://ngs.io/2019/02/08/go-release-action/</link>
       <guid>https://ngs.io/2019/02/08/go-release-action/</guid>
-      <pubDate>Fri, 08 Feb 2019 12:00:00 -0000</pubDate>
+      <pubDate>Fri, 08 Feb 2019 12:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Go Release Binary Action on GitHub Marketplace.&lt;/p&gt;
 
@@ -194,7 +194,7 @@ action "release linux/amd64" {
       <title>Import AWS credentials.csv to 1Password using aws1pif</title>
       <link>https://ngs.io/2019/02/07/aws1pif/</link>
       <guid>https://ngs.io/2019/02/07/aws1pif/</guid>
-      <pubDate>Thu, 07 Feb 2019 12:00:00 -0000</pubDate>
+      <pubDate>Thu, 07 Feb 2019 12:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just open-sourced &lt;strong&gt;aws1pif&lt;/strong&gt;, a command line tool that converts AWS credentials.csv to 1Password .1pif file format&lt;/p&gt;
 
@@ -218,7 +218,7 @@ action "release linux/amd64" {
       <title>CI2Go Today widget support</title>
       <link>https://ngs.io/2018/07/08/ci2go/</link>
       <guid>https://ngs.io/2018/07/08/ci2go/</guid>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 -0000</pubDate>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released version 2.1.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;v2.1.0 contains the following:&lt;/p&gt;
 
@@ -250,7 +250,7 @@ action "release linux/amd64" {
       <title>Coveralls plugin for fastlane</title>
       <link>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</link>
       <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
-      <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
+      <pubDate>Sat, 07 Jul 2018 14:59:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just published a fastlane&amp;nbsp;plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
 
@@ -296,7 +296,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>CI2Go version 2</title>
       <link>https://ngs.io/2018/07/02/ci2go-v2/</link>
       <guid>https://ngs.io/2018/07/02/ci2go-v2/</guid>
-      <pubDate>Mon, 02 Jul 2018 00:20:00 -0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just released major updated version 2.0.0 of CI2Go, the CircleCI client for iPhone and iPad.&lt;/p&gt;&lt;p&gt;V2 contains the following updates.&lt;/p&gt;&lt;h2&gt;iPhone X Support&lt;/h2&gt;&lt;p&gt;Started supporting iPhone X’s 5.8 inches screen.&lt;/p&gt;
 
@@ -329,7 +329,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>Wiplock - Protect main branch from in-progress branches</title>
       <link>https://ngs.io/2016/09/23/wiplock/</link>
       <guid>https://ngs.io/2016/09/23/wiplock/</guid>
-      <pubDate>Thu, 22 Sep 2016 17:00:00 -0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 17:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -421,7 +421,7 @@ docker run --name wiplock-redis -d redis
       <title>Testing Email Delivery in Nightwatch.js End to End test</title>
       <link>https://ngs.io/2016/09/08/nightwatch-mail-test/</link>
       <guid>https://ngs.io/2016/09/08/nightwatch-mail-test/</guid>
-      <pubDate>Thu, 08 Sep 2016 08:00:00 -0000</pubDate>
+      <pubDate>Thu, 08 Sep 2016 08:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published an example Nightwatch.js End to End (E2E) testing project that contains Email delivery testing using Mandrill and RequestBin.&lt;/p&gt;
 
@@ -574,7 +574,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
