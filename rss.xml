@@ -7,12 +7,12 @@
     <language>en</language>
     <description>Hacking recipes in my life.</description>
     <link>https://ngs.io/</link>
-    <lastBuildDate>Tue, 16 Jun 2020 15:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 15:00:00 +0000</lastBuildDate>
     <item>
       <title>Scrapmd - the Markdown formatted Webpage Scrapbook</title>
       <link>https://ngs.io/2020/06/17/scrapmd/</link>
       <guid>https://ngs.io/2020/06/17/scrapmd/</guid>
-      <pubDate>Tue, 16 Jun 2020 15:00:00 -0000</pubDate>
+      <pubDate>Tue, 16 Jun 2020 15:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published initial version of Scrapmd, an app that clips webpage content into iCloud Drive with Markdown formatted article body and embedded images.&lt;/p&gt;&lt;h2&gt;Motivation&lt;/h2&gt;
 
@@ -60,7 +60,7 @@
       <title>CI2Go for macOS</title>
       <link>https://ngs.io/2020/05/15/ci2go-maccatalyst/</link>
       <guid>https://ngs.io/2020/05/15/ci2go-maccatalyst/</guid>
-      <pubDate>Thu, 14 May 2020 15:00:00 -0000</pubDate>
+      <pubDate>Thu, 14 May 2020 15:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.&lt;/p&gt;
 
@@ -250,7 +250,7 @@ action "release linux/amd64" {
       <title>Coveralls plugin for fastlane</title>
       <link>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</link>
       <guid>https://ngs.io/2018/07/07/fastlane-plugin-coveralls/</guid>
-      <pubDate>Sat, 07 Jul 2018 14:59:00 -0000</pubDate>
+      <pubDate>Sat, 07 Jul 2018 14:59:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve just published a fastlane&amp;nbsp;plugin that sends Xcode code coverage to Coveralls and its depending library xccoveralls that also works as standalone command line tool.&lt;/p&gt;
 
@@ -329,7 +329,7 @@ $ xcrun xccov view --file /Users/ngs/src/CI2Go/AppDelegate.swift \
       <title>Wiplock - Protect main branch from in-progress branches</title>
       <link>https://ngs.io/2016/09/23/wiplock/</link>
       <guid>https://ngs.io/2016/09/23/wiplock/</guid>
-      <pubDate>Thu, 22 Sep 2016 17:00:00 -0000</pubDate>
+      <pubDate>Thu, 22 Sep 2016 17:00:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;h2&gt;TL;DR&lt;/h2&gt;
 
@@ -574,7 +574,7 @@ exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) 
       <title>Hyperterm Tomorrow Themes</title>
       <link>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</link>
       <guid>https://ngs.io/2016/07/17/hyperterm-tomorrow-themes/</guid>
-      <pubDate>Sun, 17 Jul 2016 04:20:00 -0000</pubDate>
+      <pubDate>Sun, 17 Jul 2016 04:20:00 +0000</pubDate>
       <author>a@ngs.io (Atsushi Nagase)</author>
       <description>&lt;p&gt;I’ve published Hyperterm themes based on Tomorrow Themes.&lt;/p&gt;
 
