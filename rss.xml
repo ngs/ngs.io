@@ -428,28 +428,33 @@ docker run --name wiplock-redis -d redis
 &lt;p&gt;&lt;strong&gt;ngs/nightwatch-mail-example on GitHub&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;This example project tests subscribing and unsubscribing Hacker News Letter user flow.&lt;/p&gt;&lt;p&gt;The test code is like this:&lt;/p&gt;
-  page.navigate()
-//
-// Create Mandrill Email Route
-.createEmailRoute(email)
-//
-// Fill in form
-.waitForElementVisible('@form')
-.clearValue('@email')
-.setValue('@email', email)
-.click('@submit')
-//
-// Navigate to completion screen
-.waitForElementNotPresent('@form')
-.assert.urlEquals(page.url + 'almostfinished.html')
-//
-// Check Email with specified subject
-.assert.receivedEmailSubjectEquals(email,
-  'Hacker Newsletter: Please Confirm Subscription')
-//
-// Check Email contains specified string in HTML body
-.assert.receivedEmailHTMLBodyContains(email,
-  '&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=')
+  page
+  .navigate()
+  //
+  // Create Mandrill Email Route
+  .createEmailRoute(email)
+  //
+  // Fill in form
+  .waitForElementVisible("@form")
+  .clearValue("@email")
+  .setValue("@email", email)
+  .click("@submit")
+  //
+  // Navigate to completion screen
+  .waitForElementNotPresent("@form")
+  .assert.urlEquals(page.url + "almostfinished.html")
+  //
+  // Check Email with specified subject
+  .assert.receivedEmailSubjectEquals(
+    email,
+    "Hacker Newsletter: Please Confirm Subscription"
+  )
+  //
+  // Check Email contains specified string in HTML body
+  .assert.receivedEmailHTMLBodyContains(
+    email,
+    '&amp;lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u='
+  );
   
 &lt;p&gt;See full code.&lt;/p&gt;
 
@@ -537,33 +542,38 @@ npm test
 &lt;p&gt;I added receivedEmailHTMLBodyContains, receivedEmailSubjectContains, receivedEmailSubjectEquals in this example project.&lt;/p&gt;
 
 &lt;p&gt;If you want to add assertions for other field like from_email or attachments, you can implement by forking existing implementations. (See full list)&lt;/p&gt;
-  const util = require('nightwatch/lib/util/utils');
+  const util = require("nightwatch/lib/util/utils");
 
-exports.assertion = function receivedEmailSubjectEquals(address, expected, msg) {
+exports.assertion = function receivedEmailSubjectEquals(
+  address,
+  expected,
+  msg
+) {
   const DEFAULT_MSG = 'Testing if &amp;lt;%s&amp;gt; received with subject equals to "%s".';
   this.message = msg || util.format(DEFAULT_MSG, address, expected);
 
-  this.expected = function() {
+  this.expected = function () {
     return expected;
   };
 
-  this.pass = function(value) {
+  this.pass = function (value) {
     const expected = this.expected();
-    return value.filter(function(email) {
-      return email.subject === expected;
-      // use indexOf(expected) !== -1 for *contains* implementation.
-    }).length &amp;gt; 0;
+    return (
+      value.filter(function (email) {
+        return email.subject === expected;
+        // use indexOf(expected) !== -1 for *contains* implementation.
+      }).length &amp;gt; 0
+    );
   };
 
-  this.value = function(result) {
+  this.value = function (result) {
     return result || [];
   };
 
-  this.command = function(callback) {
+  this.command = function (callback) {
     return this.api.checkEmails(address, callback);
   };
-
-}
+};
   
 &lt;p&gt;If you write some cool assertions in your project, please fork the repository and send me a Pull Request!&lt;/p&gt;
 

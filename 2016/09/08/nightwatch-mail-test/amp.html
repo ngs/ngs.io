@@ -41,7 +41,7 @@
       <div class="hidden article-metadata"><meta content="I've published an example Nightwatch.js E2E testing project that contains Email delivery testing using Mandrill and RequestBin." itemprop="headline" /><div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="2016-09-08-nightwatch-mail-test/og.png" itemprop="url" /><meta content="992" itemprop="width" /><meta content="525" itemprop="height" /></div><div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta content="Atsushi Nagase" itemprop="name" /><div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><meta content="https://ngs.io/images/amp-logo.png" itemprop="url" /><meta content="600" itemprop="width" /><meta content="60" itemprop="height" /></div></div><meta content="2016-09-08T08:00:00" itemprop="dateModified" /></div>
       <p><amp-img src="/images/2016-09-08-nightwatch-mail-test/screen.gif" layout="responsive" width="992" height="524"></amp-img></p>
 
-<p>I&rsquo;ve published an example <a href="http://nightwatchjs.org/">Nightwatch.js</a> End to End (E2E) testing project that contains Email delivery testing using <a href="https://mandrillapp.com/">Mandrill</a> and <a href="http://requestb.in/">RequestBin</a>.</p>
+<p>I&rsquo;ve published an example <a href="http://nightwatchjs.org/">Nightwatch.js</a> End to End (E2E) testing project that contains Email delivery testing using <a href="https://mandrillapp.com/">Mandrill</a> and <a href="https://requestbin.com/">RequestBin</a>.</p>
 
 <p><strong><a href="https://github.com/ngs/nightwatch-mail-example">ngs/nightwatch-mail-example on GitHub</a></strong></p>
 
@@ -50,28 +50,33 @@
 
 
 <p>The test code is like this:</p>
-<div class="highlight"><pre class="highlight javascript"><code><span class="nx">page</span><span class="p">.</span><span class="nx">navigate</span><span class="p">()</span>
-<span class="c1">//</span>
-<span class="c1">// Create Mandrill Email Route</span>
-<span class="p">.</span><span class="nx">createEmailRoute</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span>
-<span class="c1">//</span>
-<span class="c1">// Fill in form</span>
-<span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="dl">'</span><span class="s1">@form</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">@email</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">@email</span><span class="dl">'</span><span class="p">,</span> <span class="nx">email</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="dl">'</span><span class="s1">@submit</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">//</span>
-<span class="c1">// Navigate to completion screen</span>
-<span class="p">.</span><span class="nx">waitForElementNotPresent</span><span class="p">(</span><span class="dl">'</span><span class="s1">@form</span><span class="dl">'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">urlEquals</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">almostfinished.html</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">//</span>
-<span class="c1">// Check Email with specified subject</span>
-<span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">Hacker Newsletter: Please Confirm Subscription</span><span class="dl">'</span><span class="p">)</span>
-<span class="c1">//</span>
-<span class="c1">// Check Email contains specified string in HTML body</span>
-<span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailHTMLBodyContains</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">&lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=</span><span class="dl">'</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nx">page</span>
+  <span class="p">.</span><span class="nx">navigate</span><span class="p">()</span>
+  <span class="c1">//</span>
+  <span class="c1">// Create Mandrill Email Route</span>
+  <span class="p">.</span><span class="nx">createEmailRoute</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span>
+  <span class="c1">//</span>
+  <span class="c1">// Fill in form</span>
+  <span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="dl">"</span><span class="s2">@form</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">clearValue</span><span class="p">(</span><span class="dl">"</span><span class="s2">@email</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="dl">"</span><span class="s2">@email</span><span class="dl">"</span><span class="p">,</span> <span class="nx">email</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="dl">"</span><span class="s2">@submit</span><span class="dl">"</span><span class="p">)</span>
+  <span class="c1">//</span>
+  <span class="c1">// Navigate to completion screen</span>
+  <span class="p">.</span><span class="nx">waitForElementNotPresent</span><span class="p">(</span><span class="dl">"</span><span class="s2">@form</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">urlEquals</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">almostfinished.html</span><span class="dl">"</span><span class="p">)</span>
+  <span class="c1">//</span>
+  <span class="c1">// Check Email with specified subject</span>
+  <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span>
+    <span class="nx">email</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">Hacker Newsletter: Please Confirm Subscription</span><span class="dl">"</span>
+  <span class="p">)</span>
+  <span class="c1">//</span>
+  <span class="c1">// Check Email contains specified string in HTML body</span>
+  <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">receivedEmailHTMLBodyContains</span><span class="p">(</span>
+    <span class="nx">email</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">&lt;a class="button" href="https://hackernewsletter.us1.list-manage.com/subscribe/confirm?u=</span><span class="dl">'</span>
+  <span class="p">);</span>
 </code></pre></div>
 <p><a href="https://github.com/ngs/nightwatch-mail-example/blob/master/tests/hackernewsletter.js">See full code</a>.</p>
 
@@ -111,7 +116,7 @@
 
 <h3 id="3-optional-launch-your-requestbin">3. (Optional) Launch your RequestBin</h3>
 
-<p>Delivered Emails are shared with public users. If you mind sharing your application Emails for them, you can launch your own <a href="http://requestb.in/">RequestBin</a> on hosting services like <a href="https://www.heroku.com/">Heroku</a> or <a href="http://www.ibm.com/cloud-computing/bluemix/">IBM Bluexix</a> by deploying <a href="https://github.com/Runscope/requestbin">Open Sourced RequestBin</a>.</p>
+<p>Delivered Emails are shared with public users. If you mind sharing your application Emails for them, you can launch your own <a href="https://requestbin.com/">RequestBin</a> on hosting services like <a href="https://www.heroku.com/">Heroku</a> or <a href="http://www.ibm.com/cloud-computing/bluemix/">IBM Bluexix</a> by deploying <a href="https://github.com/Runscope/requestbin">Open Sourced RequestBin</a>.</p>
 <div class="highlight"><pre class="highlight shell"><code>git clone git://github.com/Runscope/requestbin.git
 <span class="nb">cd </span>requestbin
 
@@ -171,33 +176,38 @@ npm <span class="nb">test</span>
 <p>I added <code>receivedEmailHTMLBodyContains</code>, <code>receivedEmailSubjectContains</code>, <code>receivedEmailSubjectEquals</code> in this example project.</p>
 
 <p>If you want to add assertions for other field like <code>from_email</code> or <code>attachments</code>, you can implement by forking existing implementations. (See <a href="https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format">full list</a>)</p>
-<div class="highlight"><pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">nightwatch/lib/util/utils</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="kd">const</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">nightwatch/lib/util/utils</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="nx">exports</span><span class="p">.</span><span class="nx">assertion</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">assertion</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">receivedEmailSubjectEquals</span><span class="p">(</span>
+  <span class="nx">address</span><span class="p">,</span>
+  <span class="nx">expected</span><span class="p">,</span>
+  <span class="nx">msg</span>
+<span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">DEFAULT_MSG</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Testing if &lt;%s&gt; received with subject equals to "%s".</span><span class="dl">'</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">msg</span> <span class="o">||</span> <span class="nx">util</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">DEFAULT_MSG</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">expected</span><span class="p">);</span>
 
-  <span class="k">this</span><span class="p">.</span><span class="nx">expected</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">expected</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">expected</span><span class="p">;</span>
   <span class="p">};</span>
 
-  <span class="k">this</span><span class="p">.</span><span class="nx">pass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">pass</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">expected</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expected</span><span class="p">();</span>
-    <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">email</span><span class="p">.</span><span class="nx">subject</span> <span class="o">===</span> <span class="nx">expected</span><span class="p">;</span>
-      <span class="c1">// use indexOf(expected) !== -1 for *contains* implementation.</span>
-    <span class="p">}).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="nx">value</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">email</span><span class="p">.</span><span class="nx">subject</span> <span class="o">===</span> <span class="nx">expected</span><span class="p">;</span>
+        <span class="c1">// use indexOf(expected) !== -1 for *contains* implementation.</span>
+      <span class="p">}).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="p">);</span>
   <span class="p">};</span>
 
-  <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">result</span> <span class="o">||</span> <span class="p">[];</span>
   <span class="p">};</span>
 
-  <span class="k">this</span><span class="p">.</span><span class="nx">command</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">command</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">checkEmails</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
   <span class="p">};</span>
-
-<span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 <p>If you write some cool assertions in your project, please <a href="https://github.com/ngs/nightwatch-mail-example/fork">fork the repository</a> and send me a Pull Request!</p>
 
