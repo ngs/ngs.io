@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://ngs.io/2013/09/01/jquery-element-diff/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
@@ -758,37 +758,37 @@
   </url>
   <url>
     <loc>https://ngs.io/t/generator/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ngs.io/t/element/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ngs.io/t/diff/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ngs.io/t/jquery/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ngs.io/t/plugin/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ngs.io/t/bower/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1280,19 +1280,19 @@
   </url>
   <url>
     <loc>https://ngs.io/2013/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://ngs.io/2013/09/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://ngs.io/2013/09/01/</loc>
-    <lastmod>2013-09-01T03:00:00+00:00</lastmod>
+    <lastmod>2013-09-01T03:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.3</priority>
   </url>
