@@ -20,6 +20,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
   archive = "archives"
 
 [params]
+  googleAnalyticsID = "G-D8FYDEZWPK"
   author = "Atsushi Nagase"
   description = "Blog by Atsushi Nagase"
   defaultTheme = "auto"
