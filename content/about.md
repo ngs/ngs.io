@@ -22,7 +22,7 @@ Hello, I am a software developer based in Tokyo, Japan.
 
 I'm focusing on developing softwares for Desktop, Mobile and Web.
 
-Current positions are Co-Founder, CEO, Software Developer at [instance0, inc.], CTO at [Modelmap Co., Ltd.]. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
+Current positions are Co-Founder, CEO, Software Developer at [instance0, inc.], Software Engineer at [Life is Tech, Inc.]. Originally started my career as graphic designer, founded a small software house [LittleApps Inc.], experienced several startup companies from founding phase.
 
 I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 3 kids and 1 wife.
 
@@ -44,6 +44,8 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 * In September, 2017, joined CAMPFIRE, Inc., inducted as Chief Technology Officer, retired in June 2018.
 * In December, 2018, [Founded](https://ja.ngs.io/2019/02/01/instance0/) [instance0, inc.]
 * In February, 2019, [Joined](https://ja.ngs.io/2019/02/12/modelmap/) [Modelmap Co., Ltd.] as CTO.
+* In January, 2023, [Modelmap Co., Ltd.] closed.
+* In October, 2025, Joined [Life is Tech, Inc.] as a Software Engineer.
 
 ## Works
 
@@ -66,6 +68,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 
 ## Social
 
+* [Bluesky](https://bsky.app/profile/ngs.io)
 * [Twitter](https://twitter.com/ngs)
 * [Facebook](https://www.facebook.com/atsnngs)
 * [Instagram](https://www.instagram.com/ngs/)
@@ -138,4 +141,4 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 [CAMPFIRE, Inc.]: https://campfire.co.jp
 [instance0, inc.]: https://ins0.jp
 [Modelmap Co., Ltd.]: https://modelmap.co/
-[slack-book]: /2016/06/22/slack-book/
+[Life is Tech, Inc.]: https://lifeistech.co.jp/
