@@ -1,6 +1,8 @@
 ---
 title: About Atsushi Nagase
 description: About Atsushi Nagase, a software engineer.
+alternate: true
+hideReadingTime: true
 ogp:
   og:
     type: profile
@@ -9,7 +11,6 @@ ogp:
     last_name: Nagase
     username: ngs
     gender: male
-alternate: true
 ---
 
 # Atsushi Nagase
