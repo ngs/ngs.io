@@ -79,7 +79,7 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 ## Publications
 
 <div class="d-flex flex-items-start mb-3">
-  <img src="247x350.jpg" alt="Slack入門 [ChatOpsによるチーム開発の効率化]" class="mr-3 rounded" style="width: 126px">
+  <img src="/slack-book/247x350.jpg" alt="Slack入門 [ChatOpsによるチーム開発の効率化]" class="mr-3 rounded" style="width: 126px">
   <div>
     <strong><a href="https://ja.ngs.io/2016/06/22/slack-book/">Slack入門 [ChatOpsによるチーム開発の効率化]</a></strong><br>
     2016-06-28 Gijutsu-Hyoron Co., Ltd.
