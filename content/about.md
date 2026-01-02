@@ -13,10 +13,6 @@ ogp:
     gender: male
 ---
 
-# Atsushi Nagase
-
-長瀬 敦史
-
 ![Atsushi Nagase](https://www.gravatar.com/avatar/e10997c59685f5c742a63b3e3049d4fb.png?size=500)
 
 Hello, I am a software developer based in Tokyo, Japan.
