@@ -1,55 +1,60 @@
 baseURL = "https://ngs.io/"
+ignoreLogs = ['warning-goldmark-raw-html']
 languageCode = "en"
 title = "Atsushi Nagase"
-ignoreLogs = ['warning-goldmark-raw-html']
 
 [module]
-  [[module.imports]]
-    path = "go.ngs.io/hugo-primer-blog"
+[[module.imports]]
+path = "go.ngs.io/hugo-primer-blog"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
 
 [permalinks]
-  posts = "/:year/:month/:day/:slug/"
+posts = "/:year/:month/:day/:slug/"
 
 [taxonomies]
-  tag = "tags"
-  archive = "archives"
+archive = "archives"
+tag = "tags"
 
 [params]
-  googleAnalyticsID = "G-D8FYDEZWPK"
-  author = "Atsushi Nagase"
-  description = "Blog by Atsushi Nagase"
-  defaultTheme = "auto"
-  showReadingTime = true
-  showAuthor = true
+author = "Atsushi Nagase"
+defaultTheme = "auto"
+description = "Blog by Atsushi Nagase"
+googleAnalyticsID = "G-D8FYDEZWPK"
+showAuthor = true
+showReadingTime = true
 
 [[params.sidebarModules]]
-  partial = "links"
+partial = "links"
 
 [[params.sidebarModules]]
-  partial = "recentPosts"
+partial = "recentPosts"
 
 [[params.sidebarModules]]
-  partial = "archive"
+partial = "archive"
 
 [[params.sidebarModules]]
-  partial = "tags"
+partial = "tags"
+
+[params.social]
+bluesky = "ngs.io"
+github = "ngs"
+x = "ngs"
 
 [[menus.main]]
-  name = "Home"
-  pageRef = "/"
-  weight = 10
+name = "Home"
+pageRef = "/"
+weight = 10
 
 [[menus.main]]
-  name = "About"
-  pageRef = "/about"
-  weight = 20
+name = "About"
+pageRef = "/about"
+weight = 20
 
 [[menus.main]]
-  name = "ブログ (日本語)"
-  url = "https://ja.ngs.io/"
-  weight = 30
+name = "ブログ (日本語)"
+url = "https://ja.ngs.io/"
+weight = 30
