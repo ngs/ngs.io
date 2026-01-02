@@ -1,0 +1,51 @@
+baseURL = "https://ngs.io/"
+languageCode = "en"
+title = "Atsushi Nagase"
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[module]
+  [[module.imports]]
+    path = "go.ngs.io/hugo-primer-blog"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  tag = "tags"
+  archive = "archives"
+
+[params]
+  author = "Atsushi Nagase"
+  description = "Blog by Atsushi Nagase"
+  defaultTheme = "auto"
+  showReadingTime = true
+  showAuthor = true
+
+[[params.sidebarModules]]
+  partial = "links"
+
+[[params.sidebarModules]]
+  partial = "recentPosts"
+
+[[params.sidebarModules]]
+  partial = "archive"
+
+[[params.sidebarModules]]
+  partial = "tags"
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 20
+
+[[menus.main]]
+  name = "ブログ (日本語)"
+  url = "https://ja.ngs.io/"
+  weight = 30

@@ -1,0 +1,66 @@
+---
+title: CI2Go version 2
+description: Released version 2 of CI2Go the CircleCI client for iPhone and iPad
+date: "2018-07-02T09:20:00+09:00"
+public: true
+tags: ["ci2go","circleci","ios"]
+alternate: true
+archives: ["2018-07"]
+image: main.png
+---
+I've just released major updated version 2.0.0 of [CI2Go], the [CircleCI] client for iPhone and iPad.
+
+[![](/images/appstore.svg.svg)][AppStore]
+
+V2 contains the following updates.
+
+<!--more-->
+
+## iPhone X Support
+
+![](iphonex.png)
+
+Started supporting iPhone X's 5.8 inches screen.
+
+## Single Sign-on Support
+
+![](sso.gif)
+
+Update authentication flow to use Single Sign-on instead of Copy and Pasting API Tokens from CircleCI.
+
+This creates [Personal API Token] internally.
+
+## Build Artifacts Browser
+
+![](artifacts.gif)
+
+Redesigned Build Artifacts Browser.
+
+You can browse artifacts more quickly without waiting for downloading entire files.
+
+This app starts downloading when you tried to view file and continues downloading in background.
+
+## Apple Watch Complications
+
+![](watch.png)
+
+Supported Apple Watch [Complications].
+
+You can add your build status in your watch face.
+
+Due to watchOS API limitation, this does not update information realtime.
+
+## Performance improvement
+
+In this version, I've redesigned entire implementation from scratch.
+
+Behaves more swift instead of dealing with offline data.
+
+Send me [issues] if you have any.
+
+[CI2Go]: https://itunes.apple.com/app/id940028427?mt=8
+[AppStore]: https://itunes.apple.com/app/id940028427?mt=8
+[CircleCI]: https://circleci.com
+[issues]: https://github.com/ngs/ci2go/issues/new
+[Personal API Token]: https://circleci.com/docs/2.0/managing-api-tokens/
+[Complications]: https://support.apple.com/en-us/ht205536
