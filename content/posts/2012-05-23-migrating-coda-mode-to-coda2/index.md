@@ -1,5 +1,6 @@
 ---
 title: Migrating Coda modes to Coda 2
+slug: "migrating-coda-mode-to-coda2"
 date: "2012-05-23T11:51:00+09:00"
 public: true
 tags: ["coda 2"]
@@ -52,3 +53,4 @@ This is the why the modes located in `~/Library/Application Support/Coda 2/Modes
 -             <keywords id="Arduino Functions" color="#FF8000" casesensitive="no" useforautocomplete="yes">
 +             <keywords id="Arduino Functions" scope="language.function" casesensitive="no" useforautocomplete="yes">
 ```
+

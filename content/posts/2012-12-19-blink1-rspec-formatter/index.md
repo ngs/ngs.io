@@ -1,5 +1,6 @@
 ---
 title: Using blink(1) as RSpec formatter
+slug: "blink1-rspec-formatter"
 date: "2012-12-19T06:00:00+09:00"
 public: true
 tags: ["ruby","rspec","blink(1)","formatter","gadget","rubygems"]
@@ -22,3 +23,4 @@ GitHub: [rb-blink1], [blink1-formatter]
 
 [rb-blink1]: https://github.com/ngs/rb-blink1
 [blink1-formatter]: https://github.com/ngs/blink1-formatter
+

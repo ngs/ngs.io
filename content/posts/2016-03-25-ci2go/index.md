@@ -1,5 +1,6 @@
 ---
 title: Announcing CI2Go v1.3.0
+slug: "ci2go"
 description: "Release note of CI2Go v1.3.0 the @circleci client for iOS."
 date: "2016-03-25T19:15:00+09:00"
 public: true
@@ -32,3 +33,4 @@ This version is still having realtime updating issue with _Build List_ screen an
 [fixed]: https://github.com/ngs/ci2go/pull/55
 [CI2Go]: https://github.com/ngs/ci2go
 [AppStore]: https://itunes.apple.com/app/id940028427?mt=8
+

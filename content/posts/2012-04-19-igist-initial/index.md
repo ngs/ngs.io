@@ -1,5 +1,6 @@
 ---
 title: Released iGist - The Gist Client for iPhone, iPad
+slug: "igist-initial"
 date: "2012-04-19T12:00:00+09:00"
 public: true
 tags: ["ios","iphone","ipad","gist","github","igist"]
@@ -22,3 +23,4 @@ This allows you to browse, create, edit, fork, (un)star Gists.
 [badge]: http://igistapp.com/images/appstore.png
 [screen1]: http://igist.s3.amazonaws.com/images/ipad-screen1.png
 [screen2]: http://igist.s3.amazonaws.com/images/ipad-screen2.png
+

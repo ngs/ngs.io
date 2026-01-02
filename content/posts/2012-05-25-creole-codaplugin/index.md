@@ -1,5 +1,6 @@
 ---
 title: Released Creole Plugin for Coda 2
+slug: "creole-codaplugin"
 date: "2012-05-25T20:00:00+09:00"
 public: true
 tags: ["coda 2","plug-in","creole"]
@@ -13,3 +14,4 @@ This plug-in allows you to preview and generate HTML from [Creole][creole] wiki 
 
 [screen]: http://ngs.github.com/creole-codaplugin/images/screen.png
 [creole]: http://www.wikicreole.org/
+

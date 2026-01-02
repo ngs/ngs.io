@@ -1,5 +1,6 @@
 ---
 title: Copy UIColor / NSColor initializer code from Sketch app
+slug: "sketch-swift-color"
 description: I've published a Sketch app plugin for generating UIColor and NSColor initializer Swift code from fill color of selected layers.
 date: "2015-12-11T00:30:00+09:00"
 public: true
@@ -26,3 +27,4 @@ Download and unarchive the latest version from [Releases] page, then double clic
 [LICENSE]: ./LICENSE
 [UIColor]: https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/
 [NSColor]: https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSColor_Class/
+

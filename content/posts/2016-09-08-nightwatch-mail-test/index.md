@@ -1,5 +1,6 @@
 ---
 title: Testing Email Delivery in Nightwatch.js End to End test
+slug: "nightwatch-mail-test"
 description: I've published an example Nightwatch.js E2E testing project that contains Email delivery testing using Mandrill and RequestBin.
 date: "2016-09-08T17:00:00+09:00"
 public: true
@@ -218,3 +219,4 @@ Happy testing!
 [config file]: http://nightwatchjs.org/guide#settings-file
 [full list]: https://mandrill.zendesk.com/hc/en-us/articles/205583197-Inbound-Email-Processing-Overview#inbound-events-format
 [fork the repository]: https://github.com/ngs/nightwatch-mail-example/fork
+

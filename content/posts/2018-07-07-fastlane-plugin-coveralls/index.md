@@ -1,5 +1,6 @@
 ---
 title: Coveralls plugin for fastlane
+slug: "fastlane-plugin-coveralls"
 description: Published Coveralls plugin for fastlane
 date: "2018-07-07T23:59:00+09:00"
 public: true
@@ -73,3 +74,4 @@ Enjoy XCTesting 👨‍💻
 [xcov]: https://github.com/nakiostudio/xcov
 [issues]: https://github.com/ngs/fastlane-plugin-coveralls/issues
 [xcov action]: https://docs.fastlane.tools/actions/xcov/
+

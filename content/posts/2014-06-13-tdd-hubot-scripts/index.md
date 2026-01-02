@@ -1,5 +1,6 @@
 ---
 title: TDD Hubot scripts with gulp+mocha
+slug: "tdd-hubot-scripts"
 description: I configured mocha tests for my Hubot scripts.
 date: "2014-06-13T12:20:00+09:00"
 public: true
@@ -149,3 +150,4 @@ Make sure `mocha` pipe should pipe to `coffee` pipe.
 [Hubot v2.7.5]: https://github.com/github/hubot/commit/04b97eada0018bfc049d88f47b91bce15e54f1bc
 [pull request#712]: https://github.com/github/hubot/pull/712
 [help.coffee]: https://github.com/github/hubot/blob/master/src/scripts/help.coffee
+

@@ -1,5 +1,6 @@
 ---
 title: Released Markdown Plugin for Coda 2
+slug: "markdown-codaplugin"
 date: "2012-05-25T18:00:00+09:00"
 public: true
 tags: ["coda 2","plug-in","markdown"]
@@ -13,3 +14,4 @@ This plug-in allows you to preview and generate HTML from [Markdown][markdown] w
 
 [screen]: http://ngs.github.com/markdown-codaplugin/images/screen.png
 [markdown]: http://daringfireball.net/projects/markdown/
+

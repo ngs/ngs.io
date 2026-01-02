@@ -1,5 +1,6 @@
 ---
 title: Go Release Binary GitHub Action
+slug: "go-release-action"
 description: Published Go Release Binary Action on GitHub Marketplace
 date: "2019-02-08T21:00:00+09:00"
 public: true
@@ -69,3 +70,4 @@ action "release linux/amd64" {
   secrets = ["GITHUB_TOKEN"]
 }
 ```
+

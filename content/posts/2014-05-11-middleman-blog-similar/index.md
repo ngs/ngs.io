@@ -1,5 +1,6 @@
 ---
 title: Similar Articles on middleman-blog
+slug: "middleman-blog-similar"
 description: I created a middleman-blog extension to lookup similar articles.
 date: "2014-05-11T12:00:00+09:00"
 public: true
@@ -36,3 +37,4 @@ You will be able to choose similarity engines like the below in your `config.rb`
 [damerau-levenshtein]: https://github.com/GlobalNamesArchitecture/damerau-levenshtein
 [tf-idf-similarity]: https://github.com/opennorth/tf-idf-similarity
 [pr]: https://github.com/ngs/middleman-blog-similar/pull/2
+

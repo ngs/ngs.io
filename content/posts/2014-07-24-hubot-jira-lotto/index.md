@@ -1,5 +1,6 @@
 ---
 title: Pick assignee for JIRA issues with hubot-jira-lotto
+slug: "hubot-jira-lotto"
 description: I published a Hubot script to pick assignee for JIRA issues.
 date: "2014-07-24T10:30:00+09:00"
 public: true
@@ -52,3 +53,4 @@ eg: map `ngs` to `atsushi_nagase`
 [ngs/hubot-jira-lotto]: https://github.com/ngs/hubot-jira-lotto
 [Hubot]: https://hubot.github.com/
 [JIRA]: https://www.atlassian.com/software/jira
+

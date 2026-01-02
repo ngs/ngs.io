@@ -1,5 +1,6 @@
 ---
 title: Apply UIAppearance immediately on the screen
+slug: "refresh-ui-appearance"
 description: How to apply appearance changes made with UIAppearance's proxy method  immediately
 date: "2014-10-26T21:30:00+09:00"
 public: true
@@ -25,3 +26,4 @@ Here is Swift version.
 
 
 [UISS]: https://github.com/robertwijas/UISS
+

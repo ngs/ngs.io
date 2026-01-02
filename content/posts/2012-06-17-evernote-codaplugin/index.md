@@ -1,5 +1,6 @@
 ---
 title: Released Evernote Plugin for Coda 2
+slug: "evernote-codaplugin"
 date: "2012-06-17T18:00:00+09:00"
 public: true
 tags: ["coda 2","plug-in","evernote"]
@@ -17,3 +18,4 @@ This plug-in allows you to clip snippets and rendered HTML from Markdown to [Eve
 <!--more-->
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/b8RqCNBHNvI" frameborder="0" allowfullscreen></iframe>
+

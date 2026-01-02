@@ -1,5 +1,6 @@
 ---
 title: Scrapmd - the Markdown formatted Webpage Scrapbook
+slug: "scrapmd"
 description: I’ve published initial version of Scrapmd.
 date: "2020-06-17T00:00:00+09:00"
 public: true

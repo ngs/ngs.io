@@ -1,5 +1,6 @@
 ---
 title: Create Events on Google Calendar with Git Commit
+slug: "gitlog2gcal"
 date: "2012-08-31T12:00:00+09:00"
 public: true
 tags: ["google calendar","git","python","google"]
@@ -31,3 +32,4 @@ vim .git/hooks/post-commit
 Create new client on [the console](https://code.google.com/apis/console) and replace variables.
 
 <script src="https://gist.github.com/ngs/3550670.js?file=post-commit.py"></script>
+

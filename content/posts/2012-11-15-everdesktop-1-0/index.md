@@ -1,5 +1,6 @@
 ---
 title: Released EverDesktop
+slug: "everdesktop-1-0"
 date: "2012-11-15T20:00:00+09:00"
 public: true
 tags: ["mac","evernote","everdesktop"]
@@ -27,3 +28,4 @@ EverDesktop is available on the [Mac AppStore](http://s.liap.us/everdesktop).
 [screen2]: 2012-11-15-everdesktop-1-0/screen2.png "Screen2"
 [evernote]: http://evernote.com/
 [everdesktop]: http://everdesktop.com/
+

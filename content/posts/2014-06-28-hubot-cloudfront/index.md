@@ -1,5 +1,6 @@
 ---
 title: Fetch distributions and invalidate with hubot-cloudfront
+slug: "hubot-cloudfront"
 description: I published a Hubot script to fetch Amazon CloudFront distribution list and invalidate objects.
 date: "2014-06-28T21:00:00+09:00"
 public: true
@@ -61,3 +62,4 @@ Shortcut:
 [Amazon CloudFront]: http://aws.amazon.com/cloudfront/
 [ngs/hubot-cloudfront]: https://github.com/ngs/hubot-cloudfront
 [Hubot]: https://hubot.github.com/
+

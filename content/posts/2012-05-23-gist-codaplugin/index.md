@@ -1,5 +1,6 @@
 ---
 title: Released Gist Plugin for Coda 2
+slug: "gist-codaplugin"
 date: "2012-05-23T18:00:00+09:00"
 public: true
 tags: ["coda 2","plug-in","gist","github"]
@@ -12,3 +13,4 @@ This plug-in allows you to create public and private gists from current active d
 [http://ngs.github.com/gist-codaplugin](http://ngs.github.com/gist-codaplugin)
 
 [screen]: http://ngs.github.com/gist-codaplugin/images/screen.png
+

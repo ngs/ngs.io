@@ -1,5 +1,6 @@
 ---
 title: middleman-ogp
+slug: "middleman-ogp"
 description: Released an OpenGraph Protocol helper extension for Middleman.
 date: "2014-04-13T02:20:00+09:00"
 public: true
@@ -37,3 +38,4 @@ Outputs `<meta>` tags like this.
 
 
 [middleman-ogp]: https://github.com/ngs/middleman-ogp
+

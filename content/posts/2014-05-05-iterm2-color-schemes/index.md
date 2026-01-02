@@ -1,5 +1,6 @@
 ---
 title: Exporting and importing iTerm 2 Color Schemes
+slug: "iterm2-color-schemes"
 description: Exporting and importing iTerm 2 Color Schemes
 date: "2014-05-05T14:00:00+09:00"
 public: true
@@ -28,3 +29,4 @@ This exports color schemes configured in your iTerm 2.
 [Boxen]: http://boxen.github.com/
 [dotfiles]: https://github.com/ngs/dotfiles/
 [puppet-iterm2]: https://github.com/ngs/puppet-iterm2
+

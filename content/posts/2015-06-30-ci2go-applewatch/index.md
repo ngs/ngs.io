@@ -1,5 +1,6 @@
 ---
 title: "Announcing @circleci client for Apple Watch ⌚️"
+slug: "ci2go-applewatch"
 description: Version 1.1.0 of CI2Go, the CircleCI client for iOS is now available on the AppStore.
 date: "2015-06-30T13:40:00+09:00"
 public: true
@@ -32,3 +33,4 @@ Navigates to build details by selecting build from the App screen, and retries t
 [circleci]: https://circleci.com/
 [ci2go]: /2014/11/26/ci2go/
 [appstore]: https://itunes.apple.com/app/id940028427?mt=8
+

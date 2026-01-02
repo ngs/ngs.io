@@ -1,5 +1,6 @@
 ---
 title: Wiplock - Protect main branch from in-progress branches
+slug: "wiplock"
 description: I released Wiplock that protects main branch from pull requests that contains WIP in the title or incompleted tasks.
 date: "2016-09-23T02:00:00+09:00"
 public: true
@@ -119,3 +120,4 @@ http://localhost:8000
 I wish this could help your workflow safe, happy locking!
 
 [wiplock]: https://wiplock.com
+

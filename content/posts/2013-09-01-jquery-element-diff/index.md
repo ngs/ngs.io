@@ -1,5 +1,6 @@
 ---
 title: Generating JavaScript code to arrange elements to be same with specified HTML or element using jQuery Element Diff
+slug: "jquery-element-diff"
 date: "2013-09-01T12:00:00+09:00"
 public: true
 tags: ["javascript","generator","element","diff","jquery","plugin","npm","bower"]
@@ -60,3 +61,4 @@ $ bower install jquery-elementDiff
 [Download]: https://github.com/ngs/jquery-elementDiff/archive/master.zip
 [npm]: https://npmjs.org/package/jquery-element-diff
 [bower]: http://bower.io/
+

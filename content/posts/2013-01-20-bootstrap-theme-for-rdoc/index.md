@@ -1,5 +1,6 @@
 ---
 title: Twitter Bootstrap theme for RDoc
+slug: "bootstrap-theme-for-rdoc"
 date: "2013-01-20T12:00:00+09:00"
 public: true
 tags: ["ruby","rdoc","twitter","bootstrap","generator","documentation","rubygems"]
@@ -30,3 +31,4 @@ You can customize your favorite Bootstrap based theme easily. Enjoy!
 [proj]: http://ngs.github.com/hanna-bootstrap/
 [bootstrap]: http://getbootstrap.com/
 [Hanna Nouveau]: https://github.com/rdoc/hanna-nouveau
+

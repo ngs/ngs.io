@@ -1,5 +1,6 @@
 ---
 title: "Real-time Log Support w/CI2Go the @circleci Client for iOS"
+slug: "ci2go"
 description: "I&apos;ve released new version of CI2Go, the @circleci client for iOS that supports real-time log watching."
 date: "2016-01-29T22:15:00+09:00"
 public: true
@@ -74,3 +75,4 @@ Drop me a [New Issue] if you have any.
 [pusher-community/pusher-websocket-swift/pull/22]: https://github.com/pusher-community/pusher-websocket-swift/pull/22
 [Realm]: https://realm.io
 [WatchConnectivity Framework]: https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/
+

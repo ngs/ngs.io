@@ -1,5 +1,6 @@
 ---
 title: CI2Go for macOS
+slug: "ci2go-maccatalyst"
 description: I've published CI2Go the CircleCI client for macOS by porting existing iOS app using Mac Catalyst.
 date: "2020-05-15T00:00:00+09:00"
 public: true
@@ -107,3 +108,4 @@ I've published my sponsors page on [GitHub Sponsors]. Please support me polishin
 [spaceship]: https://github.com/fastlane/fastlane/tree/master/spaceship
 [ci2go.app]: https://ci2go.app
 [github sponsors]: https://github.com/sponsors/ngs
+

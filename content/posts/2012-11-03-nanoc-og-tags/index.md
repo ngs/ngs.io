@@ -1,5 +1,6 @@
 ---
 title: Open Graph protocol tag helper for nanoc
+slug: "nanoc-og-tags"
 date: "2012-11-03T07:00:00+09:00"
 public: true
 tags: ["nanoc","ruby","opengraph"]
@@ -14,3 +15,4 @@ To use this helper:
 3. Add ```require 'nanoc/helpers/og_tags'``` to `lib/default.rb`.
 4. Now you can use `og_tag` helper in your templates.
    For more details see the [spec](https://github.com/littleapps/littleapps.github.com/blob/source/spec/og_tags_spec.rb) or trace my [haml template](https://github.com/littleapps/littleapps.github.com/blob/source/layouts/default.haml).
+

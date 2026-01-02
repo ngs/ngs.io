@@ -1,5 +1,6 @@
 ---
 title: CI2Go version 2
+slug: "ci2go-v2"
 description: Released version 2 of CI2Go the CircleCI client for iPhone and iPad
 date: "2018-07-02T09:20:00+09:00"
 public: true
@@ -64,3 +65,4 @@ Send me [issues] if you have any.
 [issues]: https://github.com/ngs/ci2go/issues/new
 [Personal API Token]: https://circleci.com/docs/2.0/managing-api-tokens/
 [Complications]: https://support.apple.com/en-us/ht205536
+

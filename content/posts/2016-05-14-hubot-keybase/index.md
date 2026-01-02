@@ -1,5 +1,6 @@
 ---
 title: PGP encrypted messages for Keybase users in our chat rooms
+slug: "hubot-keybase"
 description: I've released hubot-keybase, a Hubot script to encrypt messages for Keybase users.
 date: "2016-05-14T07:45:00+09:00"
 public: true
@@ -59,3 +60,4 @@ Enjoy encrypting!
 [Keybase]: https://keybase.io/
 [hubot-keybase]: https://github.com/ngs/hubot-keybase
 [Hubot]: https://hubot.github.com/
+

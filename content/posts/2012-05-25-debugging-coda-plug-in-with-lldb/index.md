@@ -1,5 +1,6 @@
 ---
 title: Debugging Coda Plug-In with LLDB
+slug: "debugging-coda-plug-in-with-lldb"
 date: "2012-05-25T12:00:00+09:00"
 public: true
 tags: ["coda 2","xcode","lldb"]
@@ -18,3 +19,4 @@ archives: ["2012-05"]
 
 
 Now you can debug with your LLDB console, enjoy!
+

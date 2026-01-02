@@ -1,5 +1,6 @@
 ---
 title: CI2Go Today widget support
+slug: "ci2go"
 description: Released CI2Go 2.1.0 including Today widget support
 date: "2018-07-08T09:00:00+09:00"
 public: true
@@ -59,3 +60,4 @@ Send me [issues] if you have any.
 [ci2go://circleci.com/gh/circleci/frontend/3439]: ci2go://circleci.com/gh/circleci/frontend/3439
 [Prompt]: https://panic.com/prompt/
 [Today]: https://support.apple.com/en-us/ht207122
+

@@ -1,5 +1,6 @@
 ---
 title: jquery-rails confirmation with Bootstrap
+slug: "jquery-rails-confirmation-with-bootstrap"
 date: "2012-04-20T02:15:00+09:00"
 public: true
 tags: ["bootstrap","rails","coffee script"]
@@ -12,3 +13,4 @@ So I overrode `$.rails.fire` method to show Bootstrap style modal instead.
 <!--more-->
 
 <script src="https://gist.github.com/ngs/2582950.js"></script>
+

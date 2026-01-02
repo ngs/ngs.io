@@ -1,5 +1,6 @@
 ---
 title: "Evernote SDK for Mac: Async requests and file attachment support"
+slug: "evernote-sdk-mac"
 date: "2012-11-22T06:00:00+09:00"
 public: true
 tags: ["mac","evernote","evernotesdk","gcd"]
@@ -26,3 +27,4 @@ I have already sent a [pull-request] to the Evernote team. I you like this, plea
 [pull-request]: https://github.com/evernote/evernote-sdk-mac/pull/2
 [HEAD]: https://github.com/evernote/evernote-sdk-mac/tree/2dc7d3dae864c93952ebc008f987fb219e27883f
 [fork]: https://github.com/ngs/evernote-sdk-mac
+

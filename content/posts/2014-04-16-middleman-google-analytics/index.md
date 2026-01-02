@@ -1,5 +1,6 @@
 ---
 title: Universal Code support for middleman-google-analytics
+slug: "middleman-google-analytics"
 description: I've sent a pull request to support Universal Code for middleman-google-analytics
 date: "2014-04-16T10:00:00+09:00"
 public: true
@@ -53,3 +54,4 @@ gem 'middleman-google-analytics', '~> 0.1.0'
 [Cucumber]: http://cukes.info/
 [0.1.0]: https://github.com/danielbayerlein/middleman-google-analytics/commit/c28a5fc1e0f72cd206ba5f8733c3655935501b9c
 [RubyGems]: http://rubygems.org/gems/middleman-google-analytics
+

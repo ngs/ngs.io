@@ -1,5 +1,6 @@
 ---
 title: "CI2Go v1.0.0 the @circleci Client for iPhone &amp; iPad"
+slug: "ci2go"
 description: "I&apos;ve released a CircleCI client for iPhone &amp; iPad."
 date: "2014-11-26T01:10:00+09:00"
 public: true
@@ -55,3 +56,4 @@ Drop me a [New Issue] if you have any.
 [Today widget]: https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/NotificationCenter.html
 [Apple watch]: https://developer.apple.com/watchkit/
 [Previous article]: /2014/10/26/refresh-ui-appearance/
+

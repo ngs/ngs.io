@@ -1,5 +1,6 @@
 ---
 title: Generating Objective-C Literals from JSON
+slug: "generating-objc-literals-from-json"
 date: "2012-07-26T12:00:00+09:00"
 public: true
 tags: ["test","objective-c","node.js","javascript"]
@@ -13,6 +14,7 @@ With node.js, the script can convert JSON from STDIN.
 
 
 Also in browser, this works with stripping lines under `if(process)` scope.
+
 
 
 

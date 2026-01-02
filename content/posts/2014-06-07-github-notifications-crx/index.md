@@ -1,5 +1,6 @@
 ---
 title: GitHub Notifications for Google Chrome
+slug: "github-notifications-crx"
 description: I created a chrome extension to check GitHub Notifications in toolbar icon.
 date: "2014-06-07T06:00:00+09:00"
 public: true
@@ -23,3 +24,4 @@ GitHub Repository: **[ngs/github-notifications-crx]**
 
 [webstore]: https://chrome.google.com/webstore/detail/cchmnfkmaijmcbafheknhcafoanipela
 [ngs/github-notifications-crx]: https://github.com/ngs/github-notifications-crx
+

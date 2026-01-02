@@ -1,5 +1,6 @@
 ---
 title: Take cross browser screenshots with hubot-browserstack
+slug: "hubot-browserstack"
 description: I published a Hubot script to take cross browser screenshots with BrowserStack.
 date: "2014-06-08T09:30:00+09:00"
 public: true
@@ -31,3 +32,4 @@ For more details, visit GitHub repo: **[ngs/hubot-browserstack]**.
 [Hubot]: https://hubot.github.com/
 [BrowserStack]: http://www.browserstack.com/
 [ngs/hubot-browserstack]: https://github.com/ngs/hubot-browserstack
+

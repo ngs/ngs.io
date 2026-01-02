@@ -1,5 +1,6 @@
 ---
 title: Generating unique selector with jQuery Selectorator
+slug: "jquery-selectorator"
 date: "2013-08-18T12:00:00+09:00"
 public: true
 tags: ["javascript","selector","jquery","plugin","npm","bower"]
@@ -40,3 +41,4 @@ Selectorator is inspired by [Optimizely].
 [npm]: https://npmjs.org/package/jquery-selectorator
 [bower]: http://bower.io/
 [Optimizely]: https://www.optimizely.com/
+

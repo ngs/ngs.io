@@ -1,5 +1,6 @@
 ---
 title: Deploy Swift WebApps on Amazon EC2 Container Services (ECS)
+slug: "swift-webapp-on-ecs"
 description: How to run web applications built with
 date: "2016-03-04T22:50:00+09:00"
 public: true
@@ -237,3 +238,4 @@ https://github.com/ngs/Swifton-TodoApp
 [erb template]: https://github.com/ngs/Swifton-TodoApp/blob/master/script/ecs-deploy-services.sh
 [aws ecs documentation]: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html
 [aws command line interface]: https://aws.amazon.com/cli/
+

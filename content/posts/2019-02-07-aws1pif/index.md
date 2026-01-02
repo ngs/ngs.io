@@ -1,5 +1,6 @@
 ---
 title: Import AWS credentials.csv to 1Password using aws1pif
+slug: "aws1pif"
 description: Open-sourced aws1pif, a command line tool that converts AWS credentials.csv to 1Password .1pif file format
 date: "2019-02-07T21:00:00+09:00"
 public: true
@@ -43,3 +44,4 @@ cat ~/Downloads/credentials.csv | aws1pif > aws.1pif
 ![](import.jpg)
 
 Currently CSV with multiple credentials is not supported.
+

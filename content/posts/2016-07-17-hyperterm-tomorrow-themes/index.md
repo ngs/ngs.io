@@ -1,5 +1,6 @@
 ---
 title: Hyperterm Tomorrow Themes
+slug: "hyperterm-tomorrow-themes"
 description: I've published Tomorrow Themes for Hyperterm
 date: "2016-07-17T13:20:00+09:00"
 public: true
@@ -42,3 +43,4 @@ $EDITOR ~/.hyperterm.js
 
 [Tomorrow Themes]: https://github.com/chriskempson/tomorrow-theme
 [Hyperterm]: https://hyperterm.org/
+
