@@ -66,6 +66,7 @@ partial = "archive"
 partial = "tags"
 
 [params.social]
+activitypub = "ngs"
 bluesky = "ngs.io"
 github = "ngs"
 x = "ngs"
