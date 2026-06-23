@@ -47,7 +47,7 @@ Scheme data is just `schemes/*.json` in the repo, so a contribution is "a PR tha
 
 ## Feedback welcome
 
-Feedback is handled through GitHub Issues — if you hit a bug or notice something, please file one.
+Feedback is handled through GitHub Issues — if you hit a glitch or notice something, please file one.
 
 And please send **PRs to add new color schemes**. The repository is here:
 
