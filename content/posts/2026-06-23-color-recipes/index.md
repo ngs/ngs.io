@@ -1,5 +1,5 @@
 ---
-title: "color.recipes: A Simple Color-Scheme Collection"
+title: "Color Recipes: A Simple Color-Scheme Collection"
 slug: "color-recipes"
 description: Published color.recipes, a simple color-scheme collection you can filter by tag and download or copy in various formats. Missing combinations can be added yourself via a PR.
 date: "2026-06-23T09:00:00+09:00"
