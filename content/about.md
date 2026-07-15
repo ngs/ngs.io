@@ -32,24 +32,24 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 * 12th, March, 2009, founded [LittleApps Inc.] to continue working for those client works.
 * In December, 2009, TenkiMeter awarded  [Softbank Mobile Prise in "天気予報API活用アプリコンテスト" (App Awards for Forecast API)].
 * In October, 2011, joined tattva Inc. Developed a [Pinterest clone called i.ntere.st]. Left the company in April, 2012.
-* In March, 2012, started developing a SDK for mobile applications called [AppSocially].
-* In November, 2012, [EverDesktop] awarded Evernote Corporation Prise in "[Mashup Awards 8]".
+* In March, 2012, started developing a SDK for mobile applications called AppSocially.
+* In November, 2012, EverDesktop awarded Evernote Corporation Prise in "[Mashup Awards 8]".
 * In April, 2013, founded AppSocially Inc. in Delaware, United States. In May, I [left the company](https://ja.ngs.io/2013/12/30/shokan2013/).
 * In June, 2013, joined [Kaizen Platform, Inc.].
 * In July, 2015, left [Kaizen Platform, Inc.].
 * In August, 2015, joined [Oneteam Inc.].
 * In September, 2017, joined CAMPFIRE, Inc., inducted as Chief Technology Officer, retired in June 2018.
 * In December, 2018, [Founded](https://ja.ngs.io/2019/02/01/instance0/) [instance0, inc.]
-* In February, 2019, [Joined](https://ja.ngs.io/2019/02/12/modelmap/) [Modelmap Co., Ltd.] as CTO.
+* In February, 2019, [Joined](https://ja.ngs.io/2019/02/12/modelmap/) Modelmap Co., Ltd. as CTO.
 * In October, 2022, Founded [enkake, Inc.] Appointed as Director and CTO.
-* In January, 2023, [Modelmap Co., Ltd.] closed.
+* In January, 2023, Modelmap Co., Ltd. closed.
 * In October, 2025, Joined [Life is Tech, Inc.] as a Software Engineer.
 
 ## Works
 
 * [GitHub](https://github.com/ngs)
 * [Go Packages](https://go.ngs.io)
-* [CPAN](http://search.cpan.org/~ngs)
+* [CPAN](https://metacpan.org/author/NGS)
 * [RubyGems](https://rubygems.org/profiles/ngs)
 * [npm](https://npmjs.org/~ngs)
 * [Qiita](http://qiita.com/ngs)
@@ -60,7 +60,6 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 
 ## Profile
 
-* [AngelList](http://angel.co/ngs)
 * [CrunchBase](http://www.crunchbase.com/person/atsushi-nagase)
 * [LinkedIn](http://www.linkedin.com/in/ngsdev)
 * [Keybase](https://keybase.io/ngs)
@@ -74,7 +73,6 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 * [Raindrop](https://raindrop.io/ngs/)
 * [Quora](http://www.quora.com/Atsushi-Nagase)
 * [Strava](http://strava.com/athletes/ngs)
-* [TripIt](https://www.tripit.com/people/ngs)
 * [Flickr](http://www.flickr.com/photos/atsnngs)
 * [Pinterest](http://pinterest.com/ngs)
 
@@ -91,22 +89,22 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 ## Media
 
 * 2017-04-17 SELECK  
-  [営業報告の「二度手間」を防ぐ！現場と経営者のニーズを満たす、顧客管理ツールの使い方](https://seleck.cc/982)
+  [営業報告の「二度手間」を防ぐ！現場と経営者のニーズを満たす、顧客管理ツールの使い方](https://web.archive.org/web/20180925010044/https://seleck.cc/982)
 
 * 2016-05-24 CAREER HACK  
   [長瀬敦史が「シード期の5社」で見てきた熱狂。エンジニアがスタートアップにコミットすべき理由。](http://careerhack.en-japan.com/report/detail/665)
 
 * 2015-08-06 エンジニアtype  
-  [アジア視点で考える『Oneteam』のスケールするエンジニアリングチームのあり方【連載：NEOジェネ！】](http://type.jp/et/log/article/oneteam_neo)
+  [アジア視点で考える『Oneteam』のスケールするエンジニアリングチームのあり方【連載：NEOジェネ！】](https://web.archive.org/web/20170814111726/http://type.jp/et/log/article/oneteam_neo)
 
 * 2012-10-15 BBC News  
   [Japan: Entrepreneurs spur out-of-the-box thinking](http://www.bbc.co.uk/news/business-19893561)
 
 * 2011-11-09 Tech総研  
-  [ソーシャルアプリ開発現場のジェットでマッハな爽快感](http://next.rikunabi.com/tech/docs/ct_s03600.jsp?p=001998)
+  [ソーシャルアプリ開発現場のジェットでマッハな爽快感](https://web.archive.org/web/20130903164255/https://next.rikunabi.com/tech/docs/ct_s03600.jsp?p=001998)
 
 * 2010-05-25 andronavi  
-  [アプリ開発秘話：003　宿ろいど](http://andronavi.com/2010/05/22600)
+  [アプリ開発秘話：003　宿ろいど](https://web.archive.org/web/20100528125217/http://andronavi.com/2010/05/22600)
 
 * 2008-09-29 マイコミムック  
   [別冊Mac Fan 01 スグ使えるフリーソフトでおもてなし](http://www.amazon.co.jp/gp/product/4839929718/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4839929718&linkCode=as2&tag=atsushnagased-22)
@@ -131,14 +129,11 @@ I love Gadgets, Road cycling, Running, Fishing, Driving, Music, Scale Modeling, 
 [LittleApps Inc.]: https://littleapps.jp/
 [Shimamoto, Osaka]: http://en.wikipedia.org/wiki/Shimamoto,_Osaka
 [Lotus Image Laboratory Inc.]: http://lotus-lab.com/
-[AppSocially]: https://appsocial.ly/
-[EverDesktop]: http://everdesktop.com/
 [Softbank Mobile Prise in "天気予報API活用アプリコンテスト" (App Awards for Forecast API)]: http://www.value-press.com/pressrelease/49464
 [Pinterest clone called i.ntere.st]: http://jp.techcrunch.com/2012/02/27/jp20120227interest-renewal/
 [Mashup Awards 8]: http://ma8.mashupaward.jp/
 [Kaizen Platform, Inc.]: https://kaizenplatform.com/
 [CAMPFIRE, Inc.]: https://campfire.co.jp
 [instance0, inc.]: https://ins0.jp
-[Modelmap Co., Ltd.]: https://modelmap.co/
 [Life is Tech, Inc.]: https://lifeistech.co.jp/
 [enkake, Inc.]: https://enkake.co.jp/
