@@ -47,7 +47,7 @@ gcloud run deploy asc-slack-notifier \
   --set-secrets "ASC_WEBHOOK_SECRET=asc-webhook-secret:latest,SLACK_WEBHOOK_URL=slack-webhook-url:latest"
 ```
 
-Then register the webhook with the App Store Connect API — `$TOKEN` is a JWT minted from your API key, `$APP_ID` the App Store Connect ID of the app:
+Then register the webhook with the App Store Connect API. The `eventTypes` list below covers only the three events this post talks about; the README has the full set, including the beta feedback ones. `$TOKEN` is a JWT minted from your API key, `$APP_ID` the App Store Connect ID of the app:
 
 ```sh
 curl -sS -X POST 'https://api.appstoreconnect.apple.com/v1/webhooks' \
