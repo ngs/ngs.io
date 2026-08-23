@@ -46,6 +46,12 @@ From there it behaves like a well-mannered coworker:
 - When it needs a decision, `slack_ask` posts buttons and the tapped choice goes straight back to the session
 - Ask it to "summarize the discussion above" and it reads everyone's messages through `slack_history`
 
+Outside the home channel it works by mention: in any channel the app has been added to, mentioning it opens a conversation thread under that message, and from then on you talk in that thread without mentioning it again.
+
+Replies carry the channel of the message they answer, so they land where the conversation is.
+
+Only your own messages are ever relayed, in every channel — a colleague mentioning the app does not reach the session.
+
 Sleep is not a failure mode: messages stay in Slack, and the session catches up from its cursor on wake, thread replies included.
 
 Most of what I just described — the progress label, the buttons, the history reader, thread-reply recovery — was implemented on release day, by me sending instructions from my phone.
