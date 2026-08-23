@@ -50,7 +50,7 @@ From there it behaves like a well-mannered coworker:
 
 Outside the home channel it works by mention: in any channel the app has been added to, mentioning it opens a conversation — the thread under that message when you mention it on the channel surface, the thread itself when you mention it inside one — and from then on you talk there without mentioning it again.
 
-Replies carry the channel of the message they answer, so they land where the conversation is.
+Each message arrives with the channel it was sent in, and the session passes that back when it posts, so the reply lands where the conversation is instead of in the home channel.
 
 Only your own messages are ever relayed, in every channel — a colleague mentioning the app does not reach the session.
 
