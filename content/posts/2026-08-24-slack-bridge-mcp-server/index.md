@@ -2,7 +2,7 @@
 title: An MCP Server That Bridges a Resident Claude Code Session to Slack
 slug: "slack-bridge-mcp-server"
 description: An MCP server that bridges a resident Claude Code session to a Slack channel. The whole back-and-forth of instructing the LLM stays in the channel, so teammates can give feedback mid-flight even on solo work.
-date: "2026-08-24T09:00:00+09:00"
+date: "2026-08-24T02:00:00+09:00"
 public: true
 tags: ["go","oss","mcp","slack","claude-code"]
 archives: ["2026-08"]

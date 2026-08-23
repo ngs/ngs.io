@@ -6,7 +6,6 @@ date: "2026-08-12T09:00:00+09:00"
 public: true
 tags: ["google-mcp-server","mcp","go","google-workspace","claude","oss"]
 archives: ["2026-08"]
-draft: true
 ---
 
 **[google-mcp-server](https://github.com/ngs/google-mcp-server)** is an MCP server I built that lets Claude and other MCP clients read and write Google Calendar, Drive, Gmail, Sheets, Docs, and Slides.
