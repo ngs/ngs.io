@@ -3,11 +3,9 @@ title: "asc-slack-notifier: App Store Connect Review Status in Slack"
 slug: "asc-slack-notifier"
 description: Introducing asc-slack-notifier, a Go server that receives App Store Connect webhooks and posts review status and build events to Slack. One binary that runs on Cloud Run or AWS Lambda, with optional App Store Connect API enrichment.
 date: "2026-08-14T09:00:00+09:00"
-draft: true
 public: true
 tags: ["asc-slack-notifier","app-store-connect","slack","go","ios","oss"]
 archives: ["2026-08"]
-image: main.jpg
 ---
 
 **[asc-slack-notifier](https://github.com/ngs/asc-slack-notifier)** is a server I built that receives [App Store Connect webhooks](https://developer.apple.com/documentation/appstoreconnectapi/webhooks) and posts review status and build events to Slack.
