@@ -11,7 +11,7 @@ alternate: true
 
 I released [slack-bridge-mcp-server](https://github.com/ngs/slack-bridge-mcp-server), an MCP server that bridges a resident Claude Code session on my Mac to a Slack channel.
 
-I send a message from Slack on my phone, the local session picks it up, does the work, and replies where I sent it.
+I send a message from Slack, the local session picks it up, does the work, and replies where I sent it.
 
 <!--more-->
 
@@ -64,7 +64,7 @@ Catch-up out there is best effort: at most twenty open threads are re-read per r
 
 ### The trust boundary
 
-The owner filter is exactly as strong as the Slack account and the signed-in phone behind it, and what it guards is an agent with local tool access, so treat access to the channel as terminal access on the machine and set the session's tool permissions accordingly.
+The owner filter is exactly as strong as the Slack account and the signed-in device behind it, and what it guards is an agent with local tool access, so treat access to the channel as terminal access on the machine and set the session's tool permissions accordingly.
 
 ### Recovery after sleep
 
@@ -122,4 +122,4 @@ Bug reports, feature requests, and pull requests are all welcome.
 
 https://github.com/ngs/slack-bridge-mcp-server
 
-Being able to ask your own session "how is that going?" from your phone is more pleasant than I expected — if you keep a resident session around, give it a try 📱
+Being able to ask your own session "how is that going?" from Slack is more pleasant than I expected — if you keep a resident session around, give it a try 💬
