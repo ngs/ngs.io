@@ -25,7 +25,7 @@ If the instructions happen as a conversation in a Slack channel instead, the pro
 
 The other motivation was the billing boundary: rather than running a bot on the metered API, I wanted to reach the session that is already running inside my subscription.
 
-Being able to say "keep going on that thing" from the sofa turned out to be a nice side effect.
+Being able to say "keep going on that thing" from the sofa or a fishing spot turned out to be a nice side effect.
 
 ## Usage
 
