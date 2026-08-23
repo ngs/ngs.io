@@ -11,7 +11,7 @@ alternate: true
 
 I released [slack-bridge-mcp-server](https://github.com/ngs/slack-bridge-mcp-server), an MCP server that bridges a resident Claude Code session on my Mac to a Slack channel.
 
-I send a message from Slack on my phone, the local session picks it up, does the work, and replies into the thread.
+I send a message from Slack on my phone, the local session picks it up, does the work, and replies where I sent it.
 
 <!--more-->
 
@@ -58,7 +58,7 @@ Sleep is not a failure mode: messages stay in Slack, and the session catches up 
 
 Most of what I just described — the progress label, the buttons, the history reader, thread-reply recovery — was implemented on release day, by me sending instructions from my phone.
 
-I shipped v0.1.0 in the morning, kept filing bug reports and feature requests from Slack, and the project reached v0.2.1 the same day, with the entire exchange still sitting in the channel.
+I shipped v0.1.0 in the early afternoon, kept filing bug reports and feature requests from Slack, and the project reached v0.2.1 the same day, with the entire exchange still sitting in the channel.
 
 ## Installation
 
@@ -92,7 +92,7 @@ The server runs as a stdio child of Claude Code, so there is no daemon, no port,
 
 The Socket Mode WebSocket is opened lazily on the first tool call that needs Slack, so having the server in every project's `.mcp.json` costs nothing until a session actually attends.
 
-Reliability comes from catch-up rather than redelivery: the last processed timestamp is persisted as a cursor, and on reconnect the server walks `conversations.history` and `conversations.replies` forward from it.
+Reliability comes from catch-up rather than redelivery: the timestamp of the last message handed to the session is persisted as a cursor, and on reconnect the server walks `conversations.history` and `conversations.replies` forward from it.
 
 `slack_wait` blocks for 300 seconds by default and 1,500 at most, a number worked back from the 30-minute idle limit Claude Code applies to MCP tool calls.
 
