@@ -13,6 +13,8 @@ I released [slack-bridge-mcp-server](https://github.com/ngs/slack-bridge-mcp-ser
 
 I send a message from Slack on my phone, the local session picks it up, does the work, and replies into the thread.
 
+<!--more-->
+
 ## Motivation
 
 When you code alone with an LLM, the entire process of instructing it stays inside your terminal where nobody else can see it.
@@ -41,7 +43,7 @@ do not stop:
 From there it behaves like a well-mannered coworker:
 
 - The server reacts with 👀 on its own the moment the session takes a message in — immediately when it is waiting, at the next wait when it is mid-task
-- If a reply takes more than ten seconds, "⏳ Working… (1m 05s)" appears in the thread, keeps counting, and disappears with the reply
+- If a reply takes more than ten seconds, "⏳ Working… (1m 05s)" appears where the turn is happening — on the channel surface, or in the thread when the exchange is threaded — keeps counting, and disappears with the reply
 - When the session starts something long, `slack_progress` puts the reason next to the timer: "⏳ Working… (2m 10s) — waiting for CI"
 - When it needs a decision, `slack_ask` posts buttons and the tapped choice goes straight back to the session
 - Ask it to "summarize the discussion above" and it reads everyone's messages through `slack_history`
@@ -52,7 +54,7 @@ Replies carry the channel of the message they answer, so they land where the con
 
 Only your own messages are ever relayed, in every channel — a colleague mentioning the app does not reach the session.
 
-Sleep is not a failure mode: messages stay in Slack, and the session catches up from its cursor on wake, thread replies included.
+Sleep is not a failure mode: messages stay in Slack, and the session catches up from its cursor on wake, thread replies included — it scans the newest 200 messages for replied-to threads and reads at most 20 of them per reconnect, past which a reply is genuinely missed.
 
 Most of what I just described — the progress label, the buttons, the history reader, thread-reply recovery — was implemented on release day, by me sending instructions from my phone.
 
