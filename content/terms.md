@@ -50,5 +50,5 @@ available at this page, and material changes are recorded in the site's
 
 ## Contact
 
-Questions about these terms can be sent to
-[atsn.ngs@gmail.com](mailto:atsn.ngs@gmail.com).
+Questions about these terms can be sent using the contact details on the
+[About page](/about/#contact).
