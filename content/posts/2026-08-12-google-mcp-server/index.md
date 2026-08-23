@@ -21,9 +21,9 @@ brew install google-mcp-server
 
 ## Motivation
 
-I originally wrote this for myself last year, but recently a client project put it to a real test.
+I originally wrote this for myself last year, but recently a certain project put it to a real test.
 
-I wanted a Google Spreadsheet shared with the client to work as a TODO sheet that both humans and LLMs read and write.
+I wanted a shared Google Spreadsheet to work as a TODO sheet that both humans and LLMs read and write.
 
 The claude.ai Google Drive connector could read the spreadsheet, but **couldn't write cell values**.
 
