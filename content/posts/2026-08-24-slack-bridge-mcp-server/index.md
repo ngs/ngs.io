@@ -122,4 +122,4 @@ Bug reports, feature requests, and pull requests are all welcome.
 
 https://github.com/ngs/slack-bridge-mcp-server
 
-Being able to ask your own session "how is that going?" from Slack is more pleasant than I expected — if you keep a resident session around, give it a try 📱
+Being able to ask your own session "how is that going?" from Slack is more pleasant than I expected — if you keep a resident session around, give it a try 💬
