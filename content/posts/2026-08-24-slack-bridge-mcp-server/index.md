@@ -48,7 +48,7 @@ From there it behaves like a well-mannered coworker:
 - When it needs a decision, `slack_ask` posts buttons and the tapped choice goes straight back to the session
 - Ask it to "summarize the discussion above" and it reads everyone's messages through `slack_history`
 
-Outside the home channel it works by mention: in any channel the app has been added to, mentioning it opens a conversation thread under that message, and from then on you talk in that thread without mentioning it again.
+Outside the home channel it works by mention: in any channel the app has been added to, mentioning it opens a conversation — the thread under that message when you mention it on the channel surface, the thread itself when you mention it inside one — and from then on you talk there without mentioning it again.
 
 Replies carry the channel of the message they answer, so they land where the conversation is.
 
