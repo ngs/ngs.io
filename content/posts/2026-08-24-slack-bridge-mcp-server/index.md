@@ -61,6 +61,8 @@ brew install slack-bridge-mcp-server
 
 The from-scratch setup guide, including a ready-made Slack app manifest with the right scopes, lives in [docs/setup.md](https://github.com/ngs/slack-bridge-mcp-server/blob/main/docs/setup.md).
 
+The full version of the loop, packaged as a ready-to-use Claude Code skill, ships with the repository as [examples/attend/SKILL.md](https://github.com/ngs/slack-bridge-mcp-server/blob/main/examples/attend/SKILL.md).
+
 Set four environment variables, register the server in Claude Code's `.mcp.json`, and you are done.
 
 ```json
