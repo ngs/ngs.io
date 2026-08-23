@@ -42,7 +42,7 @@ do not stop:
 3. For each message: do what it asks, then reply with slack_post. ...
 ```
 
-### What a message sets off
+### Signals during a turn
 
 From there it behaves like a well-mannered coworker:
 
