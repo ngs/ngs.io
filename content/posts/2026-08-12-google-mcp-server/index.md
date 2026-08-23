@@ -4,7 +4,7 @@ slug: "google-mcp-server"
 description: Introducing google-mcp-server, a Go-based MCP server that lets Claude and other MCP clients read and write Google Calendar, Drive, Gmail, Sheets, Docs, and Slides — and how it compares to the claude.ai Google connectors and Google's official Sheets MCP API.
 date: "2026-08-12T09:00:00+09:00"
 public: true
-tags: ["google-mcp-server","mcp","go","google-workspace","Claude","oss"]
+tags: ["google-mcp-server","mcp","go","google-workspace","claude","oss"]
 archives: ["2026-08"]
 draft: true
 ---
