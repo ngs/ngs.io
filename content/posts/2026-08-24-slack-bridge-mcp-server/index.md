@@ -29,6 +29,8 @@ Being able to say "keep going on that thing" from the sofa turned out to be a ni
 
 ## Usage
 
+### The resident loop
+
 You give the session a loop like this (the full prompt is in the README).
 
 ```
@@ -40,6 +42,8 @@ do not stop:
 3. For each message: do what it asks, then reply with slack_post. ...
 ```
 
+### What a message sets off
+
 From there it behaves like a well-mannered coworker:
 
 - The server reacts with 👀 on its own the moment the session takes a message in — immediately when it is waiting, at the next wait when it is mid-task
@@ -47,6 +51,8 @@ From there it behaves like a well-mannered coworker:
 - When the session starts something long, `slack_progress` puts the reason next to the timer: "⏳ Working… (2m 10s) — waiting for CI"
 - When it needs a decision, `slack_ask` posts buttons and the tapped choice goes straight back to the session
 - Ask it to "summarize the discussion above" and it reads everyone's messages through `slack_history`
+
+### Conversations outside the home channel
 
 Outside the home channel it works by mention: in any channel the app has been added to, mentioning it opens a conversation — the thread under that message when you mention it on the channel surface, the thread itself when you mention it inside one — and from then on you talk there without mentioning it again.
 
@@ -56,9 +62,15 @@ Only your own messages are ever relayed, in every channel — a colleague mentio
 
 Catch-up out there is best effort: at most twenty open threads are re-read per reconnect, and new mentions are looked for only in the newest hundred messages of up to twenty channels the app belongs to.
 
+### The trust boundary
+
 The owner filter is exactly as strong as the Slack account and the signed-in phone behind it, and what it guards is an agent with local tool access, so treat access to the channel as terminal access on the machine and set the session's tool permissions accordingly.
 
+### Recovery after sleep
+
 Sleep is not a failure mode: messages stay in Slack, and the session catches up from its cursor on wake, thread replies included — it scans the newest 200 messages for replied-to threads and reads at most 20 of them per reconnect, past which a reply is genuinely missed.
+
+### Release day
 
 Most of what I just described — the progress label, the buttons, the history reader, thread-reply recovery — was implemented on release day, by me sending instructions from my phone.
 
