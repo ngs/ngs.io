@@ -15,7 +15,7 @@ draft: true
 
 ## Motivation
 
-App Store Connect's review notifications arrive as email to the individual account. I would see the mail and be the one who opens the conversation in Slack: "looks like it came through."
+App Store Connect's review notifications arrive by email to individual accounts. I would see the email and be the one who opens the conversation in Slack: "looks like it came through."
 
 So the idea was to make the notification itself the origin — post it to Slack, and let the team talk in thread replies to it. This tool is the relay that turns App Store Connect webhooks into those Slack messages.
 
@@ -27,7 +27,7 @@ A webhook arrives and turns into a Block Kit message with an emoji per state (`R
 
 The Slack destination is either an Incoming Webhook URL or a bot token plus channel (`chat.postMessage`).
 
-With an App Store Connect API key configured (read-only access with the `Developer` or `App Manager` role is enough), version state and build notifications gain **App / Version / Build** fields and a button that jumps straight to the app's distribution page or TestFlight page. Enrichment is strictly optional: if the API is down at delivery time, the message still goes out un-enriched.
+With an App Store Connect API key configured (read-only access with the `Developer` or `App Manager` role is enough), version state and build notifications gain **App / Version / Build** fields and a button that jumps straight to the app's distribution page or TestFlight page. Enrichment is strictly optional: if the API is down at delivery time, the message still goes out unenriched.
 
 ## Setup
 
