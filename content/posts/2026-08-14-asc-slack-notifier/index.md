@@ -6,6 +6,7 @@ date: "2026-08-14T09:00:00+09:00"
 public: true
 tags: ["asc-slack-notifier","app-store-connect","slack","go","ios","oss"]
 archives: ["2026-08"]
+draft: true
 ---
 
 **[asc-slack-notifier](https://github.com/ngs/asc-slack-notifier)** is a server I built that receives [App Store Connect webhooks](https://developer.apple.com/documentation/appstoreconnectapi/webhooks) and posts review status and build events to Slack.
