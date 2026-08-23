@@ -14,9 +14,9 @@ archives: ["2026-08"]
 
 ## Motivation
 
-I've been on release duty for an iOS app at work. Every time we submit, the team wants to know in Slack when the app goes in review, gets approved, or gets rejected — but App Store Connect notifies the individual account by email and push, not the team. So I ended up being the person who opens App Store Connect and pastes screenshots into the channel every time the state moves.
+App Store Connect's review notifications arrive as email to the individual account. I would see the mail and be the one who opens the conversation in Slack: "looks like it came through."
 
-App Store Connect now offers webhooks, so I wrote a small relay that turns them into Slack messages.
+So the idea was to make the notification itself the origin — post it to Slack, and let the team talk in thread replies to it. This tool is the relay that turns App Store Connect webhooks into those Slack messages.
 
 Once I started, it turned out the webhook payload is bare: a version state change event carries **only the resource UUID and the old and new states**. The payload alone cannot tell you which app or which version moved, which makes a shared channel useless the moment you have more than one app. So I added optional enrichment — give it an App Store Connect API key and it looks the resource up before posting, adding the app name, version and build number, plus an "Open in App Store Connect" button.
 
