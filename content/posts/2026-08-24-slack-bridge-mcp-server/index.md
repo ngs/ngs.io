@@ -40,7 +40,7 @@ do not stop:
 
 From there it behaves like a well-mannered coworker:
 
-- The moment a message arrives, the server reacts with 👀 on its own, so you know the session has it
+- The server reacts with 👀 on its own the moment the session takes a message in — immediately when it is waiting, at the next wait when it is mid-task
 - If a reply takes more than ten seconds, "⏳ Working… (1m 05s)" appears in the thread, keeps counting, and disappears with the reply
 - When the session starts something long, `slack_progress` puts the reason next to the timer: "⏳ Working… (2m 10s) — waiting for CI"
 - When it needs a decision, `slack_ask` posts buttons and the tapped choice goes straight back to the session
@@ -88,15 +88,15 @@ It is written in Go with the official [MCP Go SDK](https://github.com/modelconte
 
 The server runs as a stdio child of Claude Code, so there is no daemon, no port, and no launchd — it lives and dies with the session.
 
-The Socket Mode WebSocket is opened lazily on the first `slack_wait`, so having the server in every project's `.mcp.json` costs nothing until a session actually attends.
+The Socket Mode WebSocket is opened lazily on the first tool call that needs Slack, so having the server in every project's `.mcp.json` costs nothing until a session actually attends.
 
 Reliability comes from catch-up rather than redelivery: the last processed timestamp is persisted as a cursor, and on reconnect the server walks `conversations.history` and `conversations.replies` forward from it.
 
 `slack_wait` blocks for 300 seconds by default and 1,500 at most, a number worked back from the 30-minute idle limit Claude Code applies to MCP tool calls.
 
-The closest project I know is [claude-slack-bridge](https://github.com/tomeraitz/claude-slack-bridge), a daemon-based bridge focused on letting Claude ask a human a question mid-task.
+The closest project I know is [claude-slack-bridge](https://github.com/tomeraitz/claude-slack-bridge), a Docker daemon that both lets Claude ask a question mid-task through `ask_on_slack` and spawns a fresh `claude -p` run for every mention in Slack.
 
-This one makes Slack the primary interface for the whole conversation instead, with no daemon and with sleep tolerance built out of the cursor.
+This one talks to a session that is already running instead of starting one per message, with no daemon and with sleep tolerance built out of the cursor.
 
 ## Feedback
 
