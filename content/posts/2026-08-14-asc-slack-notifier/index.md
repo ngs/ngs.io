@@ -72,13 +72,13 @@ curl -sS -X POST 'https://api.appstoreconnect.apple.com/v1/webhooks' \
 
 One gotcha: the webhook `secret` is **not something Apple issues — you make it up yourself**. Generate a value with something like `openssl rand -hex 32` and give the identical string to both sides: `attributes.secret` when registering the webhook, and `ASC_WEBHOOK_SECRET` on the server. If the two drift apart, every delivery is rejected with `401`.
 
-The API private key can be passed as a path to the `.p8` file, as raw PEM contents, or base64-encoded — the same convention as fastlane's `key_content`, so platforms that only carry string secrets are fine.
+The API private key is either a path to the `.p8` file in `ASC_API_PRIVATE_KEY_PATH`, or the key itself in `ASC_API_PRIVATE_KEY` as raw PEM contents or base64-encoded — the latter being the same convention as fastlane's `key_content`, so platforms that only carry string secrets are fine.
 
 ## Under the hood
 
 It's a single Go binary. Depending on one environment variable it runs as a plain HTTP server (Cloud Run, Kubernetes, anywhere) or behind AWS API Gateway on Lambda.
 
-Every delivery is authenticated before anything else: the `x-apple-signature` HMAC-SHA256 header is verified against the raw request body, compared in constant time. When Slack can't be reached the service returns `502`, so App Store Connect redelivers instead of dropping the event.
+Every delivery is authenticated before anything else: the `x-apple-signature` HMAC-SHA256 header is verified against the raw request body, compared in constant time. When Slack can't be reached the service returns `502`, so the delivery is recorded as failed in App Store Connect's delivery history and can be resent from there, instead of being silently acknowledged as successful.
 
 ## Feedback welcome
 
