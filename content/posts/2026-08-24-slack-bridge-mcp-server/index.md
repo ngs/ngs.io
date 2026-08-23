@@ -54,6 +54,8 @@ Replies carry the channel of the message they answer, so they land where the con
 
 Only your own messages are ever relayed, in every channel — a colleague mentioning the app does not reach the session.
 
+Catch-up out there is best effort: every open thread is re-read on reconnect, but new mentions are looked for only in the newest hundred messages of up to twenty channels the app belongs to.
+
 Sleep is not a failure mode: messages stay in Slack, and the session catches up from its cursor on wake, thread replies included — it scans the newest 200 messages for replied-to threads and reads at most 20 of them per reconnect, past which a reply is genuinely missed.
 
 Most of what I just described — the progress label, the buttons, the history reader, thread-reply recovery — was implemented on release day, by me sending instructions from my phone.
