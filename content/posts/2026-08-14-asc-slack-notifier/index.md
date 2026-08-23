@@ -36,15 +36,19 @@ The quickest route is to fork the repository and let GitHub Actions deploy it: s
 Deploying to Cloud Run by hand is just:
 
 ```sh
+PROJECT_ID=your-project
+REGION=asia-northeast1
+IMAGE="$REGION-docker.pkg.dev/$PROJECT_ID/apps/asc-slack-notifier:latest"
+
 gcloud builds submit --tag "$IMAGE"
 gcloud run deploy asc-slack-notifier \
   --image "$IMAGE" \
-  --region asia-northeast1 \
+  --region "$REGION" \
   --allow-unauthenticated \
   --set-secrets "ASC_WEBHOOK_SECRET=asc-webhook-secret:latest,SLACK_WEBHOOK_URL=slack-webhook-url:latest"
 ```
 
-Then register the webhook with the App Store Connect API:
+Then register the webhook with the App Store Connect API — `$TOKEN` is a JWT minted from your API key, `$APP_ID` the App Store Connect ID of the app:
 
 ```sh
 curl -sS -X POST 'https://api.appstoreconnect.apple.com/v1/webhooks' \
