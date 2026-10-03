@@ -22,7 +22,7 @@ There are no ads and no in-app purchases, and it plays offline.
 
 ## Motivation
 
-I love hanafuda, enough to have built [a hanafuda app that runs in the terminal](https://github.com/ngs/go-koikoi) and to have given my kids an early education in it when they were little.
+I love hanafuda, enough to have built [a hanafuda app that runs in the terminal](https://github.com/ngs/go-koikoi) and to have drilled it into my kids from an early age.
 
 On the iPhone, iPad and Mac I use every day, I had only ever found apps with features I didn't need, or apps that were paid or came with ads, and I wanted a clean hanafuda app built with SwiftUI.
 
@@ -166,3 +166,5 @@ When a game is opened, it rebuilds the same deal from the seed and applies `move
 ## Feedback
 
 Please send bug reports and feature requests to [GitHub Issues](https://github.com/ngs/koikoi-swift/issues).
+
+If you play, I'd love to hear how it goes.
