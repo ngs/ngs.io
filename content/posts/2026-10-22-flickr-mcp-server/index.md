@@ -109,7 +109,7 @@ Adding it to Claude Code is one line:
 claude mcp add flickr -- flickr-mcp-server --download-dir ~/Pictures/flickr
 ```
 
-Note that since May 15, 2025 Flickr has restricted downloading the original and larger-than-1024px sizes of photos on free accounts ([Flickr Blog](https://blog.flickr.net/en/2025/04/15/service-update-original-large-size-download-limitations-on-free-accounts/)), so you need Flickr Pro for the big sizes.
+Note that since May 15, 2025, Flickr has restricted downloads of the original and larger-than-1024px sizes of photos owned by free accounts ([Flickr Blog](https://blog.flickr.net/en/2025/04/15/service-update-original-large-size-download-limitations-on-free-accounts/)).
 
 ## Under the hood
 
