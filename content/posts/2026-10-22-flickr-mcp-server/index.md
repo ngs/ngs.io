@@ -70,6 +70,25 @@ As of October 21, 2026 there are 224 methods, and a token authorized with read p
 
 `live.staticflickr.com`, where the images are served, returns 502 to Go's default User-Agent, so the server sends its own.
 
+## Built with Claude Code
+
+I asked a Claude Code session bridged to Slack to build this, from the Slack app on my phone.
+
+What I asked for:
+
+- Offer the full feature set of the Flickr API as tools
+- Keep the repository private until it's done
+- Only the first pull request; after that, push straight to main (no reviews)
+- Raise test coverage to 98%
+- Put Homebrew and other install methods in the README
+- Don't purge the image cache automatically; report the local disk usage in the response so it suggests a purge
+
+Claude Code first wrote a design spec, matched the layout of [slack-bridge-mcp-server](https://github.com/ngs/slack-bridge-mcp-server) (Go, the official MCP Go SDK, GoReleaser, MIT) and handed the implementation to subagents.
+
+OAuth authorization was done while I was out: Claude Code posted the authorization URL in Slack, I allowed access on my phone and sent back the code Flickr showed, and the Mac exchanged it for a token.
+
+It checked the real API with read-only calls, raised coverage from 67.8% to 89.9% to 98.5%, scanned the whole history with gitleaks before going public, and then made the repository public, released v0.1.0 and published the Homebrew cask.
+
 ## Feedback
 
 Bug reports, feature requests and pull requests are welcome, feel free to send some.
