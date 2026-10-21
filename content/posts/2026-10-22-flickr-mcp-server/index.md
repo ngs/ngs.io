@@ -2,8 +2,7 @@
 title: An MCP Server That Turns Every Flickr API Method into a Tool
 slug: "flickr-mcp-server"
 description: flickr-mcp-server exposes all 224 Flickr API methods as MCP tools, so an LLM can find your photos by date taken or location and read their EXIF and smaller sizes.
-date: "2026-10-22T09:00:00+09:00"
-draft: true
+date: "2026-10-22T03:00:00+09:00"
 public: true
 tags: ["go","oss","mcp","flickr","claude-code"]
 archives: ["2026-10"]
