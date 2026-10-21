@@ -16,13 +16,13 @@ I've released [flickr-mcp-server](https://github.com/ngs/flickr-mcp-server), an 
 
 ## Motivation
 
-I wanted an LLM to look at my fishing photos and work out the length of a fish from the size of the lure in the photo.
+I want an LLM to work out the length of a fish from the size of the lure in my fishing photos.
 
-I tried handing it iCloud shared links, but they expire, so that wasn't practical.
+iCloud shared links expire, so they are not practical for handing photos over.
 
-I have a Flickr Pro account, and I wondered whether my photos there could be accessed through the API or MCP.
+I have a Flickr Pro account.
 
-The existing MCP implementations didn't look like much, so I built my own that offers the full feature set of the Flickr API as tools.
+The existing Flickr MCP implementations don't look like much, so I built my own that offers the full feature set of the Flickr API as tools.
 
 ## Usage
 
@@ -68,7 +68,7 @@ The tools are not written by hand; they are generated with `go generate` from th
 
 As of October 21, 2026 there are 224 methods, and a token authorized with read permission gives 152 tools.
 
-One thing I ran into was that `live.staticflickr.com`, where the images are served, returns 502 to Go's default User-Agent, so the server sends its own User-Agent.
+`live.staticflickr.com`, where the images are served, returns 502 to Go's default User-Agent, so the server sends its own.
 
 ## Feedback
 
