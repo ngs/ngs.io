@@ -16,15 +16,13 @@ I've released [flickr-mcp-server](https://github.com/ngs/flickr-mcp-server), an 
 
 ## Motivation
 
-I take quite a few photos of fish and lures when I go fishing.
+I wanted an LLM to look at my fishing photos and work out the length of a fish from the size of the lure in the photo.
 
-I wanted an LLM to look at them, put the catches in order by the time they were taken, and estimate the length of a fish from the lure in the same photo, but I had no good way to hand the photos over.
+I tried handing it iCloud shared links, but they expire, so that wasn't practical.
 
-I tried iCloud shared links, but they expire, so the LLM couldn't read the same photos again later.
+I have a Flickr Pro account, and I wondered whether my photos there could be accessed through the API or MCP.
 
-I already have Flickr Pro, so I decided to upload the photos to Flickr and let the LLM search them by date taken or location.
-
-Then I thought it should be able to use everything the Flickr API offers, so I wrote an MCP server that turns all of its methods into tools.
+The existing MCP implementations didn't look like much, so I built my own that offers the full feature set of the Flickr API as tools.
 
 ## Usage
 
